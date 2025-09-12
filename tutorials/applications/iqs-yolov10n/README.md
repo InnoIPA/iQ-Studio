@@ -8,9 +8,11 @@
 
 ![output.gif](./fig/gif0.gif)
 
+>Note: The demo GIF may take some time to load. If it does not appear immediately, please wait.
+
 Inference with the YOLOv10n model was conducted on both NVIDIA AGX ORIN and Qualcomm EXMP-Q911 platforms, utilizing their respective GPU and NPU. A confidence threshold of 0.5 was applied, and the visual outputs were found to be highly comparable.
 
-# Jetson AGX ORING
+# Jetson AGX ORIN
 
 ## Platform information
 

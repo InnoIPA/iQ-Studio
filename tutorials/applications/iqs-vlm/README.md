@@ -24,6 +24,8 @@ The demo can be run at following BSP version.
 | :--- | :---- | :--- |
 | 0.0.1-Beta | iqs-vlm-demo | 0.0.1-Beta |
 | 0.0.1-Beta | iqs-ogenie | 0.0.1-Beta |
+| 0.0.2 | iqs-vlm-demo | 0.0.2 |
+| 0.0.2 | iqs-ogenie | 0.0.2 |
 
 
 1. At least 10 GB of free disk space

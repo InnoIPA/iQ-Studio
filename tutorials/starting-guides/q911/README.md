@@ -91,6 +91,8 @@ The Q911 platform ships with the system image pre-loaded on the UFS storage. To 
   </table>
 </div>
 
+>**Important**: If the network isn’t accessible after booting, you can fix it by plugging in the cable before starting up..
+
 1.  Connect the power cable.
 
   

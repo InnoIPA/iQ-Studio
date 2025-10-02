@@ -1,5 +1,6 @@
 {
     "iqs-ogenie": "tutorials/applications/iqs-vlm/run.sh",
     "iqs-vlm-demo": "tutorials/applications/iqs-vlm/run.sh",
-    "iqs-streampipe": "tutorials/applications/iqs-streampipe/run.sh"
+    "iqs-streampipe": "tutorials/applications/iqs-streampipe/run.sh",
+    "iqs-yolov10n": "tutorials/applications/iqs-yolov10n/run.sh"
 }

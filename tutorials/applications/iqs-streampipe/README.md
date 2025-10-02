@@ -19,14 +19,15 @@ The set IDs are ordered on the screen from left to right, then from top to botto
 <div align="center"><img width="80%" height="80%" src="./fig/gif0.gif"></div>
 <br />
 
-# What you need？
+# What you need?
 
 The demo can be run at following platform and BSP version
 
-The demo can be run at following BSP version.
-| BSP version | Docker image | Docker image tag |
+| APP version | Docker image | BSP version |
 | :--- | :---- | :--- |
-| 0.0.2 | iqs-streampipe | v0.0.2 |
+| 1.1.0 | iqs-streampipe | v0.0.2 |
+
+>Note: Our BSP version is the same as the docker tag.
 
 1. At least 1 GB of free disk space
 2. A monitor
@@ -42,7 +43,7 @@ cd iQ-Studio
 1. Use iqs-launcher and autotag tools to automatically pull or build a compatible docker image.
     
     ```bash
-    iqs-launcher --autotag iqs-streampipe
+    $ iqs-launcher --autotag iqs-streampipe
     ```
     
 2. You will see in the screen.
@@ -53,3 +54,6 @@ cd iQ-Studio
 # iQS-Streampipe SDK
 
 For advanced features and usage examples, visit this [page](../../sdks/iqs-streampipe/README.md) to learn more.
+
+# Known Issue
+The current Qualcomm codec driver may under certain conditions, cause the system to restart unexpectedly. If this occurs, re-run the process to continue.

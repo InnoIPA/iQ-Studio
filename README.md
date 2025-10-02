@@ -113,6 +113,7 @@ iQ Studio applications are grouped into categories based on functionality:
       <td>
         <ul>
           <li><a href="./tutorials/applications/iqs-vlm/README.md">iQS-VLM</a></li>
+          <li><a href="./tutorials/applications/iqs-streampipe/README.md">iQS-Streampipe</a></li>
           <li><a href="./tutorials/applications/iqs-yolov10n/README.md">Yolov10n on EXMP-Q911</a></li>
         </ul>
       </td>
@@ -123,6 +124,7 @@ iQ Studio applications are grouped into categories based on functionality:
       <td>
         <ul>
           <li><a href="./tutorials/sdks/iqs-vlm/README.md">iQS-VLM SDK</a></li>
+          <li><a href="./tutorials/sdks/iqs-streampipe/README.md">iQS-Streampipe SDK</a></li>
         </ul>
       </td>
     </tr>

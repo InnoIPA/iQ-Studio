@@ -13,9 +13,8 @@ utilizes `OGenie`, our API server that handles LLM/VLM inference requests, along
 with `iq-VLM-DEMO`, which captures images from UVC cameras and displays the VLM
 results on a monitor.
 
-![demo gif](./fig/demo2.gif)
+![demo gif](./fig/vlm.gif)
 
-> video source[^1]
 
 # What do you need?
 
@@ -74,7 +73,7 @@ Running this command will open a window showing live video from the UVC camera,
 with the VLM response overlaid on the video. Press `q` to close the
 window.
 
-![demo image](./fig/demo2.png)
+![demo image](./fig/vlm.png)
 
 # LLaVA-1.5-7B Performance
 
@@ -83,5 +82,3 @@ window.
 # iQS-VLM SDK
 
 For advanced features and usage examples, visit this [page](../../sdks/iqs-vlm/README.md) to learn more.
-
-[^1]: https://www.youtube.com/watch?v=UG_imPDsxfw

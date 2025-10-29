@@ -26,13 +26,13 @@ We are using the [Ultralytics](https://docs.ultralytics.com/models/yolov10/) fra
 - Convert model:
     
     ```bash
-    yolo export model=yolov10n.pt format=engine int8=True simplify opset=13 workspace=16
+    $ yolo export model=yolov10n.pt format=engine int8=True simplify opset=13 workspace=16
     ```
     
 - Inference:
     
     ```bash
-    yolo predict model=yolov10s.engine source=<image or videos>
+    $ yolo predict model=yolov10n.engine source=<image or videos>
     ```
     
 
@@ -43,11 +43,26 @@ We are using the [Ultralytics](https://docs.ultralytics.com/models/yolov10/) fra
 - RAM: 36GB
 - Qnn SDK Version: 2.29
 
+The demo can be run at following platform and BSP version.
+| APP version | Docker image | BSP version |
+| :--- | :---- | :--- |
+| 1.0.0 | iqs-yolov10n | v0.0.2 |
+
+>Note: Our BSP version is the same as the docker tag.
+
 ### How to demo the model?
 
-Our model is different from [Qualcomm AI Hub](https://aihub.qualcomm.com/models/yolov10_det) .
+Use the iqs-launcher to start the application.
 
-Model download here: [yolov10n_full_integer_quant.tflite](./model/yolov10n_full_integer_quant.tflite)
+```bash
+$ iqs-launcher --autotag iqs-yolov10n
+```
+If you want to change the video, please put your video in the current directory.
+
+```bash
+$ iqs-launcher --autotag iqs-yolov10n --other "-v <video_path>"
+```
+**Output location**: The predicted video will be saved in the `output` folder.
 
 # Conclusion
 

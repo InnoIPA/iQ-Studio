@@ -1,0 +1,58 @@
+{
+    "streams": [
+        {
+            "id": 0,
+            "model_path": "../app/yolov10n_full_integer_quant.tflite",
+            "source_path": "../app/japan_walk.mp4",
+            "input_size": 640
+        },
+                {
+            "id": 1,
+            "model_path": "../app/yolov10n_full_integer_quant.tflite",
+            "source_path": "../app/road.mp4",
+            "input_size": 640
+        },
+                {
+            "id": 2,
+            "model_path": "../app/yolov10n_full_integer_quant.tflite",
+            "source_path": "../app/europe_walk.mp4",
+            "input_size": 640
+        },
+                {
+            "id": 3,
+            "model_path": "../app/yolov10n_full_integer_quant.tflite",
+            "source_path": "../app/japan_walk.mp4",
+            "input_size": 640
+        },
+                {
+            "id": 4,
+            "model_path": "../app/yolov10n_full_integer_quant.tflite",
+            "source_path": "../app/road.mp4",
+            "input_size": 640
+        },
+                {
+            "id": 5,
+            "model_path": "../app/yolov10n_full_integer_quant.tflite",
+            "source_path": "../app/europe_walk.mp4",
+            "input_size": 640
+        },
+                {
+            "id": 6,
+            "model_path": "../app/yolov10n_full_integer_quant.tflite",
+            "source_path": "../app/japan_walk.mp4",
+            "input_size": 640
+        },
+                {
+            "id": 7,
+            "model_path": "../app/yolov10n_full_integer_quant.tflite",
+            "source_path": "../app/road.mp4",
+            "input_size": 640
+        },
+                {
+            "id": 8,
+            "model_path": "../app/yolov10n_full_integer_quant.tflite",
+            "source_path": "../app/europe_walk.mp4",
+            "input_size": 640
+        }  
+    ]
+}

@@ -47,27 +47,21 @@ bash install.sh
 
 ### Run Application
 
-For example, If you want to run the [iQ-VLM](./tutorials/integrations/iqs-vlm/iqs-vlm.md). You just need two command run the interative real-time demo.
+For example, If you want to run the [iQ-VLM](./tutorials/applications/iqs-vlm/README.md). You just need two command run the interative real-time demo.
 
 Launch OGenie API server.
 ```bash
-iqs-launcher --autotag iqs-ogenie
+$ iqs-launcher --autotag iqs-ogenie
 ```
 Real-Time Display of VLM Predictions on the Monitor.
 ```bash
-iqs-launcher --autotag iqs-vlm-demo
+$ iqs-launcher --autotag iqs-vlm-demo
 ```
 This is provides a real-time display of VLM predictions, allowing you to quickly verify inference results.
 
-The following screenshot shows the output captured using a UVC camera.
-
 <br />
-<div align="center"><img width="50%" height="50%" src="./docs/fig/iq-vlm-demo.gif"></div>
+<div align="center"><img width="100%" height="100%" src="./tutorials/applications/iqs-vlm/fig/vlm-demo.gif"></div>
 <br />
-
-<p align="center">
-  The GIF shows the output captured using a UVC camera.
-</p>
 
 For other applications, please refer to the [application section below](#application).
 
@@ -113,6 +107,7 @@ iQ Studio applications are grouped into categories based on functionality:
       <td>
         <ul>
           <li><a href="./tutorials/applications/iqs-vlm/README.md">iQS-VLM</a></li>
+          <li><a href="./tutorials/applications/iqs-streampipe/README.md">iQS-Streampipe</a></li>
           <li><a href="./tutorials/applications/iqs-yolov10n/README.md">Yolov10n on EXMP-Q911</a></li>
         </ul>
       </td>
@@ -123,6 +118,7 @@ iQ Studio applications are grouped into categories based on functionality:
       <td>
         <ul>
           <li><a href="./tutorials/sdks/iqs-vlm/README.md">iQS-VLM SDK</a></li>
+          <li><a href="./tutorials/sdks/iqs-streampipe/README.md">iQS-Streampipe SDK</a></li>
         </ul>
       </td>
     </tr>

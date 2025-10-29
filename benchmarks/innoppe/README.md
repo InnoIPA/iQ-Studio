@@ -86,7 +86,7 @@ Under the 10 channel(single UVC Cam, 9 Videos), the **IQ-9075-EVK** achieves per
 1. Run `system_monitor.py` to start monitoring system metrics.
 
    ```bash
-   python3 system_monitor.py
+   $ python3 system_monitor.py
    ```
 
    The data will be continuously written to `test.csv`. Press **Ctrl + C** to stop monitoring.
@@ -94,7 +94,7 @@ Under the 10 channel(single UVC Cam, 9 Videos), the **IQ-9075-EVK** achieves per
 2. After obtaining `test.csv`, run `draw_csv.py` to generate charts.
 
    ```bash
-   python3 draw_csv.py
+   $ python3 draw_csv.py
    ```
 
    The resulting charts will be saved in the `report/` directory.
@@ -108,7 +108,7 @@ Under the 10 channel(single UVC Cam, 9 Videos), the **IQ-9075-EVK** achieves per
 3. To calculate the average values of the collected metrics, run `print_mean.py`.
 
    ```bash
-   python3 print_mean.py
+   $ python3 print_mean.py
    ```
 
    ```

@@ -60,7 +60,7 @@ $ iqs-launcher --autotag iqs-vlm-demo
 This is provides a real-time display of VLM predictions, allowing you to quickly verify inference results.
 
 <br />
-<div align="center"><img width="50%" height="50%" src="./tutorials/applications/iqs-vlm/fig/vlm-demo.gif"></div>
+<div align="center"><img width="100%" height="100%" src="./tutorials/applications/iqs-vlm/fig/vlm-demo.gif"></div>
 <br />
 
 For other applications, please refer to the [application section below](#application).

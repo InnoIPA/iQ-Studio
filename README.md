@@ -119,6 +119,7 @@ iQ Studio applications are grouped into categories based on functionality:
         <ul>
           <li><a href="./tutorials/sdks/iqs-vlm/README.md">iQS-VLM SDK</a></li>
           <li><a href="./tutorials/sdks/iqs-streampipe/README.md">iQS-Streampipe SDK</a></li>
+          <li><a href="./tutorials/sdks/iqs-ogenie/README.md">iQS-OGenie SDK</a></li>
         </ul>
       </td>
     </tr>

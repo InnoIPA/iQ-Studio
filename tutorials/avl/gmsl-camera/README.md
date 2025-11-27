@@ -33,6 +33,9 @@ Connect the GMSL Camera to EXMP-Q911 and EB022-2M4F GMSL adapter board, follow t
 2. Use Link A to connect the GMSL camera. Only Link A is supported, and the adapter board can operate with one MIPI sensor at a time.
 3. Power on the EB022-2M4F first, and then power on the EXMP-Q911.
 
+<br />
+<br />
+
 | Module | Support Platform | Adapter Board | Support OS | JCAM0 | JCAM1 | JCAM2 | JCAM3 | Resolution, Frame Rate |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | EVDF-OOM1 | iQ-9075 EVK | EB022-2M4F | Yocto linux 1.5 | ❌ | ❌ | ✅ | ✅ | 1920x1080, 30 FPS |
@@ -48,6 +51,9 @@ Connect the camera to the iQ-9075 EVK and EB022-2M4F GMSL adapter board, follow 
 2. Connect CN_CSIx to the corresponding FPC1 header. This cable type is required for proper CSI lane alignment.
 3. Use Link A to connect the GMSL camera. Only Link A is supported, and the adapter board can operate with one MIPI sensor at a time.
 4. Power on the EB022-2M4F first, and then power on the iQ-9075 EVK.
+
+<br />
+<br />
 
 | Module | Adapter Board | Support OS | Port0 | Port1 | Port2 | Port3 | Resolution, Frame Rate |
 | --- | --- | --- | --- | --- | --- | --- | --- |

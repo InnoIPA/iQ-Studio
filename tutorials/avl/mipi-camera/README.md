@@ -10,8 +10,8 @@ With its mature ecosystem and broad sensor compatibility, MIPI CSI-2 is commonly
 
 ## Supported Components
 
-- Camera: [EVDF-OOM1](https://www.innodisk.com/en/products/camera/gmsl2/evdf-oom1-rhcf)
-- Camera: EVDF-OOM3 (Will be released later)
+- Camera: [EVDM-OOM1](https://www.innodisk.com/en/products/camera/mipi-csi-2/evdm-oom1-rhcf)
+- Camera: EVDM-OOM3
 - Evaluation Kit: [IQ-9075 EVK](https://www.qualcomm.com/developer/hardware/qualcomm-iq-9075-evaluation-kit-evk)
 - IQ-9075 EVK OS: [Ubuntu 24.04](https://ubuntu.com/download/qualcomm-iot)
 
@@ -52,7 +52,7 @@ Connect the Camera to the iQ-9075 EVK, follow the steps below:
 3. Only **one MIPI sensor** can be used at a time.
 4. Power on the iQ-9075 EVK.
 
-## How to Install the Driver for GMSL Camera
+## How to Install the Driver for MIPI Camera
 
 1. Copy the `.ipk`  or `.deb` to the target platform
     
@@ -98,7 +98,7 @@ If the camera is properly connected to the platform and the required drivers are
     ```bash
         pkill cam-server
     ```
-    > Known Issue: The cam-server must be restarted once after each system reboot. You only need to restart it again if the system is rebooted.
+    > 🔔️ **Known Issue**: The cam-server must be restarted once after each system reboot. You only need to restart it again if the system is rebooted.
 
 2. Run the following command.
     

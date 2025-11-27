@@ -7,21 +7,24 @@
 
 # Run Your Own Demo with OGenie
 
-This section shows you how to integrate and run your own demo using OGenie. You’ll learn how to set up the environment, use example code for both LLM and VLM chat, and optionally connect with Open WebUI for an interactive interface. Currently, we only support LLM and VLM models officially released by Qualcomm.
+This section shows you how to integrate and run your own demo using OGenie. You’ll learn how to set up the environment, use example code for both LLM and VLM chat. Currently, we only support LLM and VLM models officially released by [Qualcomm](https://aihub.qualcomm.com/models).
 
-> 💡 **Tip:** Please check out the **[iQS-VLM](../../applications/iqs-vlm/README.md)** to see how OGenie is used in real-time applications.
+<div align="center"><img width="40%" height="40%" src="./fig/ogeine.png"></div>
+
+> 💡 **Tip:** Please check out the **[iQS-VLM](../../applications/iqs-vlm/README.md)** to see how OGenie is used in real-time applications. Or see how to use OpenWebUI to interact with OGenie in the **[iQS-VLM SDK](../iqs-vlm/README.md)**.
 
 
 ## OGenie SDK
 
-OGenie SDK provides an HTTP server that implements OpenAI-compatible API — making it easy for users to build their own demos through the Ollama interface.
+OGenie SDK provides an HTTP server that implements the Ollama-compatible API, allowing developers to use the official Ollama services (Python SDK / HTTP interface) to interact with OGenie. The inference runtime is provided by OGenie, users do NOT need Ollama’s model runner or server.
 
 Currently, the following [APIs](https://ollama.readthedocs.io/en/api/) are supported:
 
 - `/api/tags`
 - `/api/chat`
 
-In this section, you’ll learn how to prepare your environment and run the provided example code.
+### Start the OGenie Server on the Platform
+
 1. Before getting started, make sure OGenie is running on the target platform. You can start it using the following command.
     
     ```shell
@@ -42,13 +45,15 @@ In this section, you’ll learn how to prepare your environment and run the prov
     http://172.17.0.1:22434
     ```
 
-2. Prepare the Ollama environment on the host machine by installing Ollama with the following command: 
+### Run the Example Code on the Host to Interact with OGenie
+
+1. Prepare the Ollama environment on the host machine by installing Ollama with the following command: 
     
     ```bash
     curl -fsSL https://ollama.com/install.sh | sh
     ```
     
-3. Before running the example, set the environment variable by executing the following command:
+2. Before running the example, set the environment variable by executing the following command:
     
     ```bash
     # Set the environment variable for your OGenie server
@@ -59,7 +64,7 @@ In this section, you’ll learn how to prepare your environment and run the prov
     $ export OLLAMA_HOST=http://192.168.3.223:22434
     ```
     
-4. (Optional) The following API returns all models currently available on the OGenie server.
+3. (Optional) The following API returns all models currently available on the OGenie server.
     
     ```bash
     $ python3 -c "import ollama; print(ollama.list())"
@@ -69,7 +74,7 @@ In this section, you’ll learn how to prepare your environment and run the prov
 
     ```
     
-5. To use Ollama in Python, create a file called `example.py` and copy the example code into it.
+4. To use Ollama in Python, create a file called `example.py` and copy the example code into it.
    - **LLM chat example**
         
         ```python

@@ -17,18 +17,23 @@ shift
 # Execute the container using the provided image name and pass any additional arguments.
 echo "Executing docker run on image: $IMAGE_TO_RUN with args: $@"
 
-if [ ! -e output ]; then
-  mkdir output
+VOLUME_RUN=""
+if grep -qi "ubuntu" /etc/os-release; then
+    VOLUME_RUN="-v /usr/lib:/usr/lib"
+    OS_TYPE="ubuntu"
+else
+    VOLUME_RUN="-v /usr/lib:/host_lib"
 fi
-
+mkdir -p ./output
 docker run --rm -it \
     --net host \
     --privileged \
     --shm-size=3g \
+    -e OS_TYPE="$OS_TYPE" \
     -v /dev/:/dev \
-    -v /usr/lib:/host_lib \
-    -v /usr/libexec:/host_libexec \
-    -v output:/app/output \
-    -v $PWD:/workspace \
+    $VOLUME_RUN \
+    -v "$PWD":/workspace \
     "$IMAGE_TO_RUN" \
     "$@"
+
+

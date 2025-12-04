@@ -32,4 +32,5 @@ docker run --rm -it \
     -v /usr/lib:/host_lib \
     $VOLUME_RUN \
     -v $PWD:/workspace \
-    "$IMAGE_TO_RUN" "$@"
+    "$IMAGE_TO_RUN" \
+    "$@"

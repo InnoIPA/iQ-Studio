@@ -27,7 +27,7 @@ If you are using online mode (with internet access), you only need to install th
   <div align="center"><img width="80%" height="80%" src="./docs/fig/iqs-online-flow.svg"></div>
   <br />
 
-If you must use offline mode (without internet access), you need to first transfer the required packages and the iQ studio github repository to the platform before you can run the applications in an offline environment. For usage instructions, please refer to the [how to install offline package](./tutorials/starting-guides/iqs-launcher/how-to-install-offline-package-using-iqs-launcher.md).
+If you must use offline mode (without internet access), you need to first transfer the required packages and the iQ studio github repository to the platform before you can run the applications in an offline environment. For usage instructions, please refer to the [how to install offline package](./docs/how-to-install-offline-package-using-iqs-launcher.md).
 
   <br />
   <div align="center"><img width="80%" height="80%" src="./docs/fig/iqs-offline-flow.svg"></div>

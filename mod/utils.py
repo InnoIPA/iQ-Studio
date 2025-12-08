@@ -33,3 +33,10 @@ def get_system_bsp_version():
         msg = f"An unhandled error occurred while reading BSP version: {e}"
         logging.error(msg)
         raise
+
+
+def split_autotag(value: str) -> tuple[str, str]:
+    name, sep, tag = value.partition(':')
+    if not tag:
+        tag = 'latest'
+    return name, tag

@@ -5,11 +5,14 @@ The Q911 family is built around the Qualcomm® IQ-9075 SoC. The product line cur
 
 | **Model** | **P/N** | **Description** | **Packing List** |
 | --- | --- | --- | --- |
-| EXMP-Q911 | EXMP-Q911-00A1-W1 | COM HPC Mini Module By Qualcomm IQ-9075 | 1x IQ9 COM-HPC Mini Module <br/> 1x Cooler with Fan (secured onto the module) |
-| EXEC-Q911 | EXEC-Q911-00A1-W1 | COM HPC Mini EVK By Qualcomm IQ-9075| 1x IQ9 COM-HPC Mini Module <br/> 1x 3.5” COM-HPC Mini Carrier (secured with the module) <br/> 1x Cooler with Fan (secured onto the module) <br/> 1x 60W power adapter <br/> 1x US power cord <br/> 1x Speaker*2 cable <br/> 1x D-SUB(F) cable (GPIO) <br/> 1x D-SUB(M) cable (CAN FD) <br/> 1x USB 2.0 A-TYPE(F)*2 cable <br/> 1x D-SUB(M) cable (COM) |
+| EXMP-Q911 | EXMP-Q911-00A1-W1 | COM-HPC Mini Module By Qualcomm IQ-9075 | 1x IQ9 COM-HPC Mini Module <br/> 1x Cooler with Fan (secured onto the module) |
+| EXEC-Q911 | EXEC-Q911-00A1-W1 | COM-HPC Mini EVK By Qualcomm IQ-9075| 1x IQ9 COM-HPC Mini Module <br/> 1x 3.5” COM-HPC Mini Carrier (secured with the module) <br/> 1x Cooler with Fan (secured onto the module) <br/> 1x 60W power adapter <br/> 1x US power cord <br/> 1x Speaker*2 cable <br/> 1x D-SUB(F) cable (GPIO) <br/> 1x D-SUB(M) cable (CAN FD) <br/> 1x USB 2.0 A-TYPE(F)*2 cable <br/> 1x D-SUB(M) cable (COM) |
 | APEX-A100 | EXOC-Q911-00A1-W1 | Edge AI System By Qualcomm IQ-9075| 1x Fanless Edge AI System based on EXMP-Q911 module <br/> 1x 60W power adapter <br/> 1x US power cord |
 
-This starting guide focuses on the EXEC-Q911 and APEX-A100 platforms, providing an overview of their hardware and helping users quickly get the system up and running.
+This guide focuses on the EXEC-Q911 and APEX-A100 platforms, providing an overview of their hardware and helping you get the system up and running quickly.
+
+Each device ships with either Yocto Linux or Ubuntu pre-flashed on the UFS storage, allowing you to power on the system and log in immediately.If you need to re-flash or update the system image, please refer to the
+[Q911 Image Flashing Guide](../flash-image/README.md).
 
 
 ## What’s in the Box
@@ -107,26 +110,7 @@ After the system boots, you can access the platform using one of the following m
 
 - UART Debug Console
 
-The device ships with either Yocto Linux or Ubuntu pre-flashed on the UFS storage, allowing you to boot and log in immediately.
-
-Each operating system has different default login credentials:
-
-- Yocto Linux
-
-  ```bash
-    Username: root
-    Password: oelinux123
-  ```
-- Ubuntu (You will be asked to set a new password after logging in for the first time.)
-  ```bash
-    Username: ubuntu
-    Password: ubuntu
-  ```
-  > 💡 **Tip:** For Ubuntu, the network configuration will not be enabled until the iq-ubuntu.deb package is installed. Please follow the steps below to complete the installation: 
-  > 1. Use a USB storage device to copy the [iq-ubuntu.deb](./iq-ubuntu.deb) to the system. 
-  > 2. Install the package using the command: `sudo apt install </path/to/iq-ubuntu.deb>`
-  > 3. Reboot the system. Network functionality will be available after the restart.
-
+Please refer to the [Q911 Image Flashing Guide: Boot into the System](../flash-image/README.md#step-6-boot-into-the-system) for detailed instructions on flashing the image and the steps required to enable networking on Ubuntu.
 
 ### Interact with the System Using a DP Display
 
@@ -173,7 +157,7 @@ If you are accessing the system using a DP display, please follow the steps belo
 
 ### Interact with the System Using SSH over Ethernet
 
-If you are accessing the system using SSH to intract with system, please follow the steps below to set it up.
+If you are accessing the system using SSH to intract with system, please follow the steps below to set it up. If the Ubuntu does not have network connectivity, refer to the [Q911 Image Flashing Guide: Boot into the System](../flash-image/README.md#step-6-boot-into-the-system) on configuring the network.
 
 1. Please connect an Ethernet cable and ensure that the device is reachable over the network. Then, connect the power cable and press the power button to boot the system.
 

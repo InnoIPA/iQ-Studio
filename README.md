@@ -84,10 +84,11 @@ iQ Studio applications are grouped into categories based on functionality:
   <tbody>
     <tr>
       <td>Starting Guides</td>
-      <td>Quick-start guides for evertthing, include booting up guides and iqs-launcher guides.</td>
+      <td>Quick-start guides for evertthing.</td>
       <td>
         <ul>
           <li><a href="./tutorials/starting-guides/q911/README.md">Q911 Quick Start Guide</a></li>
+          <li><a href="./tutorials/starting-guides/flash-image/README.md">Q911 Image Flashing Guide</a></li>
         </ul>
       </td>
     </tr>

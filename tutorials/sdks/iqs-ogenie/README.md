@@ -5,7 +5,7 @@
  https://opensource.org/licenses/MIT
 -->
 
-# Run Your Own Demo with OGenie
+# iQS-OGenie: Run Your Own Demo with OGenie Server
 
 This section shows you how to integrate and run your own demo using OGenie. You’ll learn how to set up the environment, use example code for both LLM and VLM chat. Currently, we only support LLM and VLM models officially released by [Qualcomm](https://aihub.qualcomm.com/models).
 

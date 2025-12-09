@@ -5,7 +5,7 @@
  https://opensource.org/licenses/MIT
 -->
 
-# iQS-Streampipe
+# iQS-Streampipe: How to Change the Custom Model and Video Source
 
 Please refer to the `tutorial/applications/iqs-streampipe`to learn how to run [iqs-streampipe](../../applications/iqs-streampipe/README.md).
 

@@ -19,27 +19,19 @@ The set IDs are ordered on the screen from left to right, then from top to botto
 <div align="center"><img width="80%" height="80%" src="./fig/gif0.gif"></div>
 <br />
 
-# What you need?
-
-The demo can be run at following platform and BSP version
-
-| APP version | Docker image | BSP version |
-| :--- | :---- | :--- |
-| 1.1.0 | iqs-streampipe | v0.0.2 |
-
->Note: Our BSP version is the same as the docker tag.
+# What You Need?
 
 1. At least 1 GB of free disk space
 2. A monitor
 
-# How to start?
+# How to Start?
     
 ```bash
 git clone https://github.com/InnoIPA/iQ-Studio.git
 cd iQ-Studio
 ./install.sh
 ```
-# Run the demo    
+# Run the Demo    
 1. Use iqs-launcher and autotag tools to automatically pull or build a compatible docker image.
     
     ```bash
@@ -51,7 +43,7 @@ cd iQ-Studio
     
     ![Recording 2025-08-13 at 15.22.58.gif](./fig/gif1.gif)
 
-# iQS-Streampipe SDK
+# How to Change the Custom Model and Video Source
 
 For advanced features and usage examples, visit this [page](../../sdks/iqs-streampipe/README.md) to learn more.
 

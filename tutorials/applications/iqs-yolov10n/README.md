@@ -4,7 +4,7 @@
  This software is released under the MIT License.
  https://opensource.org/licenses/MIT
 -->
-# YOLOv10n on EXMP-Q911
+# YOLOv10n INT8 Inference on GPU and NPU
 
 ![output.gif](./fig/gif0.gif)
 
@@ -41,14 +41,7 @@ We are using the [Ultralytics](https://docs.ultralytics.com/models/yolov10/) fra
 ## Platform information
 
 - RAM: 36GB
-- Qnn SDK Version: 2.29
-
-The demo can be run at following platform and BSP version.
-| APP version | Docker image | BSP version |
-| :--- | :---- | :--- |
-| 1.0.0 | iqs-yolov10n | v0.0.2 |
-
->Note: Our BSP version is the same as the docker tag.
+- Qnn SDK Version: 2.38
 
 ### How to demo the model?
 

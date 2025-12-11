@@ -9,12 +9,6 @@
 # Exit on error and print commands.
 set -ex
 
-# --- Ensure root ---
-if [[ $EUID -ne 0 ]]; then
-    echo "[INFO] Re-running installer with sudo..."
-    exec sudo bash "$0" "$@"
-fi
-
 # --- Variables ---
 # Project root directory.
 ROOT="$(dirname "$(readlink -f "$0")")"
@@ -25,7 +19,7 @@ PYTHON_VENV="$ROOT/iqs-venv"
 
 # --- Detect OS ---
 if grep -qi "ubuntu" /etc/os-release; then
-    sudo apt update && apt install -y \
+    sudo apt update && sudo apt install -y \
         qcom-fastrpc-dev qcom-fastrpc1 \
         python3.12-venv \
         docker.io 
@@ -40,7 +34,11 @@ source "$PYTHON_VENV/bin/activate"
 
 # --- Install ---
 # Link the launcher script to the install path to make it a global command.
-ln -sf "$ROOT/iqs-launcher.sh" "$INSTALL_PATH/iqs-launcher"
+if grep -qi "ubuntu" /etc/os-release; then
+    sudo ln -sf "$ROOT/iqs-launcher.sh" "$INSTALL_PATH/iqs-launcher"
+else
+    ln -sf "$ROOT/iqs-launcher.sh" "$INSTALL_PATH/iqs-launcher"
+fi
 
 # Make scripts executable.
 chmod +x "$ROOT/iqs-launcher.sh"

@@ -5,19 +5,26 @@
  https://opensource.org/licenses/MIT
 -->
 
-# iQS-VLM SDK
+# iQS-VLM: How to Interact with the OGenie Server through Open WebUI
 
 > If you haven't tried our iqs-vlm application yet, we recommend visiting this [page](../../applications/iqs-vlm/README.md) first, then returning here for customization options and other advanced features.
 
 # User prompt customization
+You can design your own prompt to customize how the VLM responds and presents information.
 
-```bash
-iqs-launcher --autotag iqs-vlm-demo
-```
+1. Go to the `tutorials/sdks/iqs-vlm` directory. Plsase check your in the correct directory.
+   ```bash
+   $ cd tutorials/sdks/iqs-vlm
+   ```
+2. Run the following to start the vlm demo
 
-After running the command, create a file named `iqs_vlm_prompt.txt` in your
-current working directory. Edit this file with any text editor to see the VLM
-response update dynamically as you make changes.
+   ```bash
+   $ iqs-launcher --autotag iqs-vlm-demo
+   ```
+3. After running the command, create a file named `iqs_vlm_prompt.txt` under the `tutorials/sdks/iqs-vlm`.
+
+4. Edit the `iqs_vlm_prompt.txt` with any text editor to see the VLM response update dynamically as you make changes.
+
 
 # Chat with LLaVA-1.5-7B
 

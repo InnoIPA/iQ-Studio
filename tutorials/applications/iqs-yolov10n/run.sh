@@ -17,18 +17,15 @@ shift
 # Execute the container using the provided image name and pass any additional arguments.
 echo "Executing docker run on image: $IMAGE_TO_RUN with args: $@"
 
-if [ ! -e output ]; then
-  mkdir output
-fi
-
+mkdir -p ./output
 docker run --rm -it \
     --net host \
     --privileged \
     --shm-size=3g \
     -v /dev/:/dev \
     -v /usr/lib:/host_lib \
-    -v /usr/libexec:/host_libexec \
-    -v output:/app/output \
-    -v $PWD:/workspace \
+    -v "$PWD":/workspace \
     "$IMAGE_TO_RUN" \
     "$@"
+
+

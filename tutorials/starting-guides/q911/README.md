@@ -1,202 +1,235 @@
-# Q911 Quick Starting Guide
+# Q911 Platform Quick Start Guide
 
-- [Q911 Quick Starting Guide](#q911-quick-starting-guide)
-- [Overview](#overview)
-- [What's in the box](#whats-in-the-box)
-- [Hardware](#hardware)
-- [Boot up Q911](#boot-up-q911)
-- [Connect to Q911](#connect-to-q911)
-  - [DP Display](#dp-display)
-  - [SSH](#ssh)
-  - [Debug UART](#debug-uart)
-- [Next Steps](#next-steps)
-
-
-
-# Overview
-
-The Q911 product line offers three versions based on the Qualcomm IQ-9075 CPU.
-
-- The EXMP-Q911 is a 3.5" COM-HPC Mini SOM designed for flexible integration.
-
-- The EXCC-Q911 combines the SOM with a dedicated carrier board, providing a ready-to-use development platform. 
-
-- The EXOC-Q911 is a complete system solution that integrates the SOM, carrier board, and an optimized thermal housing. Please refer to the table below for more details.
+## Overview
+The Q911 family is built around the Qualcomm® IQ-9075 SoC. The product line currently has three versions. The table below provides an overview of their differences and the items included in each packing list.
 
 | **Model** | **P/N** | **Description** | **Packing List** |
 | --- | --- | --- | --- |
-| EXMP-Q911 |  | 3.5” COM-HPC mini SOM board |  |
-| EXCC-Q911 |  | Carrier board |  |
-| EXOC-Q911 |  | 3.5” COM-HPC mini SOM board <br>+ Carrier board <br>+ Housing |  |
+| EXMP-Q911 | EXMP-Q911-00A1-W1 | COM-HPC Mini Module By Qualcomm IQ-9075 | 1x IQ9 COM-HPC Mini Module <br/> 1x Cooler with Fan (secured onto the module) |
+| EXEC-Q911 | EXEC-Q911-00A1-W1 | COM-HPC Mini EVK By Qualcomm IQ-9075| 1x IQ9 COM-HPC Mini Module <br/> 1x 3.5” COM-HPC Mini Carrier (secured with the module) <br/> 1x Cooler with Fan (secured onto the module) <br/> 1x 60W power adapter <br/> 1x US power cord <br/> 1x Speaker*2 cable <br/> 1x D-SUB(F) cable (GPIO) <br/> 1x D-SUB(M) cable (CAN FD) <br/> 1x USB 2.0 A-TYPE(F)*2 cable <br/> 1x D-SUB(M) cable (COM) |
+| APEX-A100 | EXOC-Q911-00A1-W1 | Edge AI System By Qualcomm IQ-9075| 1x Fanless Edge AI System based on EXMP-Q911 module <br/> 1x 60W power adapter <br/> 1x US power cord |
 
-# What's in the box
+This guide focuses on the EXEC-Q911 and APEX-A100 platforms, providing an overview of their hardware and helping you get the system up and running quickly.
 
-The package contains the following three items:
-
-- Q911 Platform
-- 60W Power Adapter
-- US Power Cord
+Each device ships with either Yocto Linux or Ubuntu pre-flashed on the UFS storage, allowing you to power on the system and log in immediately.If you need to re-flash or update the system image, please refer to the
+[Q911 Image Flashing Guide](../flash-image/README.md).
 
 
-<div align="center"><img width="60%" height="60%" src="./fig/what_in_box.png"></div>
+## What’s in the Box
 
+You can refer to the packing list above to see what is included in the Q911 family.
 
-# Hardware
+## EXEC-Q911 / APEX-A100 Hardware 
 
 <div align="center">
-  <table style="border: none; border-collapse: collapse;">
+  <table>
     <tr>
-      <td align="center" style="border: none;">
-        <img width="80%" src="./fig/Q911_port_front.drawio.png">
-        <br>
-        <em>Q911 - Front</em>
+      <td align="center"  width="50%" valign="bottom">
+        <img src="./fig/exec_q911_front.png" style="max-height: 100%; max-width: 100%;">
       </td>
-      <td align="center" style="border: none;">
-        <img width="100%" src="./fig/Q911_port_back.drawio.png">
-        <br>
-        <em>Q911 - Back</em>
+      <td align="center"  width="50%" valign="bottom">
+        <img src="./fig/exec_q911_back.png" style="max-height: 100%; max-width: 100%;">
       </td>
+    </tr>
+    <tr>
+      <td align="center">EXEC-Q911 Front</td>
+      <td align="center">EXEC-Q911 Back</td>
     </tr>
   </table>
 </div>
 
 
-- Debug UART
-
-    Prepare a USB to TTL serial converter/adapter that supports the UART protocol.
-
-
-- A Power Supply 
-
-   `60W` Power Adapter + US Power Cord
-
-# Boot up Q911
-
-The Q911 platform ships with the system image pre-loaded on the UFS storage. To get started, simply connect the power supply and press the power button.
-
 <div align="center">
-  <table style="border: none; border-collapse: collapse;">
+  <table>
     <tr>
-      <td align="center" style="border: none;">
-        <img width="80%" src="./fig/Q911_power_on.drawio.png">
-        <br>
-        <em>Boot up Q911</em>
+      <td align="center"  width="50%" valign="bottom">
+        <img src="./fig/qpex_a100_front.png" style="max-height: 100%; max-width: 100%;">
       </td>
-      <td align="center" style="border: none;">
-        <img width="95%" src="./fig/Q911_boot_mode.drawio.png">
-        <br>
-        <em>Check EDL Switch Mode</em>
+      <td align="center"  width="50%" valign="bottom">
+        <img src="./fig/qpex_a100_back.png" style="max-height: 100%; max-width: 100%;">
       </td>
+    </tr>
+    <tr>
+      <td align="center">APEX-A100 Front</td>
+      <td align="center">APEX-A100 Back</td>
     </tr>
   </table>
 </div>
 
->**Important**: If the network isn’t accessible after booting, you can fix it by plugging in the cable before starting up..
 
-1.  Connect the power cable.
+## Step 1: Prepare Required Items
 
+Before you get started, please make sure you have the following items:
+
+- DisplayPort (DP) monitor  
+- USB keyboard & mouse  
+- Ethernet cable 
+- USB-to-TTL serial adapter  
+- 60W power adapter
+
+## Step 2: Power On
+
+Please follow the steps below to boot the system.
+
+1. Please ensure that the jumper on the bottom side of the board is set to `Normal mode`.
+`EDL mode` should be used when flashing the system image.
+
+   <p align="center">
+    <img src="./fig/jumper_mode.png" style="width:50%;">
+  </p>
+
+2. Connect the power supply and press the power button to boot the system.
+
+
+  <div align="center">
+    <table>
+      <tr>
+        <td align="center"  width="50%" valign="bottom">
+          <img src="./fig/exec_q911_boot.png" style="max-height: 100%; max-width: 100%;">
+        </td>
+        <td align="center"  width="50%" valign="bottom">
+          <img src="./fig/a100_boot.png" style="max-height: 100%; max-width: 100%;">
+        </td>
+      </tr>
+      <tr>
+        <td align="center">EXEC-Q911</td>
+        <td align="center">APEX-A100</td>
+      </tr>
+    </table>
+  </div>
+
+
+
+## Step 3: Interact with the System
+
+After the system boots, you can access the platform using one of the following methods:
+
+- DisplayPort monitor
+
+- SSH over Ethernet
+
+- UART Debug Console
+
+Please refer to the [Q911 Image Flashing Guide: Boot into the System](../flash-image/README.md#step-6-boot-into-the-system) for detailed instructions on flashing the image and the steps required to enable networking on Ubuntu.
+
+### Interact with the System Using a DP Display
+
+If you are accessing the system using a DP display, please follow the steps below to set it up.
+
+1. Connect the DP display and USB keyboard/mouse. Then, connect the power cable and press the power button to boot the system.
+
+  <div align="center">
+  <table>
+    <tr>
+      <td align="center"  width="50%" valign="bottom">
+        <img src="./fig/connect_dp_boot.png" style="max-height: 100%; max-width: 100%;">
+      </td>
+      <td align="center"  width="50%" valign="bottom">
+        <img src="./fig/connect_dp_boot_a100.png" style="max-height: 100%; max-width: 100%;">
+      </td>
+    </tr>
+    <tr>
+      <td align="center">EXEC-Q911</td>
+      <td align="center">APEX-A100</td>
+    </tr>
+  </table>
+  </div>
+
+
+2. After the device boots up, you should see the output displayed on the DisplayPort (DP) monitor.
   
-2.  Ensure the EDL Switch is in `Normal Mode`. If the switch is set to EDL Mode, the device will be unable to boot into the operating system.
+  - In Yocto Linux, you can click the icon in the upper-left corner to open the terminal. 
+
+     <p align="center">
+      <img src="./fig/ycoto_desktop_icon.png" style="width:50%;">
+    </p>
+
+     <p align="center">
+      <img src="./fig/yocto_desktop_teminal.png" style="width:50%;">
+    </p>
+
+  - In Ubuntu, you can interact with the system just as you would on a standard amd64 Ubuntu installation.
+    
+     <p align="center">
+      <img src="./fig/ubuntu.png" style="width:50%;">
+    </p>
+
+
+### Interact with the System Using SSH over Ethernet
+
+If you are accessing the system using SSH to intract with system, please follow the steps below to set it up. If the Ubuntu does not have network connectivity, refer to the [Q911 Image Flashing Guide: Boot into the System](../flash-image/README.md#step-6-boot-into-the-system) on configuring the network.
+
+1. Please connect an Ethernet cable and ensure that the device is reachable over the network. Then, connect the power cable and press the power button to boot the system.
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"  width="50%" valign="bottom">
+        <img src="./fig/connect_eth_boot.png" style="max-height: 100%; max-width: 100%;">
+      </td>
+      <td align="center"  width="50%" valign="bottom">
+        <img src="./fig/connect_eth_boot_a100.png" style="max-height: 100%; max-width: 100%;">
+      </td>
+    </tr>
+    <tr>
+      <td align="center">EXEC-Q911</td>
+      <td align="center">APEX-A100</td>
+    </tr>
+  </table>
+</div>
+
+2. After the device boots up, You can access the device via SSH from any machine on the same network.
   
+  - Use the following command to connect the Yocto Linux
 
-3.  Press the power button.
-
-
-# Connect to Q911
-
-You can connect to the Q911 platform in one of the following three ways:
-
-- DP Display
-
-- SSH
-
-- Debug UART
-
-> Important: Ensure that all peripheral devices are connected before connecting the power supply.
-
-```shell
-# For login 
-Username: root
-Password: oelinux123
-```
-
- 
-
-## DP Display
-
-
-
-1.  You can operate the Q911 platform directly by connecting a DisplayPort (DP) monitor along with a USB keyboard and mouse.
-
-
-<div align="center"><img width="60%" height="60%" src="./fig/DP_display.drawio.png"></div>
-
-
-2.  After the device boots up, you should see a display on the DisplayPort (DP) monitor.
-
-
-<div align="center"><img width="60%" height="60%" src="./fig/DP_view.jpg"></div>
-
-
-3.  Click the icon in the top-left corner of the screen to open a terminal window.
-
-
-<div align="center"><img width="60%" height="60%" src="./fig/DP_terminal.png"></div>
-
-
-4.  You should now see the terminal window on the screen.
-  
-
-<div align="center"><img width="60%" height="60%" src="./fig/DP_terminal_2.jpg"></div>
-
-
-## SSH
-
-1. Connect the Q911 device to your Local Area Network (LAN) using an Ethernet 
-cable
-
-
-<div align="center"><img width="60%" height="60%" src="./fig/Q911_SSH.drawio.png"></div>
-
-
-2. From another computer on the Local Area Network, establish an SSH connection to the Q911 to communicate with it.
-
-
-3.  After the Q911 has booted up, enter the SSH command.
-
-    ```bash 
-    $ ssh root@<Q911 DEVICE IP-ADDR>
+    ```bash
+    $ ssh root@<target device ip address>
     ```
 
-4.  Upon successful login, you will see the command prompt appear in your terminal.
+     <p align="center">
+      <img src="./fig/SSH_terminal.png" style="width:50%;">
+    </p>
 
+  - Use the following command to connect the ubuntu
 
-<div align="center"><img width="60%" height="60%" src="./fig/SSH_terminal.png"></div>
+    ```bash
+    $ ssh ubuntu@<target device ip address>
+    ```
+     <p align="center">
+      <img src="./fig/ubuntu_teminal.png" style="width:50%;">
+    </p>
 
+### Interact with the System Using UART Debug Console
 
-## Debug UART
+If you are accessing the system using UART debug console to interact with the system, please follow the steps below to set it up.
 
-You can use a USB to TTL serial adapter to connect to the Q911's UART interface. This provides direct access to the Debug Console for communication.
+> 💡 **Tip:** You can refer to the [Qualcomm guide on setting up a debug UART](https://docs.qualcomm.com/doc/80-70014-253/topic/ubuntu_host.html#set-up-debug-uart) for detailed instructions on how to connect using minicom.
 
+1. Please connect the USB-to-TTL serial adapter to the UART pins on the bottom side of the board. Then, connect the power cable and press the power button to boot the system. 
+  
 
-<div align="center"><img width="60%" height="60%" src="./fig/Q911_debug_port.drawio.png"></div>
+  <p align="center">
+    <img src="./fig/debug_port_pin.png" style="width:50%;">
+  </p>
 
+  > 💡 **Tip:** Set your serial terminal to 115200 baud, 8 data bits, no parity, 1 stop bit, no flow control
 
-1.  Connect the power supply, and the Debug UART.
+2. After the device boots up, you will see a screen similar to the one shown below.
 
-2.  Press the power button.
+  <p align="center">
+    <img src="./fig/debug_port_view.png" style="width:50%;">
+  </p>
 
-3.  You can refer to the [Qualcomm guide on setting up a debug UART](https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/ubuntu_host.html#set-up-debug-uart) for instructions on how to connect using `minicom`.
+## Next Steps
 
-4.  The following screen should appear:
+Depending on your needs:
 
+- [iQ-Studio](../../../README.md#application): It helps users quickly understand, explore, and prototype ideas by showcasing the platform’s performance and capabilities—inspiring innovation through hands-on experience.
 
+- [Application](../../applications/) — Reference ready-to-run demos illustrating how to build applications on the platform.
 
-<div align="center"><img width="60%" height="60%" src="./fig/debug_port_view.png"></div>
+- [SDK](../../sdks/)  — Learn how to develop and integrate your own solutions with the platform SDK.
 
+- [AVL(Approved Vendor List)](../../avl/) — Provides guidance on verifying that the driver starts correctly on the system and quickly demonstrating the validated results.
 
-# Next Steps
-
-To get started with some examples, follow the link below to access resources and guides for running various demonstrations on your Q911.
-
-- [iQ-Studio](/README.md): It helps users quickly understand, explore, and prototype ideas by showcasing the platform’s performance and capabilities—inspiring innovation through hands-on experience.
+- [Benchmark](../../../benchmarks/) — Review performance metrics for AI and system workloads.

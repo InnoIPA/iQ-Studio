@@ -17,17 +17,6 @@ results on a monitor.
 
 
 # What do you need?
-
-The demo can be run at following BSP version.
-| APP version | Docker image | BSP version |
-| :--- | :---- | :--- |
-| 0.0.1 | iqs-vlm-demo | v0.0.1-Beta |
-| 0.0.1 | iqs-ogenie | v0.0.1-Beta |
-| 0.0.1 | iqs-vlm-demo | v0.0.2 |
-| 0.0.1 | iqs-ogenie | v0.0.2 |
-
->Note: Our BSP version is the same as the docker tag.
-
 1. At least 10 GB of free disk space
 2. A monitor
 3. A UVC camera
@@ -46,6 +35,7 @@ git clone https://github.com/InnoIPA/iQ-Studio.git
 cd iQ-Studio
 ./install.sh
 ```
+>Note: If you are using Ubuntu, please log in again after installation.
 
 # Run the demo
 
@@ -80,6 +70,6 @@ window.
 
 - Tokens per Second: 11
 
-# iQS-VLM SDK
+# How to Interact with the OGenie Server through Open WebUI
 
 For advanced features and usage examples, visit this [page](../../sdks/iqs-vlm/README.md) to learn more.

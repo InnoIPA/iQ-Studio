@@ -16,16 +16,23 @@ shift
 
 # Execute the container using the provided image name and pass any additional arguments.
 echo "Executing docker run on image: $IMAGE_TO_RUN with args: $@"
+
+VOLUME_RUN=""
+if grep -qi "ubuntu" /etc/os-release; then
+    VOLUME_RUN="-v /run:/run"
+    OS_TYPE="ubuntu"
+fi
+
 docker run --rm -it \
     --net host \
     --privileged \
     --shm-size=3g \
+    -e OS_TYPE="$OS_TYPE" \
     -v /dev/:/dev \
     -v /usr/lib:/host_lib \
-    -v /usr/libexec:/host_libexec \
-    -v /usr/lib/gbm/default_fmt_alignment.xml:/usr/lib/gbm/default_fmt_alignment.xml \
-    -v /usr/share/mime:/usr/share/mime \
-    -v $PWD:/workspace \
+    $VOLUME_RUN \
+    -v "$PWD":/workspace \
     "$IMAGE_TO_RUN" \
     "$@"
+
 

@@ -7,7 +7,10 @@ The steps below ensure that your flashing process completes successfully, as the
 
 ## Step 1: Prepare the Host Environment and Target Connection
 
-When you need to update the BSP, recover a corrupted system. You can directly refer to [Qualcomm’s instructions for flashing the image](https://docs.qualcomm.com/doc/80-90441-252/topic/Integrate-and-flash-software.html?product=1601111740076074&facet=Ubuntu%20quickstart#panel-0-V2luZG93cyBob3N0) to verify the prerequisites, flashing configuration, and overall flashing procedure. 
+When you need to update the BSP, recover a corrupted system. You can directly refer to [Qualcomm’s instructions for prerequisites](https://docs.qualcomm.com/doc/80-90441-252/topic/Integrate-and-flash-software.html?product=1601111740076074&facet=Ubuntu%20quickstart#prerequisites) to verify the prerequisites. 
+
+For the initial setup, if you are using Ubuntu as the host system, you must configure the USB-to-Type-C connection on the host according to Qualcomm’s official guide.
+Please follow Steps 1–2 in [Flash Dragonwing IQ-9075 EVK Integrated Image on an Ubuntu Host](https://docs.qualcomm.com/doc/80-90441-252/topic/Integrate-and-flash-software.html?product=1601111740076074&facet=Ubuntu%20quickstart#panel-0-0-0tab$flash-dragonwing-iq-9075-evk-integrated-image-on-ubuntu-host).
 
 ## Step 2: Set the Board to EDL Mode
 
@@ -27,10 +30,10 @@ Connect the power supply and press the power button to power on.
     <table>
       <tr>
         <td align="center"  width="50%" valign="bottom">
-          <img src="../q911/fig/exec_q911_boot.png" style="max-height: 100%; max-width: 100%;">
+          <img src="./fig/exec_q911_boot.png" style="max-height: 100%; max-width: 100%;">
         </td>
         <td align="center"  width="50%" valign="bottom">
-          <img src="../q911/fig/a100_boot.png" style="max-height: 100%; max-width: 100%;">
+          <img src="./fig/a100_boot.png" style="max-height: 100%; max-width: 100%;">
         </td>
       </tr>
       <tr>
@@ -65,8 +68,9 @@ Connect the power supply and press the power button to power on.
         .
         .
     ```
-2. Please refer to the instructions provided in the [official Qualcomm documentation for the exact command usage]((https://docs.qualcomm.com/doc/80-90441-252/topic/Integrate-and-flash-software.html?product=1601111740076074&facet=Ubuntu%20quickstart#panel-0-V2luZG93cyBob3N0)). If the flashing process completes successfully, you will see output as the following.
+2. Please refer to the official Qualcomm documentation for the exact command usage, and follow Step 3 in “Flash Dragonwing IQ-9075 EVK Integrated Image on an Ubuntu Host”: [Qualcomm Documentation](https://docs.qualcomm.com/doc/80-90441-252/topic/Integrate-and-flash-software.html?product=1601111740076074&facet=Ubuntu%20quickstart#panel-0-0-0tab$flash-dragonwing-iq-9075-evk-integrated-image-on-ubuntu-host).
 
+If the flashing process completes successfully, you will see output similar to the following.
     <p align="center">
     <img src="./fig/flash-image.png" style="width:50%;">
     </p>

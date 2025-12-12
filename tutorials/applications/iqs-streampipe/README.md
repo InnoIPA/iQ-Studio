@@ -21,7 +21,7 @@ The set IDs are ordered on the screen from left to right, then from top to botto
 
 # What You Need?
 
-1. At least 1 GB of free disk space
+1. At least 3 GB of free disk space
 2. A monitor
 
 # How to Start?
@@ -31,6 +31,8 @@ git clone https://github.com/InnoIPA/iQ-Studio.git
 cd iQ-Studio
 ./install.sh
 ```
+>Note: If you are using Ubuntu, please log in again after installation.
+
 # Run the Demo    
 1. Use iqs-launcher and autotag tools to automatically pull or build a compatible docker image.
     

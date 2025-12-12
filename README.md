@@ -42,8 +42,9 @@ We verify the BSP version on the platform to ensure that applications run correc
 ```bash
 git clone https://github.com/InnoIPA/iQ-Studio.git
 cd iQ-Studio
-bash install.sh
+./install.sh
 ```
+>Note: If you are using Ubuntu, please log in again after installation.
 
 ### Run Application
 

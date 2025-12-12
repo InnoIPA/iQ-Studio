@@ -32,6 +32,7 @@ Currently, the following [APIs](https://ollama.readthedocs.io/en/api/) are suppo
     cd iQ-Studio
     ./install.sh
     ```
+    >Note: If you are using Ubuntu, please log in again after installation.
     
     ```bash
     $ iqs-launcher --autotag iqs-ogenie

@@ -35,6 +35,7 @@ git clone https://github.com/InnoIPA/iQ-Studio.git
 cd iQ-Studio
 ./install.sh
 ```
+>Note: If you are using Ubuntu, please log in again after installation.
 
 # Run the demo
 

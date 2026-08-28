@@ -1,5 +1,15 @@
 # Changelogs
 
+## v0.0.10
+### Feat
+
+- Reworked the Q911 Image Flashing Guide into a self-contained procedure covering host setup (`qdl` build and udev rules), EDL mode verification, image integrity check, the flashing command, and troubleshooting
+- Added a Flashing from a Windows Host page covering `qdl.exe` setup and the Qualcomm USB Driver (QUD)
+
+### Fixes
+
+- Removed the outdated "Currently not supported" marking from the EXEC-Q911 and APEX-A100 rear-panel figures, as both DisplayPort outputs are supported
+
 ## v0.0.9
 ### Feat
 

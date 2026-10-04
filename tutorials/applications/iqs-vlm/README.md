@@ -20,14 +20,17 @@ results on a monitor.
 
 ## Supported Versions
 
-| BSP Version | QLI Version |
+Pick the iQ-Studio version that matches your platform:
+
+| Your platform | iQ-Studio version |
 | :--- | :--- |
-| 2.5.x | 2.0 |
+| BSP 2.5.x (QLI 2.0) | Latest (`main`) |
+| BSP 2.3.x (QLI 1.8) | Tag `v0.0.10` or earlier |
 
-- **BSP version** — read `/etc/innodisk/BSP-version`.
-- **QLI version** — run `uname -a` and look for the `qli-<version>` field.
+- **Check BSP:** `cat /etc/innodisk/BSP-version`
+- **Check QLI:** `uname -a`, then look for the `qli-<version>` field.
 
-> Note: On QLI 1.x, see the [changelog](../../../docs/changelog.md) for the matching iQ-Studio release. To move to QLI 2.0, flash an image from [meta-iQ__manifest](https://github.com/InnoIPA/meta-iQ__manifest).
+> Note: On BSP 2.3.x, run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. To return to the latest version, run `git checkout main`.
 
 ## What do you need?
 1. At least 10 GB of free disk space

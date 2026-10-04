@@ -9,6 +9,8 @@
 
 > If you haven't tried our iqs-vlm application yet, we recommend visiting this [page](../../applications/iqs-vlm/README.md) first, then returning here for customization options and other advanced features.
 
+> Note: The latest iQ-Studio requires BSP 2.5.x (QLI 2.0). On BSP 2.3.x (QLI 1.8), use tag `v0.0.10` or earlier. See the **Supported Versions** section of the [application tutorials](../../applications/README.md).
+
 # User prompt customization
 You can design your own prompt to customize how the VLM responds and presents information.
 

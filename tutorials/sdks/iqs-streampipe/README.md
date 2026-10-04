@@ -11,6 +11,8 @@ Please refer to the `tutorials/applications/iqs-streampipe` to learn how to run 
 
 In this section, we describe how to use custom models and video inputs with iqs-streampipe. 
 
+> Note: The latest iQ-Studio requires BSP 2.5.x (QLI 2.0). On BSP 2.3.x (QLI 1.8), use tag `v0.0.10` or earlier. See the **Supported Versions** section of the [application tutorials](../../applications/README.md).
+
 ## How to Deploy
 
 1. At least one UVC camera

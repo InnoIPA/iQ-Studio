@@ -38,6 +38,20 @@ We are using the [Ultralytics](https://docs.ultralytics.com/models/yolov10/) fra
 
 # EXMP-Q911
 
+## Supported Versions
+
+Pick the iQ-Studio version that matches your platform:
+
+| Your platform | iQ-Studio version |
+| :--- | :--- |
+| BSP 2.5.x (QLI 2.0) | Latest (`main`) |
+| BSP 2.3.x (QLI 1.8) | Tag `v0.0.10` or earlier |
+
+- **Check BSP:** `cat /etc/innodisk/BSP-version`
+- **Check QLI:** `uname -a`, then look for the `qli-<version>` field.
+
+> Note: On BSP 2.3.x, run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. To return to the latest version, run `git checkout main`.
+
 ## Platform information
 
 - RAM: 36GB

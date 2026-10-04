@@ -21,9 +21,23 @@ The set IDs are ordered on the screen from left to right, then from top to botto
 
 # How to Deploy
 
+## Supported Versions
+
+Pick the iQ-Studio version that matches your platform:
+
+| Your platform | iQ-Studio version |
+| :--- | :--- |
+| BSP 2.5.x (QLI 2.0) | Latest (`main`) |
+| BSP 2.3.x (QLI 1.8) | Tag `v0.0.10` or earlier |
+
+- **Check BSP:** `cat /etc/innodisk/BSP-version`
+- **Check QLI:** `uname -a`, then look for the `qli-<version>` field.
+
+> Note: On BSP 2.3.x, run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. To return to the latest version, run `git checkout main`.
+
 ## What You Need?
 
-1. At least 3 GB of free disk space
+1. At least 10 GB of free disk space
 2. A monitor
 
 ## How to Start?
@@ -33,7 +47,6 @@ git clone https://github.com/InnoIPA/iQ-Studio.git
 cd iQ-Studio
 ./install.sh
 ```
->Note: If you are using Ubuntu, please log in again after installation.
 
 # How to Use
 1. Use iqs-launcher and autotag tools to automatically pull or build a compatible docker image.

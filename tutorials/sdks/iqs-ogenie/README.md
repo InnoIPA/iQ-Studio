@@ -14,6 +14,8 @@ This section shows you how to integrate and run your own demo using OGenie. You�
 > 💡 **Tip:** Please check out the **[iQS-VLM](../../applications/iqs-vlm/README.md)** to see how OGenie is used in real-time applications. Or see how to use OpenWebUI to interact with OGenie in the **[iQS-VLM SDK](../iqs-vlm/README.md)**.
 
 
+> Note: The latest iQ-Studio requires BSP 2.5.x (QLI 2.0). On BSP 2.3.x (QLI 1.8), use tag `v0.0.10` or earlier. See the **Supported Versions** section of the [application tutorials](../../applications/README.md).
+
 ## OGenie SDK
 
 OGenie SDK provides an HTTP server that implements the Ollama-compatible API, allowing developers to use the official Ollama services (Python SDK / HTTP interface) to interact with OGenie. The inference runtime is provided by OGenie, users do NOT need Ollama’s model runner or server.
@@ -32,7 +34,6 @@ Currently, the following [APIs](https://ollama.readthedocs.io/en/api/) are suppo
     cd iQ-Studio
     ./install.sh
     ```
-    >Note: If you are using Ubuntu, please log in again after installation.
     
     ```bash
     iqs-launcher --autotag iqs-ogenie

@@ -18,6 +18,20 @@ results on a monitor.
 
 # How to Deploy
 
+## Supported Versions
+
+Pick the iQ-Studio version that matches your platform:
+
+| Your platform | iQ-Studio version |
+| :--- | :--- |
+| BSP 2.5.x (QLI 2.0) | Latest (`main`) |
+| BSP 2.3.x (QLI 1.8) | Tag `v0.0.10` or earlier |
+
+- **Check BSP:** `cat /etc/innodisk/BSP-version`
+- **Check QLI:** `uname -a`, then look for the `qli-<version>` field.
+
+> Note: On BSP 2.3.x, run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. To return to the latest version, run `git checkout main`.
+
 ## What do you need?
 1. At least 10 GB of free disk space
 2. A monitor
@@ -25,7 +39,6 @@ results on a monitor.
     - 1080p/30fps (1920x1080 pixels)
     - MJPEG compression format
     > Note: We have tried this demo with this [USB camera](https://www.innodisk.com/en/products/camera/usb-20/ev2u-ssm1-rlcf).
-
 
 Please plug both devices—the UVC camera and the monitor—into the platform.
 
@@ -36,11 +49,17 @@ git clone https://github.com/InnoIPA/iQ-Studio.git
 cd iQ-Studio
 ./install.sh
 ```
->Note: If you are using Ubuntu, please log in again after installation.
 
 # How to Use
 
-## Launch `OGenie` API server
+The demo consists of two separate services, `OGenie` and `iqs-vlm-demo`. Each
+runs in its own terminal, so please open two terminals and run one command in
+each.
+
+> **Important:** Make sure the `OGenie` server is up and running before you
+> start `iqs-vlm-demo`.
+
+## Terminal 1: Launch `OGenie` API server
 
 ```bash
 iqs-launcher --autotag iqs-ogenie
@@ -55,7 +74,7 @@ http://192.168.3.206:22434
 http://172.17.0.1:22434
 ```
 
-## Real-Time Display of VLM Predictions on the Monitor
+## Terminal 2: Real-Time Display of VLM Predictions on the Monitor
 
 ```bash
 iqs-launcher --autotag iqs-vlm-demo

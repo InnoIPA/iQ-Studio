@@ -172,7 +172,7 @@ Run the same `iqs-launcher` command as in online mode. `iqs-launcher` detects th
 
 ## Troubleshooting
 
-- **BSP version mismatch**: `iqs-launcher` aborts with a clear message when the local BSP does not match any compatible package version. Cross-check with the BSP listed in each application's tutorial.
+- **BSP version mismatch**: `iqs-launcher` aborts with a clear message when the local BSP does not match any compatible package version. Cross-check with the BSP listed in each application's tutorial. If `install.sh` rejects your BSP because it is 2.3.x (QLI 1.8), run `git checkout v0.0.10` in the `iQ-Studio` directory and install again.
 - **`autotag` cannot find an image**: in online mode, verify network access from the platform. In offline mode, confirm the `.tar` is under `binaries/docker-images/` and that the filename matches the autotag value.
 - **`ipk` install fails**: confirm the `.ipk` matches the platform BSP version. IPK packages are tied to specific BSP releases.
 

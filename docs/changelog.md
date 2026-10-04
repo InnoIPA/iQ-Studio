@@ -1,5 +1,24 @@
 # Changelogs
 
+## v0.0.11
+### Feat
+
+- Updated the Streampipe, VLM, and YOLOv10n launch scripts for BSP 2.5.x (QLI 2.0), covering the relocated Wayland socket, DSP fastrpc shell mapping, and running without a TTY
+- Added a BSP version check to `install.sh` that requires BSP 2.5.x and points to the Innodisk BSP manifest when the image is missing or unsupported
+- Added Supported Versions guidance to the application and SDK tutorials, mapping BSP 2.5.x (QLI 2.0) to the latest release and BSP 2.3.x (QLI 1.8) to tag `v0.0.10` or earlier, with a matching BSP troubleshooting entry in `docs/how-to-use-iqs-launcher.md`
+- Added an In the News page collecting media coverage, deployments, and ecosystem case studies, linked from the entry README
+- Added an upstream-to-iQ-Studio layer table, a BSP release roadmap, and BSP version numbering to the entry README
+- Added a two-terminal reminder to the iQS-VLM guide and the 30-Second Demo, noting that `OGenie` must be running before `iqs-vlm-demo`
+
+### Refactor
+
+- Reordered the entry README for first-time users with a Getting Started section (boot the platform, then install), step-by-step reader paths, and the Core Software Stack & Architecture section moved after the resource tables
+- Removed the Ubuntu-specific branches from `install.sh` and the application guides, as the latest release targets the Yocto-based Innodisk BSP
+
+### Fixes
+
+- Corrected the Streampipe disk space requirement from 3 GB to 10 GB
+
 ## v0.0.10
 ### Feat
 

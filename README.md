@@ -55,13 +55,17 @@ cd iQ-Studio
 
 With the platform booted and iQ-Studio installed, two commands are enough to see a vision-language model running on a live UVC Camera feed. For the detailed walkthrough, see [iQS-VLM](./tutorials/applications/iqs-vlm/README.md).
 
-Launch the OGenie API server:
+The demo consists of two separate services, `OGenie` and `iqs-vlm-demo`. Each runs in its own terminal, so please open two terminals and run one command in each.
+
+> **Important:** Make sure the `OGenie` server is up and running before you start `iqs-vlm-demo`.
+
+In Terminal 1, launch the OGenie API server:
 
 ```bash
 iqs-launcher --autotag iqs-ogenie
 ```
 
-Display VLM predictions on the monitor in real time:
+In Terminal 2, display VLM predictions on the monitor in real time:
 
 ```bash
 iqs-launcher --autotag iqs-vlm-demo

@@ -52,7 +52,14 @@ cd iQ-Studio
 
 # How to Use
 
-## Launch `OGenie` API server
+The demo consists of two separate services, `OGenie` and `iqs-vlm-demo`. Each
+runs in its own terminal, so please open two terminals and run one command in
+each.
+
+> **Important:** Make sure the `OGenie` server is up and running before you
+> start `iqs-vlm-demo`.
+
+## Terminal 1: Launch `OGenie` API server
 
 ```bash
 iqs-launcher --autotag iqs-ogenie
@@ -67,7 +74,7 @@ http://192.168.3.206:22434
 http://172.17.0.1:22434
 ```
 
-## Real-Time Display of VLM Predictions on the Monitor
+## Terminal 2: Real-Time Display of VLM Predictions on the Monitor
 
 ```bash
 iqs-launcher --autotag iqs-vlm-demo

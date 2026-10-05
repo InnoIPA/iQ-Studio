@@ -50,7 +50,7 @@ def draw_bars(
     ax.grid(axis="x", linestyle="--")
 
 
-machines = ["AIB-MX13-1-A1", "IQ-9075-EVK"]
+machines = ["NVIDIA Jetson AGX Orin", "IQ-9075-EVK"]
 
 # cpu_usages = [97.84, 97.78]
 # memory_usages = [31.63, 24.15]

@@ -33,17 +33,17 @@ inference**.
 
 ### Computing Platforms
 
-| **Platform**          | **AIB-MX13-1-A1**                                               | **IQ-9075-EVK**                                  |
-|:----------------------|:-----------------------------------------------------------|:------------------------------------------------------|
-| **SoM / SoC**         | Jetson AGX Orin Developer Kit - Jetpack 5.1.2 [L4T 35.4.1] | Qualcomm QCS9075                                      |
-| **Power consumption** | 35 W                                                       | 20 W                                                  |
-| **AI Accelerator**    | GPU                                                        | Single DSP                                            |
-| **AI Runtime**        | TensorRT                                                   | TensorFlow Lite                                       |
-| **AI Performance**    | 200 TOPS (Sparse)                                          | 100 TOPS (Dense)                                      |
-| **AI Model**          | ppes.nvidia.73.8.0.1.pmodel                                | ppes.qnn.computex.20.0.1.pmodel                       |
-| **AI Model Arch.**    | yolov10n - int8 (TRT)                                      | yolov10n - int8 (QNN)                                 |
-| **Linux Kernel**      | 5.10.120-tegra                                             | 6.6.90-qli-1.5-ver.1.1-04509-gc4b8666c9a55            |
-| **Input Setting**     | 10 Channels, 1080p, 30 FPS (single UVC Cam, 9 Videos)      | 10 Channels, 1080p, 30 FPS (single UVC Cam, 9 Videos) |
+| **Platform**          | **NVIDIA Jetson AGX Orin**                                        | **IQ-9075-EVK**                                       |
+|:----------------------|:------------------------------------------------------------------|:------------------------------------------------------|
+| **SoM / SoC**         | NVIDIA Jetson AGX Orin Developer Kit - Jetpack 5.1.2 [L4T 35.4.1] | Qualcomm QCS9075                                      |
+| **Power consumption** | 35 W                                                              | 20 W                                                  |
+| **AI Accelerator**    | GPU                                                               | Single DSP                                            |
+| **AI Runtime**        | TensorRT                                                          | TensorFlow Lite                                       |
+| **AI Performance**    | 200 TOPS (Sparse)                                                 | 100 TOPS (Dense)                                      |
+| **AI Model**          | ppes.nvidia.73.8.0.1.pmodel                                       | ppes.qnn.computex.20.0.1.pmodel                       |
+| **AI Model Arch.**    | yolov10n - int8 (TRT)                                             | yolov10n - int8 (QNN)                                 |
+| **Linux Kernel**      | 5.10.120-tegra                                                    | 6.6.90-qli-1.5-ver.1.1-04509-gc4b8666c9a55            |
+| **Input Setting**     | 10 Channels, 1080p, 30 FPS (single UVC Cam, 9 Videos)             | 10 Channels, 1080p, 30 FPS (single UVC Cam, 9 Videos) |
 
 ### UVC Cameras
 
@@ -62,14 +62,14 @@ inference**.
 
 ![benchmark_results](./fig/results.svg)
 
-We compared several performance metrics between the IQ-9075-EVK and AIB-MX13-1-A1 while
+We compared several performance metrics between the IQ-9075-EVK and NVIDIA Jetson AGX Orin while
 running 10 InnoPPE channels, measuring FPS on the channel with a UVC camera
 input, and observed that the FPS on the IQ-9075-EVK was approximately three times
-higher than on the AIB-MX13-1-A1.
+higher than on the NVIDIA Jetson AGX Orin.
 
 ## Conclusion
 
-Under the 10 channel(single UVC Cam, 9 Videos), the **IQ-9075-EVK** achieves per-channel performance (FPS) is 212.5% higher than the **AIB-MX13-1-A1**.
+Under the 10 channel(single UVC Cam, 9 Videos), the **IQ-9075-EVK** achieves per-channel performance (FPS) is 212.5% higher than the **NVIDIA Jetson AGX Orin**.
 
 
 # Appendix: How do I execute the benchmark?

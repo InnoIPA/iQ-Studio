@@ -7,9 +7,10 @@
 
 # Approved Vendor List
 
-This quick reference lists Innodisk camera modules and embedded peripheral modules validated for iQ-Studio platforms based on Qualcomm Dragonwing QCS9075.
+This quick reference lists the Innodisk camera modules and embedded peripheral modules that have been validated on the Q911 family (Qualcomm Dragonwing QCS9075).
 
 > Note: Camera driver patches are maintained in [iQ-Cam__manifest](https://github.com/InnoIPA/iQ-Cam__manifest). Refer there for release packages aligned with your BSP version.
+
 
 ## Supported GMSL Camera Modules
 
@@ -17,7 +18,8 @@ This quick reference lists Innodisk camera modules and embedded peripheral modul
 | --- | --- | --- | --- | --- | --- |
 | [EVDF-OOM1-RHCF](https://www.innodisk.com/en/products/camera/gmsl2/evdf-oom1-rhcf) | GMSL2 | 13MP Fixed Focus | Maxim MAX9295A | onsemi | onsemi AR1335 |
 | [EV3F-ZSM1-RXCF](https://www.innodisk.com/en/products/camera/gmsl2) | GMSL2 | 3MP Fixed Focus, HDR LFM | Maxim MAX9295A | Sony | Sony ISX031 |
-| [EV2F-OOM3-RHCF](https://www.innodisk.com/en/products/camera/gmsl2) | GMSL2 | 2MP Fixed Focus, HDR | Maxim MAX9295A | onsemi | onsemi AR0246 |
+
+> Note: Camera test reports are available in the [iQ-Cam test summary](https://github.com/InnoIPA/iQ-Cam__manifest/blob/main/doc/common/test_summary/). New reports will be added there.
 
 ## Supported MIPI CSI-2 Camera Modules
 
@@ -26,6 +28,8 @@ This quick reference lists Innodisk camera modules and embedded peripheral modul
 | [EV2M-OOM3-RHCF](https://www.innodisk.com/en/products/camera/mipi-csi-2/ev2m-oom3-rhcf) | MIPI CSI-2 | 2MP, 30 FPS, HDR, External Trigger | onsemi | onsemi AR0246 |
 | [EV8M-OOM1-RHCF](https://www.innodisk.com/en/products/camera/mipi-csi-2/ev8m-oom1-rhcf) | MIPI CSI-2 | 8MP, 30 FPS, HDR, External Trigger | onsemi | onsemi AR0822 |
 | [EVDM-OOM1-RHCF](https://www.innodisk.com/en/products/camera/mipi-csi-2/evdm-oom1-rhcf) | MIPI CSI-2 | 13MP, 20 FPS, HDR | onsemi | onsemi AR1335 |
+
+> Note: Camera test reports are available in the [iQ-Cam test summary](https://github.com/InnoIPA/iQ-Cam__manifest/blob/main/doc/common/test_summary/). New reports will be added there.
 
 ## Supported Embedded Peripheral Modules
 

@@ -49,7 +49,7 @@ Do not use this skill to rewrite code or documentation content. Use it after the
 Use this shape by default:
 
 ```text
-type(scope): subject
+type: subject
 
 Body, when useful:
 - What changed
@@ -62,7 +62,7 @@ Issue: ID, when available
 Rules:
 
 - `type` is lowercase and comes from the type table.
-- `scope` is optional; use it only when it clarifies a focused area such as `launcher`, `model-deploy`, `q911`, `tools`, or `agent`.
+- Do not use a scope. Write `docs: ...`, not `docs(avl): ...`.
 - Keep the subject under about 50 characters when practical. Never end it with a period.
 - Keep the body separated from the subject by a blank line.
 - Use the body for "what/why/how/improvement" context, not for repeating file names.
@@ -100,7 +100,7 @@ refactor: remove unused YOLO26 pipeline files
 Use a body only when it adds useful context. Keep bullets short and action-oriented:
 
 ```text
-chore(agent): organize iQ-Studio guidance
+chore: organize iQ-Studio guidance
 
 - move the agent entry guide under .agents
 - add focused agent, formatting, literacy, and commit-log skills
@@ -110,7 +110,7 @@ chore(agent): organize iQ-Studio guidance
 Longer examples:
 
 ```text
-feat(browser): add onUrlChange event
+feat: add onUrlChange event
 
 - forward popstate events when available
 - fall back to hashchange events for older browsers
@@ -120,7 +120,7 @@ Breaks: $browser.onHashChange was removed; use onUrlChange instead.
 ```
 
 ```text
-fix(compile): adjust IE9 unit expectations
+fix: adjust IE9 unit expectations
 
 Older IE versions serialize HTML uppercase, but IE9 does not.
 Use case-insensitive expectations where the test framework allows it.

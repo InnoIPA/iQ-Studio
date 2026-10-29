@@ -1,0 +1,40 @@
+{
+    "app_name": "defect_detection",
+    "layout": "balance",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "streams": [
+        {
+            "yolo_model": "models/tflite/yolov10n_computex_dd_screw_int8.tflite",
+            "bbox_color": [[255, 0, 0]],
+            "source_path": "videos/adb/dd/DF60_part1.mp4"
+        },
+        {
+            "yolo_model": "models/tflite/yolov10n_computex_dd_screw_int8.tflite",
+            "bbox_color": [[0, 255, 0]],
+            "source_path": "videos/adb/dd/DF60_part1.mp4"
+        },
+        {
+            "yolo_model": "models/tflite/yolov10n_computex_dd_screw_int8.tflite",
+            "bbox_color": [[0, 0, 255]],
+            "source_path": "videos/adb/dd/DF60_part1.mp4"
+        },
+        {
+            "yolo_model": "models/tflite/yolov10n_computex_dd_screw_int8.tflite",
+            "bbox_color": [[255, 255, 0]],
+            "source_path": "videos/adb/dd/DF60_part2.mp4"
+        },
+        {
+            "yolo_model": "models/tflite/yolov10n_computex_dd_screw_int8.tflite",
+            "bbox_color": [[255, 0, 255]],
+            "source_path": "videos/adb/dd/DF60_part2.mp4"
+        },
+        {
+            "yolo_model": "models/tflite/yolov10n_computex_dd_screw_int8.tflite",
+            "bbox_color": [[0, 255, 255]],
+            "source_path": "videos/adb/dd/DF60_part2.mp4"
+        }
+    ]
+}
+

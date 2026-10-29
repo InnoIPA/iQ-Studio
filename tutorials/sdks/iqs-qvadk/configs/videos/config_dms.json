@@ -1,0 +1,23 @@
+{
+    "app_name": "dms",
+    "layout": "focus",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "streams": [
+        {
+            "face_model": "models/tflite/scrfd_integer_quant.tflite",
+            "landmark_model": "models/tflite/face_landmarks_detector_float16.tflite",
+            "cnn_model": "models/tflite/resnet18_face_imagenet.tflite",
+            "source_path": "videos/adb/dms/face.mp4"
+        },
+        {
+            "cnn_model": "models/tflite/resnet18_hands_imagenet.tflite",
+            "source_path": "videos/adb/dms/hands.mp4"
+        },
+        {
+            "cnn_model": "models/tflite/resnet50_body_imagenet.tflite",
+            "source_path": "videos/adb/dms/body.mp4"
+        }
+    ]
+}

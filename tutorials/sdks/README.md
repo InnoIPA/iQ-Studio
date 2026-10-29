@@ -15,5 +15,6 @@ Read these after running the matching application — each SDK guide shows how t
 | [iQS-OGenie](./iqs-ogenie/README.md) | Run your own LLM/VLM chat through Ollama-compatible APIs. |
 | [iQS-VLM SDK](./iqs-vlm/README.md) | Interact with OGenie through Open WebUI. |
 | [iQS-Streampipe SDK](./iqs-streampipe/README.md) | Change the model and video source for the pipeline. |
+| [iQS-QVADK SDK](./iqs-qvadk/README.md) | Switch between the QVADK applications and run each of them. |
 
 

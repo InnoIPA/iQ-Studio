@@ -12,7 +12,7 @@ The fastest path from a booted device to a visible inference result — pick a d
 
 | Application | Launch command |
 | --- | --- |
-| [iQS-VLM](./iqs-vlm/README.md) | `iqs-launcher --autotag iqs-ogenie` then `iqs-launcher --autotag iqs-vlm-demo` |
+| [iQS-VLM](./iqs-vlm/README.md) | `iqs-launcher --autotag iqs-vlm-demo` |
 | [iQS-Streampipe](./iqs-streampipe/README.md) | `iqs-launcher --autotag iqs-streampipe` |
 | [iQS-YOLOv10n](./iqs-yolov10n/README.md) | `iqs-launcher --autotag iqs-yolov10n` |
 

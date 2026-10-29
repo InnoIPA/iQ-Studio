@@ -40,7 +40,6 @@ Online mode is the default path. With internet access on the platform, `iqs-laun
 Common online-mode commands used in the tutorials:
 
 ```bash
-iqs-launcher --autotag iqs-ogenie
 iqs-launcher --autotag iqs-vlm-demo
 iqs-launcher --autotag iqs-streampipe
 iqs-launcher --autotag iqs-yolov10n

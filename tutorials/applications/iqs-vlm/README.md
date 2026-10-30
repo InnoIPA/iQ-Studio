@@ -173,3 +173,9 @@ Logs are saved on the platform in `/var/lib/iqs-vlm-demo/logs`.
 # Chat with the Model through Open WebUI
 
 For advanced features and usage examples, visit this [page](../../sdks/iqs-vlm/README.md) to learn more.
+
+# Reference
+
+- [GenieX on GitHub](https://github.com/qualcomm/GenieX)
+- [GenieX documentation](https://geniex.aihub.qualcomm.com/en/get-started/what-is-geniex)
+- [GenieX guide in iQ-Studio](../../sdks/geniex/README.md)

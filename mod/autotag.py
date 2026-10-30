@@ -11,7 +11,7 @@ class AUTOTAG:
     def __init__(self, args, root_path, image_tag=None, app_name=None):
         #
         self.args = args
-        raw = app_name or self.args.autotag  # e.g. "iqs-ogenie" or "iqs-ogenie:0.0.3"
+        raw = app_name or self.args.autotag  # e.g. "iqs-vlm-demo" or "iqs-vlm-demo:0.0.3"
 
         if ':' in raw:
             self.image_name, self.image_tag = raw.split(':', 1)

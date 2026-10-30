@@ -24,6 +24,7 @@ Expected output: polished documentation text that preserves technical meaning an
   - `iQ-Studio`
   - `iqs-launcher`
   - `OGenie`
+  - `GenieX`
   - `InnoPPE`
   - `Yocto Linux`
 - Avoid informal or incorrect variants such as `qcom`, `AGX ORIN`, `nvidia agx thin`, or inconsistent product casing.

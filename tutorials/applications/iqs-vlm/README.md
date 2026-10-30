@@ -32,8 +32,8 @@ nothing has to be downloaded or installed separately.
 
 | Model | Runtime | Backend |
 | :--- | :--- | :--- |
-| **Qwen3-VL-4B** (default) | GenieX-Qairt | NPU |
-| **LFM2.5-VL-450M** | GenieX-llama.cpp | NPU, CPU, GPU, Hybrid |
+| [**Qwen3-VL-4B**](https://aihub.qualcomm.com/models/qwen3_vl_4b_instruct) (default) | GenieX-Qairt | NPU |
+| [**LFM2.5-VL-450M**](https://huggingface.co/LiquidAI/LFM2.5-VL-450M-GGUF) | GenieX-llama.cpp | NPU, CPU, GPU, Hybrid |
 
 The runtime selects the model: `GenieX-Qairt` runs Qwen3-VL-4B, and
 `GenieX-llama.cpp` runs LFM2.5-VL-450M.

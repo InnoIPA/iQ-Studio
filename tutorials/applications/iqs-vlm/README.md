@@ -12,7 +12,17 @@ powered by [GenieX](https://github.com/qualcomm/GenieX). It reads a live video
 stream from a UVC Camera, asks the model to describe what it sees, and shows the
 description on a fullscreen dashboard on the monitor.
 
-![demo gif](./fig/vlm-demo.gif)
+![iQS-VLM overview](./fig/vlm-overview.png)
+
+The demo can run in two modes:
+
+1. **VLM demo** (default): the camera feed is described live on the monitor.
+2. **Chat**: you chat with the model from a browser on your PC through
+   Open WebUI. See [Chat with the Model through Open WebUI](#chat-with-the-model-through-open-webui).
+
+Here is the VLM demo running LFM2.5-VL-450M on the NPU:
+
+<div align="center"><img src="./fig/vlm-demo.gif" width="80%" alt="demo gif"></div>
 
 
 ## Supported Models

@@ -61,3 +61,7 @@ cd iQ-Studio
     >Note: The demo GIF may take some time to load. If it does not appear immediately, please wait.
 
     ![ppe demo](./fig/gif0.gif)
+
+# Switch to Other Applications
+
+For advanced features and usage examples, visit this [page](../../sdks/iqs-qvadk/README.md) to learn more.

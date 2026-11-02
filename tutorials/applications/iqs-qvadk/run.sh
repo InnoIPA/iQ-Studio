@@ -55,19 +55,6 @@ for path in /run/user/1000 /usr/share/glvnd /etc/gbm /usr/share/qcom; do
     [ -d "$path" ] && EXTRA_MOUNTS+=(-v "$path:$path")
 done
 
-# The face models are third-party and not shipped (see
-# tutorials/sdks/iqs-qvadk/models). Mount the user's copy over the path the
-# configs load from.
-for model in models/tflite/scrfd_integer_quant.tflite \
-             models/tflite/face_landmarks_detector_float16.tflite; do
-    if [ -f "$PWD/$model" ]; then
-        EXTRA_MOUNTS+=(-v "$PWD/$model:/app/$model:ro")
-    else
-        echo "[run] $PWD/$model not found; the application that uses it" \
-            "will not work. See tutorials/sdks/iqs-qvadk/models/README.md." >&2
-    fi
-done
-
 # Allocate a TTY only when we actually have one, so the script also works
 # when launched in the background (nohup, systemd, ssh without -t).
 TTY_FLAG=""

@@ -27,7 +27,7 @@ iqs-qvadk runs two applications: **PPE** (default) and **Defect detection**. Thi
 
 ## How to switch and run an application
 
-Close the running application before starting another one. Run the PPE command from the `iQ-Studio` directory.
+Close the running application before starting another one.
 
 ### PPE (default)
 
@@ -39,11 +39,10 @@ iqs-launcher --autotag iqs-qvadk
 
 ### Defect detection
 
-Defect detection is not the default application. Go to the iqs-qvadk directory, then use `--other` to load its config file. The `/workspace` path in the command is this directory, which `iqs-launcher` mounts into the container.
+Defect detection is not the default application. Use `--other` to load its config file.
 
 ```bash
-cd tutorials/sdks/iqs-qvadk/
-iqs-launcher --autotag iqs-qvadk --other "-c /workspace/configs/videos/config_dd.json"
+iqs-launcher --autotag iqs-qvadk --other "-c /app/configs/adb_config/videos/config_dd.json"
 ```
 
 To go back to PPE, close the running application and run the PPE command again.

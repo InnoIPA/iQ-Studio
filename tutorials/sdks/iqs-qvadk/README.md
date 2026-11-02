@@ -17,7 +17,7 @@ This page lists the applications of iqs-qvadk and shows how to switch between th
 
 | Application | Channels | Models | Classes | Description | Preview |
 | --- | :---: | --- | --- | --- | :---: |
-| PPE | 9 | yolo26n, [scrfd](https://www.insightface.ai/research/scrfd) | 5 (yolo26n), 1 (scrfd) | Runs PPE and ROI person detection on 9 streams. With face mosaic enabled, 18 models run at the same time. | <img src="./fig/ppe_thumb.png" width="240"> |
+| PPE | 9 | yolo26n | 5 (yolo26n) | Runs PPE and ROI person detection on 9 streams. | <img src="./fig/ppe_thumb.png" width="240"> |
 | Defect detection | 6 | yolov10n | 1 | Runs one independent YOLO model on each of 6 streams to detect screw defects on a production line. | <img src="./fig/dd_thumb.png" width="240"> |
 | DMS | 3 | [scrfd](https://www.insightface.ai/research/scrfd), [landmark](https://github.com/PINTO0309/PINTO_model_zoo/tree/main/410_FaceMeshV2), resnet18, resnet50 | 1 (scrfd), 1 (landmark), 2 and 3 (resnet18), 5 (resnet50) | Chains face, gaze, hand and body models on each of 3 driver streams (5 models in total) and shows a warning on high-risk behavior. | <img src="./fig/dms_thumb.png" width="240"> |
 | Smart City | 32 | yolo26n | 5 (yolo26n) | Runs vehicle detection on 32 streams of a road intersection seen from above, counts the vehicles in each zone, and shows the NPU and GPU inference performance side by side. | <img src="./fig/smart_city_thumb.png" width="240"> |

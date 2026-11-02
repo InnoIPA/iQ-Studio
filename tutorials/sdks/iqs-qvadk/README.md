@@ -22,10 +22,6 @@ This page lists the applications of iqs-qvadk and shows how to switch between th
 | DMS | 3 | [scrfd](https://www.insightface.ai/research/scrfd), [landmark](https://github.com/PINTO0309/PINTO_model_zoo/tree/main/410_FaceMeshV2), resnet18, resnet50 | 1 (scrfd), 1 (landmark), 2 and 3 (resnet18), 5 (resnet50) | Chains face, gaze, hand and body models on each of 3 driver streams (5 models in total) and shows a warning on high-risk behavior. | <img src="./fig/dms_thumb.png" width="240"> |
 | Smart City | 32 | yolo26n | 5 (yolo26n) | Runs vehicle detection on 32 streams of a road intersection seen from above, counts the vehicles in each zone, and shows the NPU and GPU inference performance side by side. | <img src="./fig/smart_city_thumb.png" width="240"> |
 
-> scrfd is the SCRFD face detection model from [InsightFace](https://www.insightface.ai/research/scrfd) ([GitHub](https://github.com/deepinsight/insightface)).
-
-> landmark is the Google MediaPipe face landmark model, from [PINTO_model_zoo](https://github.com/PINTO0309/PINTO_model_zoo/tree/main/410_FaceMeshV2).
-
 > Note: PPE (with or without a camera) and Defect detection can be run. DMS and Smart City are for demonstration only; see [Other applications](#other-applications-preview-only).
 
 ## How to switch and run an application

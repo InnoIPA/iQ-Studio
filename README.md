@@ -195,6 +195,7 @@ iQ Studio resources are grouped into categories based on functionality:
           <li><a href="./benchmarks/README.md">Benchmarks Overview</a></li>
           <li><a href="./benchmarks/innoppe/README.md">InnoPPE Benchmark</a></li>
           <li><a href="./benchmarks/iqs-streampipe/README.md">Multi-stream Inference Status</a></li>
+          <li><a href="./benchmarks/multistream/README.md">Multi-stream Scaling Across Resolutions</a></li>
           <li><a href="./benchmarks/perception_model/README.md">Perception AI Benchmark</a></li>
         </ul>
       </td>

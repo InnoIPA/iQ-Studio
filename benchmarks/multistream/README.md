@@ -13,7 +13,7 @@ platform sustains in real time at each resolution, and what limits it as the
 channel count increases. The results are not intended to be a general hardware
 performance ranking.
 
-- Application: iQS-QVADK v3.0.0 (GStreamer hardware decode → inference → drawing → compositor display)
+- Application: [iQS-QVADK](../../tutorials/applications/iqs-qvadk/README.md) v3.0.0 (GStreamer hardware decode → inference → drawing → compositor display)
 - Task: object detection with an INT8 model
 - Input: 720p, 1080p, 2K, and 4K, 30 FPS H.264 video streams
 - Platform: EXEC-Q911 (Qualcomm QCS9075), BSP v2.5.0
@@ -49,6 +49,11 @@ performance ranking.
 | MP4           | 1080p          | 30 FPS         | H.264     | 15.8 Mbps   | 56.4 MiB      | 30 s       |
 | MP4           | 2K             | 30 FPS         | H.264     | 15.5 Mbps   | 55.5 MiB      | 30 s       |
 | MP4           | 4K             | 30 FPS         | H.264     | 15.4 Mbps   | 55.2 MiB      | 30 s       |
+
+The four videos were made from one licensed stock video from
+[Envato](https://app.envato.com/stock-video/5a08c377-3935-48d8-b0e5-741d82db817e),
+and they are not distributed with iQ-Studio. To reproduce the results, license
+a video and prepare your own copies at each resolution.
 
 The four videos have almost the same bitrate, so only the resolution differs.
 This bitrate is higher than a typical 720p to 2K camera stream (about 2–8 Mbps),
@@ -146,23 +151,90 @@ These issues are under investigation and will be re-tested after fixes.
 
 ## How to Use
 
-Below is an overview of how we conduct this benchmark on EXEC-Q911.
+Below is an overview of how we conduct this benchmark on EXEC-Q911. The
+application runs in a Docker container, so the models and videos in the config
+must be paths that exist inside the container.
 
-1. Start the application from an SSH session. Programs started from `adb` or
-   system services are limited to CPU cores 0–3, which lowers the results.
-
-2. Set up the same video on every channel, then run the benchmark mode for 300
-   seconds with a 180-second warm-up:
-
-   ```bash
-   timeout 300 streampipe -b --pp --warmup_time 180
+1. Install iQ Studio
+   ```
+   git clone https://github.com/InnoIPA/iQ-Studio.git
+   cd iQ-Studio
+   ./install.sh
    ```
 
-   `streampipe` prints the inference time and FPS report when it stops.
+   The iQS-QVADK Docker image is not included in the BSP. Pull it first:
 
-3. At 180 seconds, measure CPU and memory for 120 seconds with
-   [system_monitor.py](../iqs-streampipe/scripts/system_monitor.py).
+   ```bash
+   docker pull innodiskorg/iqs-qvadk:latest
+   ```
 
-4. Around 250 seconds, read the power meter. The platform's power adapter is
+2. From the repository root on EXEC-Q911, change to the iQS-QVADK directory:
+
+   ```bash
+   cd tutorials/sdks/iqs-qvadk
+   ```
+
+3. Copy the config of the resolution being tested to this directory and open it:
+
+   | Resolution | Config |
+   |:-----------|:-------|
+   | 720p       | [config_720p.json](./config_720p.json) |
+   | 1080p      | [config_1080p.json](./config_1080p.json) |
+   | 2K         | [config_2k.json](./config_2k.json) |
+   | 4K         | [config_4k.json](./config_4k.json) |
+
+   ```bash
+   cp ../../../benchmarks/multistream/config_1080p.json .
+   vi config_1080p.json
+   ```
+
+   Each config has 1 stream. Copy the stream entry in the `streams` array
+   until it contains the channel count being tested (for example 4, 8, or 16
+   entries). Every channel uses the same video. The model is already in the
+   iqs-qvadk image. For the video, set `source_path` to a video of the same
+   resolution as the config:
+
+   | Config | `source_path` |
+   |:-------|:--------------|
+   | `config_1080p.json` | `videos/adb/ppe/road.mp4`, the 1080p demo video in the image. Or use your own video as below. |
+   | `config_720p.json`, `config_2k.json`, `config_4k.json` | Your own video: put the file in `tutorials/sdks/iqs-qvadk/video/` and replace `your_..._video.mp4` with its file name. |
+
+   To list the models and videos inside the image:
+
+   ```bash
+   docker run --rm --entrypoint ls innodiskorg/iqs-qvadk:latest -R /app/videos /app/models
+   ```
+
+   > Note: The only video we provide is the 1080p demo video in the image
+   > (`videos/adb/ppe/road.mp4`). The videos used in this report are not
+   > distributed, so you need to prepare the videos for the other resolutions
+   > yourself. Results with other videos differ from this report; to compare,
+   > use a 30-second H.264 video at about 15.5 Mbps and 30 FPS.
+
+4. Run the benchmark for 300 seconds with a 180-second warm-up. Start it from an
+   SSH session, because programs started from `adb` or system services are
+   limited to CPU cores 0–3, which lowers the results:
+
+   ```bash
+   timeout 300 iqs-launcher --autotag iqs-qvadk \
+       --other "-c /workspace/config_1080p.json -b --warmup_time 180"
+   ```
+
+   The application prints the inference time and FPS report when it stops.
+
+5. In a second SSH session, wait until the application has been running for 180
+   seconds, then measure CPU and memory for 120 seconds with
+   [system_monitor.py](../iqs-streampipe/scripts/system_monitor.py):
+
+   ```bash
+   cd <iQ-Studio>/tutorials/sdks/iqs-qvadk
+   timeout 120 python3 ../../../benchmarks/iqs-streampipe/scripts/system_monitor.py
+   ```
+
+6. (Optional) Around 250 seconds, read the power meter. The platform's power adapter is
    plugged into a digital power meter (DDSC-728), so the meter shows the power
    of the whole system.
+
+> Note: The `auto_benchmark.sh` script of the
+> [iQS-Streampipe benchmark](../iqs-streampipe/README.md#how-to-use) runs steps 4
+> and 5 together for iQS-Streampipe.

@@ -55,6 +55,17 @@ The following applications are shown for demonstration. They are not available i
 
 ### PPE with camera
 
+PPE can also take live input from a camera.
+
+- **UVC camera**: at least one UVC camera.
+    - 1080p/30fps (1920x1080 pixels)
+    - MJPEG compression format
+    - For example, this Innodisk [USB camera](https://www.innodisk.com/en/products/camera/usb-20/ev2u-ssm1-rlcf).
+- **GMSL camera**: at least one GMSL camera.
+    - Download the camera driver package for your module (for the EV3F-ZSM1, `ev3f_zsm1_pp19`) from the [iQ-Cam release page](https://github.com/InnoIPA/iQ-Cam__manifest/tree/main/release).
+    - To install and use a GMSL camera, please refer to the [iQ-Cam GMSL Camera Guide](https://github.com/InnoIPA/iQ-Cam__manifest/blob/v3.0.0/doc/common/gmsl.md).
+    > Note: This demo has only been tested with the EV3F-ZSM1 camera.
+
 ![PPE with camera](./fig/ppe_camera.gif)
 
 ### DMS

@@ -9,7 +9,7 @@
 
 Please refer to the `tutorials/applications/iqs-qvadk` to learn how to deploy and run [iqs-qvadk](../../applications/iqs-qvadk/README.md).
 
-iqs-qvadk runs two applications: **PPE** (default) and **Defect detection**. This page shows how to switch between them. The other applications in the previews below are for demonstration only.
+iqs-qvadk runs **PPE** (default) and **Defect detection**, and PPE can also take live input from a UVC or GMSL camera. This page shows how to switch between them. DMS in the preview below is for demonstration only.
 
 <br />
 <div align="center"><img width="80%" height="80%" src="./fig/architecture.svg"></div>
@@ -49,24 +49,42 @@ To go back to PPE, close the running application and run the PPE command again.
 
 ![Defect detection](./fig/dd.gif)
 
-## Other applications (preview only)
-
-The following applications are shown for demonstration. They are not available in this image.
-
 ### PPE with camera
 
-PPE can also take live input from a camera.
+PPE can also take live input from a camera. The camera configs are in this directory, which `iqs-launcher` mounts into the container as `/workspace`, so run the commands from the iqs-qvadk directory. The camera feeds the first stream; the other streams keep playing videos.
 
-- **UVC camera**: at least one UVC camera.
-    - 1080p/30fps (1920x1080 pixels)
-    - MJPEG compression format
-    - For example, this Innodisk [USB camera](https://www.innodisk.com/en/products/camera/usb-20/ev2u-ssm1-rlcf).
-- **GMSL camera**: at least one GMSL camera.
-    - Download the camera driver package for your module (for the EV3F-ZSM1, `ev3f_zsm1_pp19`) from the [iQ-Cam release page](https://github.com/InnoIPA/iQ-Cam__manifest/tree/main/release).
-    - To install and use a GMSL camera, please refer to the [iQ-Cam GMSL Camera Guide](https://github.com/InnoIPA/iQ-Cam__manifest/blob/v3.0.0/doc/common/gmsl.md).
-    > Note: This demo has only been tested with the EV3F-ZSM1 camera.
+#### UVC camera
+
+At least one UVC camera.
+
+- 1080p/30fps (1920x1080 pixels)
+- MJPEG compression format
+- For example, this Innodisk [USB camera](https://www.innodisk.com/en/products/camera/usb-20/ev2u-ssm1-rlcf).
+
+```bash
+cd tutorials/sdks/iqs-qvadk/
+iqs-launcher --autotag iqs-qvadk --other "-c /workspace/configs/uvc/config_ppe_uvc.json"
+```
+
+#### GMSL camera
+
+At least one GMSL camera.
+
+- Download the camera driver package for your module (for the EV3F-ZSM1, `ev3f_zsm1_pp19`) from the [iQ-Cam release page](https://github.com/InnoIPA/iQ-Cam__manifest/tree/main/release).
+- To install and use a GMSL camera, please refer to the [iQ-Cam GMSL Camera Guide](https://github.com/InnoIPA/iQ-Cam__manifest/blob/v3.0.0/doc/common/gmsl.md).
+
+> Note: This demo has only been tested with the EV3F-ZSM1 camera.
+
+```bash
+cd tutorials/sdks/iqs-qvadk/
+iqs-launcher --autotag iqs-qvadk --other "-c /workspace/configs/gmsl/config_ppe_gmsl.json"
+```
 
 ![PPE with camera](./fig/ppe_camera.gif)
+
+## Other applications (preview only)
+
+The following application is shown for demonstration. It is not available in this image.
 
 ### DMS
 

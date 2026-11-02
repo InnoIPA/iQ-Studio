@@ -39,7 +39,7 @@ done
 # CAM_RESET_WAIT for lighter configs. Configs without a gmsl stream (e.g.
 # video-only) skip the reset and the wait.
 CAM_RESET_WAIT=${CAM_RESET_WAIT:-15}
-if docker run --rm --entrypoint grep "$IMAGE_TO_RUN" \
+if docker run --rm --entrypoint grep -v "$PWD":/workspace "$IMAGE_TO_RUN" \
     -qE '"source"[[:space:]]*:[[:space:]]*"gmsl"' "$CONFIG_PATH"; then
     pkill cam-server || true
     pkill gst || true
@@ -74,5 +74,6 @@ docker run --rm -i $TTY_FLAG \
     -v /usr/libexec:/host_libexec \
     "${EXTRA_MOUNTS[@]}" \
     $VOLUME_RUN \
+    -v "$PWD":/workspace \
     "$IMAGE_TO_RUN" \
     "$@"

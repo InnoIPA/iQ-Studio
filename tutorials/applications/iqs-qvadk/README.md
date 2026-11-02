@@ -9,12 +9,9 @@
 
 QVADK is a high-throughput, multi-stream AI video pipeline built for vertical applications. It takes many 1080p video channels at once and runs several AI models on every channel, all accelerated on the Qualcomm NPU of a single Dragonwing device, so a single box can monitor many cameras in real time.
 
-iqs-qvadk ships with several applications. The demo below runs the default **PPE (Personal Protective Equipment) detection**; click any other application to see its command and demo:
+iqs-qvadk runs two applications. The demo below runs the default **PPE (Personal Protective Equipment) detection**; you can also switch to [**Defect detection**](../../sdks/iqs-qvadk/README.md#defect-detection), which detects defects on production line video.
 
-- [**PPE with UVC camera**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): the same PPE detection, with channel 0 showing a live UVC camera.
-- [**PPE with GMSL camera**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): the same PPE detection, with channel 0 showing a live GMSL camera.
-- [**Defect detection**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): detects defects on production line video.
-- [**DMS (Driver Monitoring System)**](../../sdks/iqs-qvadk/README.md#how-to-switch-and-run-an-application): monitors the driver's face, hands, and body.
+Other applications, such as PPE with a camera and DMS (Driver Monitoring System), are shown on the [preview page](../../sdks/iqs-qvadk/README.md#other-applications-preview-only) for demonstration only.
 
 >Note: The demo GIF may take some time to load. If it does not appear immediately, please wait.
 
@@ -54,20 +51,13 @@ cd iQ-Studio
 
 # How to Use
 
-1. Download the SCRFD face detection model, which is not included in iQ-Studio. Follow [Models You Need to Provide](../../sdks/iqs-qvadk/models/README.md); it takes a few minutes.
-
-2. Use iqs-launcher and autotag tools to automatically pull or build a compatible docker image. Run it from the iqs-qvadk directory, where the model was placed.
+1. Use iqs-launcher and autotag tools to automatically pull or build a compatible docker image.
 
     ```bash
-    cd tutorials/sdks/iqs-qvadk/
     iqs-launcher --autotag iqs-qvadk
     ```
 
-3. You will see the PPE detection result on the screen.
+2. You will see the PPE detection result on the screen.
     >Note: The demo GIF may take some time to load. If it does not appear immediately, please wait.
 
     ![ppe demo](./fig/gif0.gif)
-
-# Switch to Other Applications
-
-Each application listed above runs with a single `iqs-launcher` command. For the hardware each application needs and the full list of commands, visit this [page](../../sdks/iqs-qvadk/README.md) to learn more.

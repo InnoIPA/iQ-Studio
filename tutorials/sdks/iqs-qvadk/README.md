@@ -42,8 +42,6 @@ Use `--other` to load the Defect detection config.
 iqs-launcher --autotag iqs-qvadk --other "-c /app/configs/adb_config/videos/config_dd.json"
 ```
 
-To go back to PPE, close the running application and run the PPE command again.
-
 ![Defect detection](./fig/dd.gif)
 
 ### PPE with camera

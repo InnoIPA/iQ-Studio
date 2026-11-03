@@ -8,48 +8,39 @@
         {
             "yolo_model": "models/tflite/yolo26n_ppe_v73_int8.tflite",
             "bbox_color": [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255]],
-            "face_model": "models/tflite/scrfd_integer_quant.tflite",
             "source": "gmsl",
             "gmsl_crop": true
         },{
             "yolo_model": "models/tflite/yolo26n_ppe_v73_int8.tflite",
             "bbox_color": [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255]],
-            "face_model": "models/tflite/scrfd_integer_quant.tflite",
             "source_path": "videos/adb/ppe/road.mp4"
         },{
             "yolo_model": "models/tflite/yolo26n_ppe_v73_int8.tflite",
             "bbox_color": [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255]],
-            "face_model": "models/tflite/scrfd_integer_quant.tflite",
             "source_path": "videos/adb/ppe/road.mp4"
         },{
             "yolo_model": "models/tflite/yolo26n_ppe_v73_int8.tflite",
             "bbox_color": [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255]],
-            "face_model": "models/tflite/scrfd_integer_quant.tflite",
             "source_path": "videos/adb/ppe/japan_walk.mp4"
         },{
             "yolo_model": "models/tflite/yolo26n_ppe_v73_int8.tflite",
             "bbox_color": [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255]],
-            "face_model": "models/tflite/scrfd_integer_quant.tflite",
             "source_path": "videos/adb/ppe/japan_walk.mp4"
         },{
             "yolo_model": "models/tflite/yolo26n_ppe_v73_int8.tflite",
             "bbox_color": [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255]],
-            "face_model": "models/tflite/scrfd_integer_quant.tflite",
             "source_path": "videos/adb/ppe/japan_walk.mp4"
         },{
             "yolo_model": "models/tflite/yolo26n_ppe_v73_int8.tflite",
             "bbox_color": [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255]],
-            "face_model": "models/tflite/scrfd_integer_quant.tflite",
             "source_path": "videos/adb/ppe/europe_walk.mp4"
         },{
             "yolo_model": "models/tflite/yolo26n_ppe_v73_int8.tflite",
             "bbox_color": [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255]],
-            "face_model": "models/tflite/scrfd_integer_quant.tflite",
             "source_path": "videos/adb/ppe/europe_walk.mp4"
         },{
             "yolo_model": "models/tflite/yolo26n_ppe_v73_int8.tflite",
             "bbox_color": [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255]],
-            "face_model": "models/tflite/scrfd_integer_quant.tflite",
             "source_path": "videos/adb/ppe/europe_walk.mp4"
         }
     ]

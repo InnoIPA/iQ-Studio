@@ -50,8 +50,6 @@ To go back to PPE, close the running application and run the PPE command again.
 
 PPE can also take live input from a UVC or GMSL camera. The camera feeds the first stream; the other streams keep playing videos.
 
-The camera configs are in this directory, which `iqs-launcher` mounts into the container as `/workspace`. Run the commands from the iqs-qvadk directory.
-
 #### UVC camera
 
 Requirements: at least one UVC camera with

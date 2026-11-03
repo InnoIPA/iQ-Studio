@@ -16,7 +16,7 @@ performance ranking.
 - Application: [iQS-QVADK](../../tutorials/applications/iqs-qvadk/README.md) v3.0.0 (GStreamer hardware decode → inference → drawing → compositor display)
 - Task: object detection with an INT8 model
 - Input: 720p, 1080p, 2K, and 4K, 30 FPS H.264 video streams
-- Platform: EXEC-Q911 (Qualcomm QCS9075), BSP v2.5.0
+- Platform: EXEC-Q911 (Qualcomm Dragonwing QCS9075), BSP v2.5.0
 - Metrics:
   - Output average end-to-end FPS per channel
   - Average CPU loading (%)
@@ -27,7 +27,7 @@ performance ranking.
 
 | **Platform**        | **EXEC-Q911**                                |
 |:--------------------|:---------------------------------------------|
-| **SoM / SoC**       | Qualcomm QCS9075                             |
+| **SoM / SoC**       | Qualcomm Dragonwing QCS9075                  |
 | **Power plan**      | Normal                                       |
 | **Processor cores** | 8                                            |
 | **AI accelerator**  | NPU                                          |
@@ -156,8 +156,9 @@ These issues are under investigation and will be re-tested after fixes.
 Below is an overview of how we conduct this benchmark on EXEC-Q911. The
 application runs in a Docker container.
 
-1. Install iQ Studio
-   ```
+1. Install iQ-Studio
+
+   ```bash
    git clone https://github.com/InnoIPA/iQ-Studio.git
    cd iQ-Studio
    ./install.sh
@@ -178,7 +179,7 @@ application runs in a Docker container.
 
    You should see `config.json` in this directory:
 
-   ```
+   ```text
    README.md  config.json  fig
    ```
 

@@ -20,7 +20,7 @@ This page lists the applications of iqs-qvadk and shows how to switch between th
 | PPE | 9 | yolo26n (5) | Runs PPE and ROI person detection on 9 streams. | <img src="./fig/ppe_thumb.png" width="240"> |
 | Defect detection | 6 | yolov10n (1) | Runs one independent YOLO model on each of 6 streams to detect screw defects on a production line. | <img src="./fig/dd_thumb.png" width="240"> |
 | DMS | 3 | [scrfd](https://github.com/PINTO0309/PINTO_model_zoo/tree/main/129_SCRFD) (1), [landmark](https://github.com/PINTO0309/PINTO_model_zoo/tree/main/410_FaceMeshV2) (1), resnet18 face (2), resnet18 hands (3), resnet50 body (5) | Chains face, gaze, hand and body models on each of 3 driver streams (5 models in total) and shows a warning on high-risk behavior. | <img src="./fig/dms_thumb.png" width="240"> |
-| Smart City | 32 | yolo26n (5) | Runs vehicle detection on 32 streams of a road intersection seen from above, counts the vehicles in each zone, and shows the NPU and GPU inference performance side by side. | <img src="./fig/smart_city_thumb.png" width="240"> |
+| Smart City | 32 | yolo26n (5) | Runs vehicle detection on 32 streams of a road intersection seen from above, counts the vehicles in each zone, and shows the NPU inference performance. | <img src="./fig/smart_city_thumb.png" width="240"> |
 
 ## How to switch and run an application
 

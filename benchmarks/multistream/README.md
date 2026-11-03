@@ -227,10 +227,19 @@ vi config.json
 <br />
 
 - **Video:** the default `source_path` is `videos/adb/ppe/road.mp4`, the 1080p
-  demo video in the image. To use your own video, put the file in
-  `benchmarks/multistream/video/` and set `source_path` to
-  `/workspace/video/<file name>`. Also change `width` and `height` (**Resolution**
-  in the figure) to the resolution of the video:
+  demo video in the image. To use your own video, first copy the file to the
+  `benchmarks/multistream/` directory on the platform. For example, run this on
+  your PC:
+
+  ```bash
+  scp 01_720.mp4 root@<platform IP>:~/iQ-Studio/benchmarks/multistream/
+  ```
+
+  Then set `source_path` to `/workspace/<file name>`, for example
+  `/workspace/01_720.mp4`. `/workspace` is the `benchmarks/multistream/`
+  directory as seen from inside the container, so the file must be in that
+  directory. Also change `width` and `height` (**Resolution** in
+  the figure) to the resolution of the video:
 
   | Resolution | `width` | `height` |
   |:-----------|:--------|:---------|
@@ -240,9 +249,9 @@ vi config.json
   | 4K         | 3840    | 2160     |
 
 - **Model:** the default `yolo_model` (**Model** in the figure) is `models/tflite/yolo26n_ppe_v73_int8.tflite`,
-  which is in the image. To use your own model, put the file in
-  `benchmarks/multistream/models/` and set `yolo_model` to
-  `/workspace/models/<file name>`.
+  which is in the image. To use your own model, copy the file to the
+  `benchmarks/multistream/` directory on the platform in the same way, and set
+  `yolo_model` to `/workspace/<file name>`.
 - **Channel count:** the `streams` array has 1 entry (the `{ ... }` block in
   the figure), which is 1 channel. Copy the whole block and paste it after
   itself, separated by a comma, until the array has the channel count you want

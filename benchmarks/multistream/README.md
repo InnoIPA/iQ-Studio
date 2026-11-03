@@ -99,7 +99,7 @@ reading of the whole board at the power adapter.
 
 `FPS/Watt = (FPS per channel ÷ power) × channels`. 4K stops at 8 channels
 (decoder limit). For channel counts that are not
-listed, see [Known limitations](#known-limitations).
+listed, see [Known issues](#known-issues).
 
 <p align="center">
   <img src="./fig/fps_per_channel.svg" width="32%">
@@ -139,7 +139,9 @@ resolutions allow more channels, but the limit is not set by pixel count alone.
 - **Single run:** each point was run once, and power is a manual reading, so
   small differences are not meaningful.
 
-### Known limitations
+### Known issues
+
+The following issues were observed with iQS-QVADK v3.0.0 on BSP v2.5.0.
 
 - 720p at 24 and 32 channels and 1080p at 32 channels cannot run (NPU graph
   memory allocation fails).
@@ -152,8 +154,7 @@ These issues are under investigation and will be re-tested after fixes.
 ## How to Use
 
 Below is an overview of how we conduct this benchmark on EXEC-Q911. The
-application runs in a Docker container, so the models and videos in the config
-must be paths that exist inside the container.
+application runs in a Docker container.
 
 1. Install iQ Studio
    ```
@@ -168,73 +169,86 @@ must be paths that exist inside the container.
    docker pull innodiskorg/iqs-qvadk:latest
    ```
 
-2. From the repository root on EXEC-Q911, change to the iQS-QVADK directory:
+2. From the repository root on EXEC-Q911, change to the benchmark directory:
 
    ```bash
-   cd tutorials/sdks/iqs-qvadk
+   cd benchmarks/multistream
+   ls
    ```
 
-3. Copy the config of the resolution being tested to this directory and open it:
+   You should see `config.json` in this directory:
 
-   | Resolution | Config |
-   |:-----------|:-------|
-   | 720p       | [config_720p.json](./config_720p.json) |
-   | 1080p      | [config_1080p.json](./config_1080p.json) |
-   | 2K         | [config_2k.json](./config_2k.json) |
-   | 4K         | [config_4k.json](./config_4k.json) |
-
-   ```bash
-   cp ../../../benchmarks/multistream/config_1080p.json .
-   vi config_1080p.json
+   ```
+   README.md  config.json  fig
    ```
 
-   Each config has 1 stream. Copy the stream entry in the `streams` array
-   until it contains the channel count being tested (for example 4, 8, or 16
-   entries). Every channel uses the same video. The model is already in the
-   iqs-qvadk image. For the video, set `source_path` to a video of the same
-   resolution as the config:
+   [config.json](./config.json) is the config used in the next step. `iqs-launcher`
+   shares the current directory with the container as `/workspace`, so the
+   application reads it as `/workspace/config.json`. The default config runs 1
+   channel of the 1080p demo video in the image, so you can run the next step as
+   it is. To change the video, the model, or the channel count, see
+   [How to change the config](#how-to-change-the-config).
 
-   | Config | `source_path` |
-   |:-------|:--------------|
-   | `config_1080p.json` | `videos/adb/ppe/road.mp4`, the 1080p demo video in the image. Or use your own video as below. |
-   | `config_720p.json`, `config_2k.json`, `config_4k.json` | Your own video: put the file in `tutorials/sdks/iqs-qvadk/video/` and replace `your_..._video.mp4` with its file name. |
-
-   To list the models and videos inside the image:
-
-   ```bash
-   docker run --rm --entrypoint ls innodiskorg/iqs-qvadk:latest -R /app/videos /app/models
-   ```
-
-   > Note: The only video we provide is the 1080p demo video in the image
-   > (`videos/adb/ppe/road.mp4`). The videos used in this report are not
-   > distributed, so you need to prepare the videos for the other resolutions
-   > yourself. Results with other videos differ from this report; to compare,
-   > use a 30-second H.264 video at about 15.5 Mbps and 30 FPS.
-
-4. Run the benchmark for 300 seconds with a 180-second warm-up. Start it from an
+3. Run the benchmark for 300 seconds with a 180-second warm-up. Start it from an
    SSH session, because programs started from `adb` or system services are
    limited to CPU cores 0–3, which lowers the results:
 
    ```bash
    timeout 300 iqs-launcher --autotag iqs-qvadk \
-       --other "-c /workspace/config_1080p.json -b --warmup_time 180"
+       --other "-c /workspace/config.json -b --warmup_time 180"
    ```
 
    The application prints the inference time and FPS report when it stops.
 
-5. In a second SSH session, wait until the application has been running for 180
-   seconds, then measure CPU and memory for 120 seconds with
-   [system_monitor.py](../iqs-streampipe/scripts/system_monitor.py):
+4. Open a second SSH session. When the application has been running for 180
+   seconds, measure CPU and memory for 120 seconds. Run this from the directory
+   where you ran `git clone`:
 
    ```bash
-   cd <iQ-Studio>/tutorials/sdks/iqs-qvadk
-   timeout 120 python3 ../../../benchmarks/iqs-streampipe/scripts/system_monitor.py
+   cd iQ-Studio/benchmarks/multistream
+   timeout 120 python3 ../iqs-streampipe/scripts/system_monitor.py
    ```
 
-6. (Optional) Around 250 seconds, read the power meter. The platform's power adapter is
-   plugged into a digital power meter (DDSC-728), so the meter shows the power
-   of the whole system.
+5. (Optional) Around 250 seconds, read the power meter. The platform's power
+   adapter is plugged into a digital power meter (DDSC-728), so the meter shows
+   the power of the whole system.
 
-> Note: The `auto_benchmark.sh` script of the
-> [iQS-Streampipe benchmark](../iqs-streampipe/README.md#how-to-use) runs steps 4
-> and 5 together for iQS-Streampipe.
+### How to change the config
+
+Open `config.json` in `benchmarks/multistream/` and edit it:
+
+```bash
+vi config.json
+```
+
+<br />
+<div align="center"><img width="80%" height="80%" src="./fig/config.png"></div>
+<br />
+
+- **Video:** the default `source_path` is `videos/adb/ppe/road.mp4`, the 1080p
+  demo video in the image. To use your own video, put the file in
+  `benchmarks/multistream/video/` and set `source_path` to
+  `/workspace/video/<file name>`. Also change `width` and `height` (**Resolution**
+  in the figure) to the resolution of the video:
+
+  | Resolution | `width` | `height` |
+  |:-----------|:--------|:---------|
+  | 720p       | 1280    | 720      |
+  | 1080p (default) | 1920 | 1080   |
+  | 2K         | 2560    | 1440     |
+  | 4K         | 3840    | 2160     |
+
+- **Model:** the default `yolo_model` (**Model** in the figure) is `models/tflite/yolo26n_ppe_v73_int8.tflite`,
+  which is in the image. To use your own model, put the file in
+  `benchmarks/multistream/models/` and set `yolo_model` to
+  `/workspace/models/<file name>`.
+- **Channel count:** the `streams` array has 1 entry (the `{ ... }` block in
+  the figure), which is 1 channel. Copy the whole block and paste it after
+  itself, separated by a comma, until the array has the channel count you want
+  to test (for example 4, 8, or 16 entries). Every channel uses the same video.
+
+> Note: The only video we provide is the 1080p demo video in the image. The
+> videos used in this report are not distributed, so you need to prepare the
+> videos for the other resolutions yourself. Results with other videos differ
+> from this report; to compare, use a 30-second H.264 video at about 15.5 Mbps
+> and 30 FPS.

@@ -68,7 +68,7 @@ Requirements: at least one GMSL camera, with its driver installed.
 1. Download the driver package for your module (for the EV3F-ZSM1, `ev3f_zsm1_pp19`) from the [iQ-Cam release page](https://github.com/InnoIPA/iQ-Cam__manifest/tree/main/release).
 2. Install it by following the [iQ-Cam GMSL Camera Guide](https://github.com/InnoIPA/iQ-Cam__manifest/blob/v3.0.0/doc/common/gmsl.md).
 
-> Note: Make sure the [iQ-Cam version](https://github.com/InnoIPA/iQ-Cam__manifest#bsp-support) and the [application version](../../applications/iqs-qvadk/README.md#supported-versions) match your BSP version.
+> Note: Make sure the [iQ-Cam version](https://github.com/InnoIPA/iQ-Cam__manifest/blob/main/README.md#bsp-support) and the [application version](../../applications/iqs-qvadk/README.md#supported-versions) match your BSP version.
 
 > Note: This demo has only been tested with the EV3F-ZSM1 camera.
 

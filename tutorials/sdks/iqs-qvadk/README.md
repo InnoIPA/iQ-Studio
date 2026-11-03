@@ -5,7 +5,7 @@
  https://opensource.org/licenses/MIT
 -->
 
-# iQS-QVADK: Applications
+# iQS-QVADK: How to Switch and Run the Applications
 
 This page lists the applications of iqs-qvadk and shows how to switch between them. To deploy and run iqs-qvadk for the first time, see the [application guide](../../applications/iqs-qvadk/README.md).
 

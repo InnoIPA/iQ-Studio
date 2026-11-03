@@ -9,9 +9,9 @@
 
 QVADK is a high-throughput, multi-stream AI video pipeline built for vertical applications. It takes many 1080p video channels at once and runs several AI models on every channel, all accelerated on the Qualcomm NPU of a single Dragonwing device, so a single box can monitor many cameras in real time.
 
-iqs-qvadk runs two applications. The demo below runs the default **PPE (Personal Protective Equipment) detection**; you can also switch to [**Defect detection**](../../sdks/iqs-qvadk/README.md#defect-detection), which detects defects on production line video.
+iqs-qvadk runs the default **PPE (Personal Protective Equipment) detection**, which the demo below shows. You can also switch to [**Defect detection**](../../sdks/iqs-qvadk/README.md#defect-detection), which detects defects on production line video, or run [PPE with a UVC or GMSL camera](../../sdks/iqs-qvadk/README.md#ppe-with-camera).
 
-Other applications, such as PPE with a camera and DMS (Driver Monitoring System), are shown on the [preview page](../../sdks/iqs-qvadk/README.md#other-applications-preview-only) for demonstration only.
+Other applications, such as DMS (Driver Monitoring System) and Smart City, are shown on the [preview page](../../sdks/iqs-qvadk/README.md#other-applications-preview-only) for demonstration only.
 
 >Note: The demo GIF may take some time to load. If it does not appear immediately, please wait.
 

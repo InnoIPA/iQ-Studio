@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 392" width="700" height="392" font-family="DejaVu Sans, Segoe UI, Arial, sans-serif">
+<rect width="700" height="392" fill="#fff"/>
+<line x1="62" x2="686" y1="302" y2="302" stroke="#ccc" stroke-dasharray="3,3" stroke-width="0.8"/>
+<text x="56" y="306" font-size="11" fill="#222" text-anchor="end">0</text>
+<line x1="62" x2="686" y1="254" y2="254" stroke="#ccc" stroke-dasharray="3,3" stroke-width="0.8"/>
+<text x="56" y="258" font-size="11" fill="#222" text-anchor="end">20</text>
+<line x1="62" x2="686" y1="206" y2="206" stroke="#ccc" stroke-dasharray="3,3" stroke-width="0.8"/>
+<text x="56" y="210" font-size="11" fill="#222" text-anchor="end">40</text>
+<line x1="62" x2="686" y1="158" y2="158" stroke="#ccc" stroke-dasharray="3,3" stroke-width="0.8"/>
+<text x="56" y="162" font-size="11" fill="#222" text-anchor="end">60</text>
+<line x1="62" x2="686" y1="110" y2="110" stroke="#ccc" stroke-dasharray="3,3" stroke-width="0.8"/>
+<text x="56" y="114" font-size="11" fill="#222" text-anchor="end">80</text>
+<line x1="62" x2="686" y1="62" y2="62" stroke="#ccc" stroke-dasharray="3,3" stroke-width="0.8"/>
+<text x="56" y="66" font-size="11" fill="#222" text-anchor="end">100</text>
+<line x1="62" x2="686" y1="14" y2="14" stroke="#ccc" stroke-dasharray="3,3" stroke-width="0.8"/>
+<text x="56" y="18" font-size="11" fill="#222" text-anchor="end">120</text>
+<rect x="62" y="14" width="624" height="288" fill="none" stroke="#222" stroke-width="1"/>
+<rect x="76" y="262.4" width="19" height="39.60000000000002" fill="#4e9f50"><title>720p (1280×720), 1 ch: 16.5</title></rect>
+<text x="85.5" y="259.4" font-size="8" fill="#222" text-anchor="middle">16.5</text>
+<rect x="95" y="253.76" width="19" height="48.24000000000001" fill="#f28e2b"><title>1080p (1920×1080), 1 ch: 20.1</title></rect>
+<text x="104.5" y="250.76" font-size="8" fill="#222" text-anchor="middle">20.1</text>
+<rect x="114" y="252.07999999999998" width="19" height="49.920000000000016" fill="#bbbbbb"><title>2K (2560×1440), 1 ch: 20.8</title></rect>
+<text x="123.5" y="249.07999999999998" font-size="8" fill="#222" text-anchor="middle">20.8</text>
+<rect x="133" y="248" width="19" height="54" fill="#3366ff"><title>4K (3840×2160), 1 ch: 22.5</title></rect>
+<text x="142.5" y="245" font-size="8" fill="#222" text-anchor="middle">22.5</text>
+<text x="114" y="318" font-size="11" fill="#222" text-anchor="middle">1</text>
+<rect x="180" y="208.39999999999998" width="19" height="93.60000000000002" fill="#4e9f50"><title>720p (1280×720), 4 ch: 39</title></rect>
+<text x="189.5" y="205.39999999999998" font-size="8" fill="#222" text-anchor="middle">39.0</text>
+<rect x="199" y="196.4" width="19" height="105.6" fill="#f28e2b"><title>1080p (1920×1080), 4 ch: 44</title></rect>
+<text x="208.5" y="193.4" font-size="8" fill="#222" text-anchor="middle">44.0</text>
+<rect x="218" y="193.04000000000002" width="19" height="108.95999999999998" fill="#bbbbbb"><title>2K (2560×1440), 4 ch: 45.4</title></rect>
+<text x="227.5" y="190.04000000000002" font-size="8" fill="#222" text-anchor="middle">45.4</text>
+<rect x="237" y="166.64000000000001" width="19" height="135.35999999999999" fill="#3366ff"><title>4K (3840×2160), 4 ch: 56.4</title></rect>
+<text x="246.5" y="163.64000000000001" font-size="8" fill="#222" text-anchor="middle">56.4</text>
+<text x="218" y="318" font-size="11" fill="#222" text-anchor="middle">4</text>
+<rect x="284" y="195.92000000000002" width="19" height="106.07999999999998" fill="#4e9f50"><title>720p (1280×720), 6 ch: 44.2</title></rect>
+<text x="293.5" y="192.92000000000002" font-size="8" fill="#222" text-anchor="middle">44.2</text>
+<rect x="303" y="175.04000000000002" width="19" height="126.95999999999998" fill="#f28e2b"><title>1080p (1920×1080), 6 ch: 52.9</title></rect>
+<text x="312.5" y="172.04000000000002" font-size="8" fill="#222" text-anchor="middle">52.9</text>
+<rect x="322" y="160.16" width="19" height="141.84" fill="#bbbbbb"><title>2K (2560×1440), 6 ch: 59.1</title></rect>
+<text x="331.5" y="157.16" font-size="8" fill="#222" text-anchor="middle">59.1</text>
+<rect x="341" y="64.16" width="19" height="237.84" fill="#3366ff"><title>4K (3840×2160), 6 ch: 99.1</title></rect>
+<text x="350.5" y="61.16" font-size="8" fill="#222" text-anchor="middle">99.1</text>
+<text x="322" y="318" font-size="11" fill="#222" text-anchor="middle">6</text>
+<rect x="388" y="172.4" width="19" height="129.6" fill="#4e9f50"><title>720p (1280×720), 8 ch: 54</title></rect>
+<text x="397.5" y="169.4" font-size="8" fill="#222" text-anchor="middle">54.0</text>
+<rect x="407" y="149.11999999999998" width="19" height="152.88000000000002" fill="#f28e2b"><title>1080p (1920×1080), 8 ch: 63.7</title></rect>
+<text x="416.5" y="146.11999999999998" font-size="8" fill="#222" text-anchor="middle">63.7</text>
+<rect x="426" y="118.4" width="19" height="183.6" fill="#bbbbbb"><title>2K (2560×1440), 8 ch: 76.5</title></rect>
+<text x="435.5" y="115.4" font-size="8" fill="#222" text-anchor="middle">76.5</text>
+<rect x="445" y="62.96000000000001" width="19" height="239.04" fill="#3366ff"><title>4K (3840×2160), 8 ch: 99.6</title></rect>
+<text x="454.5" y="59.96000000000001" font-size="8" fill="#222" text-anchor="middle">99.6</text>
+<text x="426" y="318" font-size="11" fill="#222" text-anchor="middle">8</text>
+<rect x="492" y="164.96" width="19" height="137.04" fill="#4e9f50"><title>720p (1280×720), 9 ch: 57.1</title></rect>
+<text x="501.5" y="161.96" font-size="8" fill="#222" text-anchor="middle">57.1</text>
+<rect x="511" y="138.32" width="19" height="163.68" fill="#f28e2b"><title>1080p (1920×1080), 9 ch: 68.2</title></rect>
+<text x="520.5" y="135.32" font-size="8" fill="#222" text-anchor="middle">68.2</text>
+<rect x="530" y="92.72" width="19" height="209.28" fill="#bbbbbb"><title>2K (2560×1440), 9 ch: 87.2</title></rect>
+<text x="539.5" y="89.72" font-size="8" fill="#222" text-anchor="middle">87.2</text>
+<text x="530" y="318" font-size="11" fill="#222" text-anchor="middle">9</text>
+<rect x="596" y="121.28000000000003" width="19" height="180.71999999999997" fill="#4e9f50"><title>720p (1280×720), 16 ch: 75.3</title></rect>
+<text x="605.5" y="118.28000000000003" font-size="8" fill="#222" text-anchor="middle">75.3</text>
+<rect x="615" y="73.52000000000001" width="19" height="228.48" fill="#f28e2b"><title>1080p (1920×1080), 16 ch: 95.2</title></rect>
+<text x="624.5" y="70.52000000000001" font-size="8" fill="#222" text-anchor="middle">95.2</text>
+<rect x="634" y="67.51999999999998" width="19" height="234.48000000000002" fill="#bbbbbb"><title>2K (2560×1440), 16 ch: 97.7</title></rect>
+<text x="643.5" y="64.51999999999998" font-size="8" fill="#222" text-anchor="middle">97.7</text>
+<text x="634" y="318" font-size="11" fill="#222" text-anchor="middle">16</text>
+<text x="374" y="342" font-size="11" fill="#222" text-anchor="middle">Channels</text>
+<text x="62" y="364" font-size="10" fill="#555">Note: Device EXEC-Q911 · BSP v2.5.0 · PPE yolo26n INT8 · 300 s (180 s warm-up) · each point = 1 run</text>
+<text x="62" y="380" font-size="10" fill="#555">4K/2K: one board; 720p/1080p: another board of the same model; 12 ch and 24 ch not drawn</text>
+<text transform="translate(14 158) rotate(-90)" font-size="11" fill="#222" text-anchor="middle">CPU Loading (%)</text>
+<rect x="70" y="22" width="150" height="80" rx="3" fill="#fff" stroke="#ccc"/>
+<rect x="78" y="31" width="14" height="9" fill="#4e9f50"/><text x="98" y="40" font-size="11" fill="#222">720p (1280×720)</text>
+<rect x="78" y="48" width="14" height="9" fill="#f28e2b"/><text x="98" y="57" font-size="11" fill="#222">1080p (1920×1080)</text>
+<rect x="78" y="65" width="14" height="9" fill="#bbbbbb"/><text x="98" y="74" font-size="11" fill="#222">2K (2560×1440)</text>
+<rect x="78" y="82" width="14" height="9" fill="#3366ff"/><text x="98" y="91" font-size="11" fill="#222">4K (3840×2160)</text>
+</svg>

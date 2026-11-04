@@ -17,5 +17,6 @@ Measured numbers for evaluators and integrators — pick the workload closest to
 | --- | --- |
 | [InnoPPE Benchmark](./innoppe/README.md) | Multi-stream YOLO inference (10 concurrent streams). |
 | [iQS-Streampipe Benchmark](./iqs-streampipe/README.md) | Multi-stream generic inference pipeline scaling. |
+| [Multi-stream Scaling Benchmark](./multistream/README.md) | Multi-stream inference scaling at 720p, 1080p, 2K, and 4K on EXEC-Q911. |
 | [Perception Model Benchmark](./perception_model/README.md) | Computer vision perception model suite. |
 | [iQ-Foundry Model Benchmark](./iqf-models/README.md) | Accuracy, size, and inference latency for [iQ-Foundry](https://github.com/InnoIPA/iQ-Foundry) models. |

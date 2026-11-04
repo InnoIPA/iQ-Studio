@@ -5,72 +5,73 @@
  https://opensource.org/licenses/MIT
 -->
 
-# iQS-VLM: How to Interact with the OGenie Server through Open WebUI
+# iQS-VLM: Chat with the VLM through Open WebUI
 
-> If you haven't tried our iqs-vlm application yet, we recommend visiting this [page](../../applications/iqs-vlm/README.md) first, then returning here for customization options and other advanced features.
+> Note: Try the [iQS-VLM application](../../applications/iqs-vlm/README.md) first; this guide needs BSP 2.5.x (QLI 2.0), while BSP 2.3.x (QLI 1.8) uses the OGenie-based demo on tag `v0.0.10` (see [Supported Versions](../../applications/iqs-vlm/README.md#supported-versions)).
 
-> Note: The latest iQ-Studio requires BSP 2.5.x (QLI 2.0). On BSP 2.3.x (QLI 1.8), use tag `v0.0.10` or earlier. See the **Supported Versions** section of the [application tutorials](../../applications/README.md).
+Besides the live camera demo, iQS-VLM has a chat mode. It runs the same model,
+powered by [GenieX](https://github.com/qualcomm/GenieX), behind
+[Open WebUI](https://github.com/open-webui/open-webui), so you can chat with the
+model and send it your own images from a browser on your development machine.
 
-# User prompt customization
-You can design your own prompt to customize how the VLM responds and presents information.
+![Open WebUI chat](./fig/openwebui-chat.gif)
 
-1. Go to the `tutorials/sdks/iqs-vlm` directory. Please ensure you are in the correct directory.
-   ```bash
-   cd tutorials/sdks/iqs-vlm
-   ```
-2. Run the following to start the vlm demo
+Chat mode needs no camera and no monitor.
 
-   ```bash
-   iqs-launcher --autotag iqs-vlm-demo
-   ```
-3. After running the command, create a file named `iqs_vlm_prompt.txt` under the `tutorials/sdks/iqs-vlm`.
+# Chat with the VLM
 
-4. Edit the `iqs_vlm_prompt.txt` with any text editor to see the VLM response update dynamically as you make changes.
-
-
-# Chat with LLaVA-1.5-7B
-
-Alongside the live video demo, you can also chat with **LLaVA-1.5-7B** using
-[Open WebUI](https://github.com/open-webui/open-webui).
-
-https://github.com/user-attachments/assets/fda1d4a4-2ef7-40ff-910b-47d563fc3273
-
-1. Start a Open WebUI server on the platform.
+1. Start the demo in chat mode on the platform:
 
    ```bash
-   docker run --rm -d -p 3000:8080 \
-       -e WEBUI_AUTH=False \
-       -e OLLAMA_BASE_URL=http://host.docker.internal:22434 \
-       -v open-webui:/app/backend/data \
-       --add-host host.docker.internal:host-gateway \
-       --name open-webui \
-       ghcr.io/open-webui/open-webui:git-b5f4c85
+   iqs-launcher --autotag iqs-vlm-demo --other "--mode chat"
    ```
 
-2. Open `192.168.3.206:3000` using your browser on your development machine.
+   This runs **Qwen3-VL-4B** on the NPU. To chat with **LFM2.5-VL-450M**
+   instead, add the runtime and the backend (`NPU`, `CPU`, `GPU` or `HYBRID`):
 
-3. We recommend the following system prompt.
-
+   ```bash
+   iqs-launcher --autotag iqs-vlm-demo --other "--mode chat --runtime GenieX-llama.cpp --backend NPU"
    ```
-   A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions.
-   ```
 
-4. Start chatting!
+   > Note: The first chat start downloads the Open WebUI image, which takes a
+   > while. Later starts use the downloaded image.
+
+2. When the model is ready, the terminal prints the Open WebUI address,
+   `http://<device_ip>:3000`. Open it in a browser on your development machine.
+
+   ![Open WebUI address](./fig/openwebui-ip.png)
+
+3. Open WebUI opens with the model already selected. Type a message, or attach
+   an image with `+`, and start chatting!
+
+To stop chat mode, press `q` or `Ctrl+C` in the terminal.
 
 # Technical Details
 
-1. For more details on running LLaVA-1.5-7B on the Qualcomm platform, refer to
-   the tutorial available in the Qualcomm Package Manager by searching for
-   "Tutorial for LLaVA1.5-7B".
+1. Chat mode starts the model and an OpenAI-compatible API server on port
+   `8000`, then starts Open WebUI on port `3000` as a separate container
+   connected to it. Your chats and settings are kept between runs.
 
-   - Qualcomm Package Manager:
-   https://qpm.qualcomm.com/#/main/tools/details/QPM3
+2. You can also call the API directly, for example to list the model that is
+   running:
 
-2. `OGenie` is an Ollama-compatible API server built with `libGenie`, designed
-   to enable LLM/VLM inference on Qualcomm platforms. It implements a subset of
-   the Ollama API—specifically `POST /api/chat` and `GET /api/tags`—and currently
-   supports only streaming mode. The only available model is
-   `llava2_7B_FT:latest`.
+   ```bash
+   curl http://<device_ip>:8000/v1/models
+   ```
 
-   For more details about the API, visit the official Ollama documentation:
-   https://ollama.readthedocs.io/en/api/
+   It implements `GET /v1/models` and `POST /v1/chat/completions`. For the
+   request format, see the
+   [OpenAI Chat Completions API](https://platform.openai.com/docs/api-reference/chat).
+
+3. Logs are saved on the platform in `/var/lib/iqs-vlm-demo/logs`. To follow
+   them live while the demo runs, open another terminal on the platform:
+
+   ```bash
+   tail -f /var/lib/iqs-vlm-demo/logs/gateway.log
+   ```
+
+   | Log file | What it shows |
+   | :--- | :--- |
+   | `gateway.log` | API requests from Open WebUI and the responses |
+   | `geniex.stdout.log`, `geniex.stderr.log` | Model loading and inference output from GenieX |
+   | `lifecycle.log` | Startup and shutdown steps |

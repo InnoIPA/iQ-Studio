@@ -53,23 +53,15 @@ cd iQ-Studio
 
 # 30-Second Demo
 
-With the platform booted and iQ-Studio installed, two commands are enough to see a vision-language model running on a live UVC Camera feed. For the detailed walkthrough, see [iQS-VLM](./tutorials/applications/iqs-vlm/README.md).
-
-The demo consists of two separate services, `OGenie` and `iqs-vlm-demo`. Each runs in its own terminal, so please open two terminals and run one command in each.
-
-> **Important:** Make sure the `OGenie` server is up and running before you start `iqs-vlm-demo`.
-
-In Terminal 1, launch the OGenie API server:
-
-```bash
-iqs-launcher --autotag iqs-ogenie
-```
-
-In Terminal 2, display VLM predictions on the monitor in real time:
+With the platform booted and iQ-Studio installed, one command is enough to see a vision-language model, powered by [GenieX](https://github.com/qualcomm/GenieX), describe a live UVC Camera feed on the monitor in real time:
 
 ```bash
 iqs-launcher --autotag iqs-vlm-demo
 ```
+
+This starts **Qwen3-VL-4B** on the NPU. To run **LFM2.5-VL-450M** on the NPU, CPU, GPU or Hybrid backend instead, see the detailed walkthrough in [iQS-VLM](./tutorials/applications/iqs-vlm/README.md).
+
+To stop the demo, press `q` in the dashboard window or `Ctrl+C` in the terminal.
 
 <br />
 <div align="center"><img width="100%" height="100%" src="./tutorials/applications/iqs-vlm/fig/vlm-demo.gif"></div>
@@ -148,10 +140,10 @@ iQ Studio resources are grouped into categories based on functionality:
       <td>
         <ul>
           <li><a href="./tutorials/sdks/README.md">SDKs Overview</a></li>
-          <li><a href="./tutorials/sdks/iqs-vlm/README.md">iQS-VLM: How to Interact with the OGenie Server through Open WebUI</a></li>
+          <li><a href="./tutorials/sdks/iqs-vlm/README.md">iQS-VLM: Chat with the VLM through Open WebUI</a></li>
           <li><a href="./tutorials/sdks/iqs-streampipe/README.md">iQS-Streampipe: How to Change the Custom Model and Video Source</a></li>
           <li><a href="./tutorials/sdks/iqs-qvadk/README.md">iQS-QVADK: How to Switch and Run the Applications</a></li>
-          <li><a href="./tutorials/sdks/iqs-ogenie/README.md">iQS-OGenie: Run Your Own Demo with OGenie Server</a></li>
+          <li><a href="./tutorials/sdks/geniex/README.md">GenieX: Run Your Own LLM/VLM on the Platform</a></li>
         </ul>
       </td>
     </tr>
@@ -163,6 +155,7 @@ iQ Studio resources are grouped into categories based on functionality:
           <li><a href="./benchmarks/README.md">Benchmarks Overview</a></li>
           <li><a href="./benchmarks/innoppe/README.md">InnoPPE Benchmark</a></li>
           <li><a href="./benchmarks/iqs-streampipe/README.md">Multi-stream Inference Status</a></li>
+          <li><a href="./benchmarks/multistream/README.md">Multi-stream Scaling Across Resolutions</a></li>
           <li><a href="./benchmarks/perception_model/README.md">Perception AI Benchmark</a></li>
         </ul>
       </td>
@@ -184,7 +177,7 @@ What runs on the platform, from hardware up to the applications:
 
 - **Hardware & Firmware**: [Qualcomm Dragonwing QCS9075 SoC](https://www.innodisk.com/en/products/computing/qualcomm-solution/exmp-q911) and low-level firmware.
 - **Kernel Space**: Powered by [Qualcomm Linux](https://www.qualcomm.com/developer/software/qualcomm-linux), integrated with our custom [Inno DTB/drivers and Yocto environments](https://github.com/InnoIPA/meta-iQ__manifest).
-- **User Space**: Seamlessly supports 3rd-party LLM SDKs, device management ([iCAP](https://www.innodisk.com/en/products/software-icap)), and inno AVL. At the very top sits the **[iQS-App layer](#explore-documentation--resources)** (VLM, Streampipe, YOLO, OGenie).
+- **User Space**: Seamlessly supports 3rd-party LLM SDKs, device management ([iCAP](https://www.innodisk.com/en/products/software-icap)), and inno AVL. At the very top sits the **[iQS-App layer](#explore-documentation--resources)** (VLM, Streampipe, YOLO).
 
 ## How the Software Is Built: From Upstream to iQ-Studio
 

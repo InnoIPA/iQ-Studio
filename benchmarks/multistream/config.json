@@ -1,0 +1,14 @@
+{
+    "app_name": "ppe",
+    "layout": "balance",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "streams": [
+        {
+            "yolo_model": "models/tflite/yolo26n_ppe_v73_int8.tflite",
+            "bbox_color": [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255]],
+            "source_path": "videos/adb/ppe/road.mp4"
+        }
+    ]
+}

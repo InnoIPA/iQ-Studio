@@ -120,6 +120,7 @@ iQ Studio resources are grouped into categories based on functionality:
           <li><a href="./tutorials/applications/iqs-vlm/README.md">iQS-VLM</a></li>
           <li><a href="./tutorials/applications/iqs-streampipe/README.md">iQS-Streampipe</a></li>
           <li><a href="./tutorials/applications/iqs-yolov10n/README.md">YOLOv10n INT8 Inference on GPU and NPU</a></li>
+          <li><a href="./tutorials/applications/iqs-qvadk/README.md">iQS-QVADK</a></li>
         </ul>
       </td>
     </tr>
@@ -141,6 +142,7 @@ iQ Studio resources are grouped into categories based on functionality:
           <li><a href="./tutorials/sdks/README.md">SDKs Overview</a></li>
           <li><a href="./tutorials/sdks/iqs-vlm/README.md">iQS-VLM: Chat with the VLM through Open WebUI</a></li>
           <li><a href="./tutorials/sdks/iqs-streampipe/README.md">iQS-Streampipe: How to Change the Custom Model and Video Source</a></li>
+          <li><a href="./tutorials/sdks/iqs-qvadk/README.md">iQS-QVADK: How to Switch and Run the Applications</a></li>
           <li><a href="./tutorials/sdks/geniex/README.md">GenieX: Run Your Own LLM/VLM on the Platform</a></li>
         </ul>
       </td>

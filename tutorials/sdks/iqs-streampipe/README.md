@@ -18,6 +18,7 @@ In this section, we describe how to use custom models and video inputs with iqs-
 1. At least one UVC camera
     - 1080p/30fps (1920x1080 pixels)
     - MJPEG compression format
+    - For example, this Innodisk [USB camera](https://www.innodisk.com/en/products/camera/usb-20/ev2u-ssm1-rlcf).
     > Due to limited bandwidth, do not use more than 3 UVC cameras at once.
 2. At least one MP4 video uses the H.264 codec.
 

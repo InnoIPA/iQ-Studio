@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 490" width="1400" height="490" font-family="DejaVu Sans, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f1f3d"/>
+    </marker>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#ff9a5a" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="490" fill="#f0f2f8"/>
+
+  <!-- Docker container -->
+  <rect x="20" y="20" width="1360" height="450" rx="14" fill="none" stroke="#5b4bb7" stroke-width="2" stroke-dasharray="10 6"/>
+  <text x="40" y="48" font-size="17" font-weight="bold" fill="#3b2a8f">Docker container: iqs-qvadk   (started by iqs-launcher --autotag iqs-qvadk)</text>
+
+  <!-- Column titles -->
+  <g font-size="15" fill="#1f1f3d" text-anchor="middle">
+    <text x="115" y="95">Input</text>
+    <text x="280" y="95">Decode / Capture</text>
+    <text x="465" y="95">AI Inference (NPU)</text>
+    <text x="650" y="95">Overlay</text>
+    <text x="870" y="95">Compose</text>
+    <text x="1055" y="95">Display</text>
+    <text x="1260" y="95">Output</text>
+  </g>
+
+  <!-- Row 0 -->
+  <g font-size="14" fill="#ffffff" text-anchor="middle" filter="url(#glow)">
+    <rect x="40" y="115" width="150" height="56" fill="#2a0f7a"/>
+    <text x="115" y="140">UVC / GMSL camera</text><text x="115" y="158" font-size="12">(or video file)</text>
+    <rect x="215" y="115" width="130" height="56" fill="#2a0f7a"/>
+    <text x="280" y="148">Decode / Capture</text>
+    <rect x="370" y="115" width="190" height="56" fill="#2a0f7a"/>
+    <text x="465" y="148">CV model</text>
+    <rect x="585" y="115" width="130" height="56" fill="#2a0f7a"/>
+    <text x="650" y="148">Overlay</text>
+  </g>
+  <!-- Row 1 -->
+  <g font-size="14" fill="#ffffff" text-anchor="middle" filter="url(#glow)">
+    <rect x="40" y="195" width="150" height="56" fill="#2a0f7a"/>
+    <text x="115" y="228">Video file</text>
+    <rect x="215" y="195" width="130" height="56" fill="#2a0f7a"/>
+    <text x="280" y="228">Decode</text>
+    <rect x="370" y="195" width="190" height="56" fill="#2a0f7a"/>
+    <text x="465" y="228">CV model</text>
+    <rect x="585" y="195" width="130" height="56" fill="#2a0f7a"/>
+    <text x="650" y="228">Overlay</text>
+  </g>
+  <!-- Row 8 -->
+  <g font-size="14" fill="#ffffff" text-anchor="middle" filter="url(#glow)">
+    <rect x="40" y="345" width="150" height="56" fill="#2a0f7a"/>
+    <text x="115" y="378">Video file</text>
+    <rect x="215" y="345" width="130" height="56" fill="#2a0f7a"/>
+    <text x="280" y="378">Decode</text>
+    <rect x="370" y="345" width="190" height="56" fill="#2a0f7a"/>
+    <text x="465" y="378">CV model</text>
+    <rect x="585" y="345" width="130" height="56" fill="#2a0f7a"/>
+    <text x="650" y="378">Overlay</text>
+  </g>
+
+  <!-- Ellipsis -->
+  <g fill="#1f1f3d">
+    <circle cx="465" cy="285" r="3"/><circle cx="465" cy="305" r="3"/><circle cx="465" cy="325" r="3"/>
+    <circle cx="115" cy="285" r="3"/><circle cx="115" cy="305" r="3"/><circle cx="115" cy="325" r="3"/>
+  </g>
+
+  <!-- Arrows inside rows -->
+  <g stroke="#1f1f3d" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M190,143 H213"/><path d="M345,143 H368"/><path d="M560,143 H583"/>
+    <path d="M190,223 H213"/><path d="M345,223 H368"/><path d="M560,223 H583"/>
+    <path d="M190,373 H213"/><path d="M345,373 H368"/><path d="M560,373 H583"/>
+  </g>
+
+  <!-- Overlay -> Composer -->
+  <g stroke="#1f1f3d" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M715,143 H798"/><path d="M715,223 H798"/><path d="M715,373 H798"/>
+  </g>
+
+  <!-- Composer -> Sink -> Monitor -->
+  <g font-size="15" fill="#ffffff" text-anchor="middle">
+    <rect x="800" y="115" width="140" height="286" fill="#2a0f7a"/>
+    <text x="870" y="262">Composer</text>
+    <rect x="990" y="230" width="130" height="56" fill="#2a0f7a"/>
+    <text x="1055" y="263">waylandsink</text>
+  </g>
+  <g stroke="#1f1f3d" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M940,258 H988"/><path d="M1120,258 H1178"/>
+  </g>
+
+  <!-- Monitor -->
+  <rect x="1180" y="175" width="170" height="110" rx="6" fill="#1b1b2f" stroke="#1f1f3d" stroke-width="3"/>
+  <rect x="1190" y="185" width="150" height="90" fill="#2e4f8f"/>
+  <g stroke="#7fe08a" stroke-width="2" fill="none">
+    <rect x="1200" y="195" width="40" height="30"/><rect x="1250" y="195" width="40" height="30"/>
+    <rect x="1200" y="235" width="40" height="30"/><rect x="1250" y="235" width="40" height="30"/>
+  </g>
+  <rect x="1245" y="285" width="30" height="14" fill="#1b1b2f"/>
+  <rect x="1225" y="299" width="70" height="8" rx="3" fill="#1b1b2f"/>
+  <text x="1265" y="330" font-size="14" fill="#1f1f3d" text-anchor="middle">Monitor</text>
+  <text x="1265" y="348" font-size="12" fill="#1f1f3d" text-anchor="middle">detection results</text>
+
+</svg>

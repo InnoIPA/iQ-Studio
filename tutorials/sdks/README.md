@@ -15,5 +15,6 @@ Read these after running the matching application — each SDK guide shows how t
 | [GenieX](./geniex/README.md) | Run your own LLM/VLM from the CLI, an OpenAI-compatible server or Python. |
 | [iQS-VLM SDK](./iqs-vlm/README.md) | Chat with the VLM through Open WebUI. |
 | [iQS-Streampipe SDK](./iqs-streampipe/README.md) | Change the model and video source for the pipeline. |
+| [iQS-QVADK SDK](./iqs-qvadk/README.md) | Switch between the QVADK applications and run each of them. |
 
 

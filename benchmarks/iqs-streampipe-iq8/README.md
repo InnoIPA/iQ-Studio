@@ -168,14 +168,14 @@ Coming soon.
 1. Go to the benchmark directory of the iQ-Studio repository and download the archive:
 
    ```bash
-   $ cd benchmarks/iqs-streampipe-iq8
-   $ wget https://github.com/InnoIPA/iQ-Studio/releases/download/v0.0.X/benchmark_orinnx_sources.tar.gz
+   cd benchmarks/iqs-streampipe-iq8
+   wget https://github.com/InnoIPA/iQ-Studio/releases/download/v0.0.X/benchmark_orinnx_sources.tar.gz
    ```
 
 2. In the same directory, extract the NVIDIA benchmark archive:
 
    ```bash
-   $ tar xzf benchmark_orinnx_sources.tar.gz --strip-components=1
+   tar xzf benchmark_orinnx_sources.tar.gz --strip-components=1
    ```
 
    This provides the `videos/` directory, `config_nv.json`, and the
@@ -184,8 +184,8 @@ Coming soon.
 3. Set the power mode to MAXN and check it:
 
    ```bash
-   $ sudo nvpmodel -m 0
-   $ nvpmodel -q
+   sudo nvpmodel -m 0
+   nvpmodel -q
    ```
 
    The output should be:
@@ -198,13 +198,13 @@ Coming soon.
 4. Install the Python virtual environment package if it is missing. The script uses it to keep its Python packages separate from the system (the first run also downloads them, so it needs network access):
 
    ```bash
-   $ sudo apt install python3-venv
+   sudo apt install python3-venv
    ```
 
 5. From a desktop session on the Jetson, run the benchmark script with the NVIDIA platform selected:
 
    ```bash
-   $ ./scripts/auto_benchmark.sh \
+   ./scripts/auto_benchmark.sh \
        --platform nv \
        --channels 9 \
        --video <your video path> \

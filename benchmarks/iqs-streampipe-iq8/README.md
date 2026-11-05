@@ -31,16 +31,16 @@ a general hardware performance ranking.
 
 The benchmark uses two edge AI platforms with the configurations shown below.
 
-| **Platform**        | NVIDIA Jetson Orin NX 16GB (Aetina AIE-CN43-1-S1-F) | IQ-8275                                      |
-|:--------------------|:------------------------------------------------------|:---------------------------------------------|
-| **SoM / SoC**       | NVIDIA Jetson Orin NX 16GB (Tegra234)                 | Qualcomm Dragonwing IQ-8275 (QCS8275)        |
-| **Power plan**      | MAXN                                                  | Normal                                       |
-| **Processor cores** | 8 (8× Cortex-A78AE)                                   | 8 (4× Cortex-A78C + 4× Cortex-A55)           |
-| **AI accelerator**  | GPU                                                   | NPU (Qualcomm Hexagon)                       |
-| **AI runtime**      | TensorRT 10.3.0.30                                    | TFLite 2.16.1 (QNN 2.50)                     |
-| **AI performance**  | 100 TOPS                                              | Up to 40 TOPS (INT8)                         |
-| **BSP / SDK**       | L4T R36.4.3                                           | Coming soon                                  |
-| **Linux kernel**    | 5.15.148-tegra (PREEMPT)                              | Coming soon                                  |
+| **Platform**        | NVIDIA Jetson Orin NX 16GB | IQ-8275                               |
+|:--------------------|:---------------------------|:--------------------------------------|
+| **SoM / SoC**       | NVIDIA Jetson Orin NX 16GB | Qualcomm Dragonwing IQ-8275 (QCS8275) |
+| **Power plan**      | MAXN                       | Normal                                |
+| **Processor cores** | 8 (8× Cortex-A78AE)        | 8 (4× Cortex-A78C + 4× Cortex-A55)    |
+| **AI accelerator**  | GPU                        | NPU (Qualcomm Hexagon)                |
+| **AI runtime**      | TensorRT 10.3.0.30         | TFLite 2.16.1 (QNN 2.50)              |
+| **AI performance**  | 100 TOPS                   | Up to 40 TOPS (INT8)                  |
+| **BSP / SDK**       | L4T R36.4.3                | Coming soon                           |
+| **Linux kernel**    | 5.15.148-tegra (PREEMPT)   | Coming soon                           |
 
 ## AI model
 
@@ -169,7 +169,7 @@ Coming soon.
 
    ```bash
    cd benchmarks/iqs-streampipe-iq8
-   wget https://github.com/InnoIPA/iQ-Studio/releases/download/v0.0.X/benchmark_orinnx_sources.tar.gz
+   wget https://github.com/InnoIPA/iQ-Studio/releases/download/v0.0.12/benchmark_orinnx_sources.tar.gz
    ```
 
 2. In the same directory, extract the NVIDIA benchmark archive:

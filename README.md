@@ -230,7 +230,7 @@ The BSP version number reads as `vMAJOR.MINOR.PATCH`:
 
 Besides the Yocto-based Innodisk BSP, Innodisk also provides integrated [Ubuntu images](https://ubuntu.com/download/qualcomm-iot#evaluation-kit) for development.
 
-> Note: To keep all IO functions working correctly, use the Innodisk-provided Ubuntu image. See [InnoIPA/iQ-ubuntu__manifest](https://github.com/InnoIPA/iQ-ubuntu__manifest) for the available image versions. The official Ubuntu image from Qualcomm can boot on the platform but does not guarantee full IO support.
+> Note: To keep all IO functions working correctly, use the Innodisk-provided Ubuntu image. See [InnoIPA/iQ-ubuntu__manifest](https://github.com/InnoIPA/iQ-ubuntu__manifest) (no longer maintained since v2.5.1; merged into [InnoIPA/meta-iQ__manifest](https://github.com/InnoIPA/meta-iQ__manifest)) for the available image versions. The official Ubuntu image from Qualcomm can boot on the platform but does not guarantee full IO support.
 
 # In the News
 
@@ -242,7 +242,6 @@ iQ-Studio integrates with several sibling repositories. Each owns a specific lay
 
 - [InnoIPA/meta-iQ__manifest](https://github.com/InnoIPA/meta-iQ__manifest) — Yocto-based BSP baseline for the platform.
 - [InnoIPA/iQ-Cam__manifest](https://github.com/InnoIPA/iQ-Cam__manifest) — Camera driver patches consumed by the AVL tutorials.
-- [InnoIPA/iQ-ubuntu__manifest](https://github.com/InnoIPA/iQ-ubuntu__manifest) — Reference for Innodisk-provided Ubuntu image versions.
 - [InnoIPA/iQ-Foundry](https://github.com/InnoIPA/iQ-Foundry) — End-to-end model quantization and on-device validation for custom models.
 
 # Changelog

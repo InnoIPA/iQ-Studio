@@ -4,7 +4,12 @@ This guide provides instructions for flashing or updating the system image on th
 
 Use this guide when you need to re-flash the system image, switch OS, or recover a corrupted system. To update firmware or OS on a deployed device without re-flashing, see the [Qualcomm OTA Guide](../ota/README.md) instead.
 
-To obtain an image package, please contact Innodisk sales. We mainly provide Yocto Linux images, built from [meta-iQ__manifest](https://github.com/InnoIPA/meta-iQ__manifest). If you want to run Ubuntu and keep all IO functions working correctly, please contact Innodisk sales to obtain a validated Innodisk-ported image — see [iQ-ubuntu__manifest](https://github.com/InnoIPA/iQ-ubuntu__manifest) for the available versions.
+To obtain an image package, please contact Innodisk sales. We mainly provide Yocto Linux images, built from [meta-iQ__manifest](https://github.com/InnoIPA/meta-iQ__manifest). Refer to that repository for the released BSP versions and the image build details.
+
+For Ubuntu, you can choose either of the following:
+
+- Contact Innodisk sales to obtain a validated Innodisk-ported image — see [iQ-ubuntu__manifest](https://github.com/InnoIPA/iQ-ubuntu__manifest) (no longer maintained since v2.5.1; merged into meta-iQ__manifest) for the available versions.
+- Build the Ubuntu image yourself from the Innodisk image package by following [recipes-ubuntu/README.md](https://github.com/InnoIPA/meta-iQ__manifest/blob/main/recipes-ubuntu/README.md) in meta-iQ__manifest.
 
 > **Note**
 > - Yocto Linux and Ubuntu images are flashed with exactly the same procedure below.

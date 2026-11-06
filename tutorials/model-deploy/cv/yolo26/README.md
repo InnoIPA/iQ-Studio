@@ -34,7 +34,7 @@ Connect the EXMP-Q911 target to the host with a USB-C cable.
 
 ADB reference: [adb overview](https://developer.android.com/tools/adb). No steps are required from that page for this tutorial.
 
-For more about ADB interaction, see [Interact with the system using adb](../../../starting-guides/q911/README.md#interact-with-the-system-using-adb-over-usb-type-c).
+For more about ADB interaction, see [Interact with the system using adb](../../../starting-guides/q911/yocto.md#interact-with-the-system).
 
 ## Step 2. Clone the Repository and Prepare the Host
 

@@ -1,6 +1,6 @@
 # Q911 — Ubuntu Interaction Guide
 
-This guide covers system interaction on Ubuntu, using the Innodisk-ported image tracked in [iQ-ubuntu__manifest](https://github.com/InnoIPA/iQ-ubuntu__manifest).
+This guide covers system interaction on Ubuntu, using the Innodisk-ported image tracked in [iQ-ubuntu__manifest](https://github.com/InnoIPA/iQ-ubuntu__manifest) (no longer maintained since v2.5.1; merged into [meta-iQ__manifest](https://github.com/InnoIPA/meta-iQ__manifest)).
 
 > Prerequisite: flash an Innodisk-provided Ubuntu image via the [Q911 Image Flashing Guide](../flash-image/README.md), then complete [Prepare Required Items](./README.md#step-1-prepare-required-items) and [Power On](./README.md#step-2-power-on) in the Q911 Quick Start Guide.
 

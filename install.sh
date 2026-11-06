@@ -18,7 +18,7 @@ INSTALL_PATH="/usr/local/bin"
 PYTHON_VENV="$ROOT/iqs-venv"
 
 # --- Check BSP version ---
-# The applications in this repository are validated on BSP 2.5.x (QLI 2.0) only.
+# The applications in this repository require BSP v2.5.0 or later.
 # Override BSP_VERSION_FILE only for testing.
 BSP_VERSION_FILE="${BSP_VERSION_FILE:-/etc/innodisk/BSP-version}"
 REQUIRED_BSP="2.5"
@@ -35,8 +35,14 @@ if [ -z "$BSP_VERSION" ]; then
     exit 1
 fi
 
-if [ "$BSP_VERSION" != "$REQUIRED_BSP" ]; then
-    echo "Error: BSP $BSP_VERSION is not supported. iQ-Studio requires BSP $REQUIRED_BSP.x." >&2
+# Compare major.minor numerically so that later BSP versions (e.g. 2.10, 3.0) pass.
+BSP_MAJOR="${BSP_VERSION%%.*}"
+BSP_MINOR="${BSP_VERSION#*.}"
+REQ_MAJOR="${REQUIRED_BSP%%.*}"
+REQ_MINOR="${REQUIRED_BSP#*.}"
+if [ "$BSP_MAJOR" -lt "$REQ_MAJOR" ] || { [ "$BSP_MAJOR" -eq "$REQ_MAJOR" ] && [ "$BSP_MINOR" -lt "$REQ_MINOR" ]; }; then
+    echo "Error: BSP $BSP_VERSION is not supported. iQ-Studio requires BSP v$REQUIRED_BSP.0 or later." >&2
+    echo "For an earlier BSP, run 'git checkout v0.0.10' in the iQ-Studio directory and run ./install.sh again." >&2
     exit 1
 fi
 

@@ -80,7 +80,7 @@ bash tools/compress_gifs.sh --apply <path>   # limit scope to a path
     *   **Example Output**:
         ```text
         FILE: README.md
-          # iQ Studio
+          # iQ-Studio
           ## Core Software Stack & Architecture
           ## How to Deploy
         ```

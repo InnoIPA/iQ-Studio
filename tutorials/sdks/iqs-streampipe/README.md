@@ -11,13 +11,24 @@ Please refer to the `tutorials/applications/iqs-streampipe` to learn how to run 
 
 In this section, we describe how to use custom models and video inputs with iqs-streampipe. 
 
-> Note: The latest iQ-Studio requires BSP 2.5.x (QLI 2.0). On BSP 2.3.x (QLI 1.8), use tag `v0.0.10` or earlier. See the **Supported Versions** section of the [application tutorials](../../applications/README.md).
+## Supported Versions
+
+Choose the iQ-Studio version that matches your platform. To check your BSP version, run `cat /etc/innodisk/BSP-version` on the platform.
+
+| Your platform | iQ-Studio version |
+| :--- | :--- |
+| BSP v2.5.0 or later | `v0.0.11` or later |
+| BSP earlier than v2.5.0 | `v0.0.10` |
+| Ubuntu image `x09` | `v0.0.10` |
+
+For `v0.0.10`, run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. To return to the latest version, run `git checkout main`.
 
 ## How to Deploy
 
 1. At least one UVC camera
     - 1080p/30fps (1920x1080 pixels)
     - MJPEG compression format
+    - For example, this Innodisk [USB camera](https://www.innodisk.com/en/products/camera/usb-20/ev2u-ssm1-rlcf).
     > Due to limited bandwidth, do not use more than 3 UVC cameras at once.
 2. At least one MP4 video uses the H.264 codec.
 

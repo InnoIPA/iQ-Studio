@@ -13,6 +13,7 @@
 [![Deployments](https://img.shields.io/badge/Deployments-00aa13?style=flat-square)](#-real-world-deployments)
 [![Events & Media](https://img.shields.io/badge/Events%20%26%20Media-00aa13?style=flat-square)](#-events--media-coverage)
 [![Reviews & Partners](https://img.shields.io/badge/Reviews%20%26%20Partners-00aa13?style=flat-square)](#-reviews--ecosystem-partners)
+[![Workshops](https://img.shields.io/badge/Workshops-00aa13?style=flat-square)](#%EF%B8%8F-hands-on-workshops)
 
 </div>
 
@@ -20,13 +21,14 @@
 
 ## About This Page
 
-This page collects media coverage, deployment stories, and ecosystem resources about the platforms iQ-Studio runs on. It helps you answer three questions:
+This page collects media coverage, deployment stories, and ecosystem resources about the platforms iQ-Studio runs on. It helps you answer four questions:
 
 | If you want to know... | Go to |
 | :--- | :--- |
 | Where the platform is already running in the field | [Real-World Deployments](#-real-world-deployments) |
 | What was announced and shown at exhibitions | [Events & Media Coverage](#-events--media-coverage) |
 | How ecosystem partners use and describe the platform | [Reviews & Ecosystem Partners](#-reviews--ecosystem-partners) |
+| Which hands-on workshops we have run | [Hands-On Workshops](#%EF%B8%8F-hands-on-workshops) |
 
 ---
 
@@ -121,6 +123,44 @@ Case studies and technical documentation from ecosystem partners such as Qualcom
       -- | EyePop.ai<br>
       <strong>Real-Time Computer Vision at the Edge: EyePop.ai on Innodisk Dragonwing Platforms</strong><br>
       <a href="https://www.eyepop.ai/deployments/dragonwing-edge-ai-eyepop-ai-on-innodisk"><img src="https://img.shields.io/badge/Read%20More%20%3E-00aa13?style=flat-square" alt="Read More >"></a>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🛠️ Hands-On Workshops
+
+Three hands-on workshops where attendees ran iQ-Studio on Innodisk Dragonwing platforms.
+
+<table>
+  <tr>
+    <td width="220" valign="top">
+      <a href="https://innoipa.github.io/inno_qcom_hands_on_workshop_2.0/"><img src="./fig/workshop-session-3.jpg" width="200" alt="Attendee running multi-stream inference on the IQ9 at the Xizhi HQ workshop"></a>
+    </td>
+    <td valign="top">
+      October 14, 2026 | Innodisk HQ, Xizhi<br>
+      <strong>Innodisk × Qualcomm Hands-On Workshop: Accelerating Edge AI Deployment</strong><br>
+      <a href="https://innoipa.github.io/inno_qcom_hands_on_workshop_2.0/"><img src="https://img.shields.io/badge/Read%20More%20%3E-00aa13?style=flat-square" alt="Read More >"></a>
+    </td>
+  </tr>
+  <tr>
+    <td width="220" valign="top">
+      <img src="./fig/workshop-session-2.jpg" width="200" alt="Innodisk presenting multi-stream inference at the Watch-Me-Build event in Santa Clara">
+    </td>
+    <td valign="top">
+      September 14, 2026 | Santa Clara, USA<br>
+      <strong>Bringing Vision Intelligence to the Edge, Live in Santa Clara</strong>
+    </td>
+  </tr>
+  <tr>
+    <td width="220" valign="top">
+      <a href="https://innoipa.github.io/inno_qcom_hands_on_workshop/"><img src="./fig/workshop-session-1.jpg" width="200" alt="Dragonwing board set up for the Qualcomm AI Hub and YOLO26 workshop"></a>
+    </td>
+    <td valign="top">
+      July 30, 2026 | Innodisk × Qualcomm<br>
+      <strong>Qualcomm AI Hub × YOLO26 BYOM Hands-On Workshop</strong><br>
+      <a href="https://innoipa.github.io/inno_qcom_hands_on_workshop/"><img src="https://img.shields.io/badge/Read%20More%20%3E-00aa13?style=flat-square" alt="Read More >"></a>
     </td>
   </tr>
 </table>

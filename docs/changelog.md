@@ -1,5 +1,29 @@
 # Changelogs
 
+## v0.0.12
+### Feat
+
+- Added the iQS-QVADK application and an iQS-QVADK SDK guide, covering how to switch between the runnable apps with UVC and GMSL cameras
+- Added a GenieX-based iQS-VLM demo with two models (Qwen3-VL-4B and LFM2.5-VL-450M) on the NPU, CPU, GPU and Hybrid backends, plus a chat mode through Open WebUI
+- Added a GenieX SDK guide for running your own LLM or VLM on the platform
+- Added a Multi-stream Scaling Across Resolutions benchmark on EXEC-Q911, with sample configs and a guide for using your own video
+- Added `binaries/docker-images/README.md` explaining where to place the Docker image `.tar` for offline mode
+- Added a Supported Versions table to the entry README and the application and SDK guides, mapping BSP v2.5.0 or later to `v0.0.12` or later, BSP earlier than v2.5.0 and Ubuntu image `x09` to `v0.0.10`
+- Added the two Ubuntu options (Innodisk-provided image or a self-packaged image) and the `meta-iQ__manifest` reference to the Q911 Image Flashing Guide
+- Added a Hands-On Workshops section to the In the News page covering the three workshops held in 2026
+
+### Refactor
+
+- Replaced the OGenie SDK guide with the GenieX guides; iQ-Studio versions earlier than `v0.0.12` keep the earlier OGenie-based demo
+- Removed the unused `--ipk` option from `iqs-launcher`; offline mode now uses only the Docker image `.tar`
+- Relaxed the `install.sh` BSP check to accept BSP v2.5.0 or later, and pointed earlier BSP versions to `v0.0.10`
+- Marked `iQ-ubuntu__manifest` as no longer maintained since v2.5.1 and merged into `meta-iQ__manifest`
+
+### Fixes
+
+- Fixed `iqs-launcher` to give clear errors and a failing exit code for common mistakes
+- Corrected broken links in the OTA, YOLO26 and iqf-models pages, and the missing code-block tag in the streampipe benchmark
+
 ## v0.0.11
 ### Feat
 
@@ -7,6 +31,7 @@
 - Added a BSP version check to `install.sh` that requires BSP 2.5.x and points to the Innodisk BSP manifest when the image is missing or unsupported
 - Added Supported Versions guidance to the application and SDK tutorials, mapping BSP 2.5.x (QLI 2.0) to the latest release and BSP 2.3.x (QLI 1.8) to tag `v0.0.10` or earlier, with a matching BSP troubleshooting entry in `docs/how-to-use-iqs-launcher.md`
 - Added an In the News page collecting media coverage, deployments, and ecosystem case studies, linked from the entry README
+- Added a Hands-On Workshops section to the In the News page covering the three workshops held in 2026
 - Added an upstream-to-iQ-Studio layer table, a BSP release roadmap, and BSP version numbering to the entry README
 - Added a two-terminal reminder to the iQS-VLM guide and the 30-Second Demo, noting that `OGenie` must be running before `iqs-vlm-demo`
 

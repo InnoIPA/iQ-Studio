@@ -2,42 +2,43 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-import logging
-
-def get_system_bsp_version():
-    """
-    Gets the system's BSP version from /etc/innodisk/BSP-version.
-    
-    Raises:
-        FileNotFoundError: If the BSP version file does not exist.
-        ValueError: If the BSP version file is empty.
-    
-    Returns:
-        str: The BSP version string.
-    """
-    # bsp_version_file = "/etc/innodisk/BSP-version"
-    # try:
-    #     with open(bsp_version_file, 'r', encoding='utf-8') as f:
-    #         version = f.read().strip()
-    #         if not version:
-    #             msg = f"BSP version file is empty: {bsp_version_file}"
-    #             logging.error(msg)
-    #             raise ValueError(msg)
-    #         logging.info(f"Got BSP version: '{version}' from {bsp_version_file}")
-    #         return version
-    # except FileNotFoundError:
-    #     msg = f"Critical: BSP version file not found at: {bsp_version_file}"
-    #     logging.error(msg)
-    #     raise
-    # except Exception as e:
-    #     msg = f"An unhandled error occurred while reading BSP version: {e}"
-    #     logging.error(msg)
-    #     raise
-    return ""
-
+import subprocess
 
 def split_autotag(value: str) -> tuple[str, str]:
     name, sep, tag = value.partition(':')
     if not tag:
         tag = 'latest'
     return name, tag
+
+def join_option_value(argv: list[str], option: str) -> list[str]:
+    """Turn '--other -x' into '--other=-x'.
+
+    argparse reads a value that starts with '-' and has no space (for example
+    "--dry-run") as another option and fails with "expected one argument".
+    """
+    out = []
+    i = 0
+    while i < len(argv):
+        if argv[i] == option and i + 1 < len(argv) and argv[i + 1].startswith('-'):
+            out.append(f"{option}={argv[i + 1]}")
+            i += 2
+        else:
+            out.append(argv[i])
+            i += 1
+    return out
+
+def docker_unavailable_reason() -> "str | None":
+    """Return None when the Docker daemon answers, otherwise a short reason."""
+    try:
+        result = subprocess.run(
+            ['docker', 'info', '--format', '{{.ServerVersion}}'],
+            capture_output=True, text=True, timeout=30
+        )
+    except FileNotFoundError:
+        return "the 'docker' command was not found"
+    except subprocess.TimeoutExpired:
+        return "Docker did not answer within 30 seconds"
+    if result.returncode != 0:
+        lines = (result.stderr or result.stdout).strip().splitlines()
+        return lines[0] if lines else "Docker returned an error"
+    return None

@@ -40,17 +40,15 @@ We are using the [Ultralytics](https://docs.ultralytics.com/models/yolov10/) fra
 
 ## Supported Versions
 
-Pick the iQ-Studio version that matches your platform:
+Choose the iQ-Studio version that matches your platform. To check your BSP version, run `cat /etc/innodisk/BSP-version` on the platform.
 
 | Your platform | iQ-Studio version |
 | :--- | :--- |
-| BSP 2.5.x (QLI 2.0) | Latest (`main`) |
-| BSP 2.3.x (QLI 1.8) | Tag `v0.0.10` or earlier |
+| BSP v2.5.0 or later | `v0.0.11` or later |
+| BSP earlier than v2.5.0 | `v0.0.10` |
+| Ubuntu image `x09` | `v0.0.10` |
 
-- **Check BSP:** `cat /etc/innodisk/BSP-version`
-- **Check QLI:** `uname -a`, then look for the `qli-<version>` field.
-
-> Note: On BSP 2.3.x, run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. To return to the latest version, run `git checkout main`.
+For `v0.0.10`, run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. To return to the latest version, run `git checkout main`.
 
 ## Platform information
 

@@ -30,7 +30,7 @@ These results provide comparison data rather than a universal model ranking. Sel
 
 | Item | Configuration |
 | --- | --- |
-| Dataset | [COCO 2017 validation dataset]((https://cocodataset.org/#download) )|
+| Dataset | [COCO 2017 validation dataset](https://cocodataset.org/#download)|
 | Evaluation subset | First 300 validation images |
 | Evaluation images | 300 |
 | Confidence threshold | 0.25 |

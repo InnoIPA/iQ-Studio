@@ -17,7 +17,7 @@ connection. This guide shows how to use it from the **CLI**, as an
 > application. See it running with a live camera there, or chat with it through
 > Open WebUI in the **[iQS-VLM SDK](../iqs-vlm/README.md)**.
 
-> Note: The latest iQ-Studio requires BSP 2.5.x (QLI 2.0). On BSP 2.3.x (QLI 1.8), use tag `v0.0.10` or earlier, which uses the OGenie-based VLM demo. See the **Supported Versions** section of the [application tutorials](../../applications/README.md).
+> Note: Requires BSP v2.5.0 or later.
 
 <div align="center"><img width="80%" src="./fig/geniex-architecture.png"></div>
 <p align="center"><sub>GenieX architecture. Image: <a href="https://geniex.aihub.qualcomm.com/en/get-started/what-is-geniex">GenieX documentation</a>, © Qualcomm Technologies, Inc.</sub></p>

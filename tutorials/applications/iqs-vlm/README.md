@@ -45,17 +45,17 @@ Both runtimes are powered by [GenieX](https://github.com/qualcomm/GenieX) **v0.9
 
 ## Supported Versions
 
-Pick the iQ-Studio version that matches your platform:
+Choose the iQ-Studio version that matches your platform. To check your BSP version, run `cat /etc/innodisk/BSP-version` on the platform.
 
-| Your platform | iQ-Studio version | VLM demo |
-| :--- | :--- | :--- |
-| BSP 2.5.x (QLI 2.0) | Latest (`main`) | GenieX-based (Qwen3-VL-4B, LFM2.5-VL-450M) |
-| BSP 2.3.x (QLI 1.8) | Tag `v0.0.10` or earlier | OGenie-based (LLaVA-1.5-7B) |
+| Your platform | iQ-Studio version |
+| :--- | :--- |
+| BSP v2.5.0 or later | Latest |
+| BSP earlier than v2.5.0 | `v0.0.10` |
+| Ubuntu image `x09` | `v0.0.10` |
 
-- **Check BSP:** `cat /etc/innodisk/BSP-version`
-- **Check QLI:** `uname -a`, then look for the `qli-<version>` field.
+For `v0.0.10`, run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. To return to the latest version, run `git checkout main`.
 
-> Note: On BSP 2.3.x, run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. These older versions use the OGenie-based VLM demo, so follow the README in that checkout instead of this page. To return to the latest version, run `git checkout main`.
+This page describes the GenieX-based VLM demo. iQ-Studio versions earlier than `v0.0.12` use the earlier OGenie-based demo, so we recommend the latest version.
 
 ## What do you need?
 1. A platform: [EXMP-Q911](https://www.innodisk.com/en/products/computing/qualcomm-solution/exmp-q911), [EXEC-Q911](https://www.innodisk.com/en/products/computing/qualcomm-solution/exec-q911) or [APEX-A100](https://www.innodisk.com/en/edge-ai-systems/qualcomm-solution/apex-a100)

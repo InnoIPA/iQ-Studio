@@ -37,9 +37,17 @@ Flash an image and boot the device. See the [Starting Guides](./tutorials/starti
 Two image options are available (see [OS Images](#os-images) for details):
 
 - **Innodisk BSP (Yocto), recommended.** iQ-Studio is developed and validated on the Yocto-based BSP.
-- **Innodisk Ubuntu image.** Earlier versions have been verified to run iQ-Studio; use it only if you need an Ubuntu environment.
+- **Innodisk Ubuntu image.** iQ-Studio `v0.0.10` has been verified on Ubuntu image release `x09` (Canonical's release naming for Qualcomm platforms). Other iQ-Studio versions have not been tested on Ubuntu; use it only if you need an Ubuntu environment.
 
 ## Step 2. Install iQ Studio
+
+Choose the iQ-Studio version that matches your platform. To check your BSP version, run `cat /etc/innodisk/BSP-version` on the platform.
+
+| Your platform | iQ-Studio version |
+| :--- | :--- |
+| BSP v2.5.0 or later | Latest |
+| BSP earlier than v2.5.0 | `v0.0.10` |
+| Ubuntu image `x09` | `v0.0.10` |
 
 On the platform, run:
 
@@ -49,7 +57,7 @@ cd iQ-Studio
 ./install.sh
 ```
 
-> Note: The latest iQ-Studio requires BSP 2.5.x (QLI 2.0). On BSP 2.3.x (QLI 1.8), run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. Tag `v0.0.10` and earlier are the releases for these platforms.
+For `v0.0.10`, run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. To return to the latest version, run `git checkout main`.
 
 # 30-Second Demo
 
@@ -205,8 +213,6 @@ Each QLI release line is tied to a specific Linux kernel and Yocto Project versi
 | **6.6 LTS** | 4.0 Kirkstone | QLI 1.x |
 | **6.6 LTS** | 5.0 Scarthgap | QLI 1.x |
 | **6.18 LTS** | Wrynose (Master) | QLI 2.x |
-
-> Note: Latest iQ-Studio targets QLI 2.x (BSP 2.5.x). QLI 1.x platforms (BSP 2.3.x) use tag `v0.0.10` or earlier.
 
 > Note: For the full upstream timeline, including the Kirkstone track and Qualcomm's Mainline development branch, see the [Qualcomm Linux Roadmap](https://www.qualcomm.com/developer/software/qualcomm-linux).
 

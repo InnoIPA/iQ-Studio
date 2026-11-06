@@ -11,7 +11,17 @@ Please refer to the `tutorials/applications/iqs-streampipe` to learn how to run 
 
 In this section, we describe how to use custom models and video inputs with iqs-streampipe. 
 
-> Note: The latest iQ-Studio requires BSP 2.5.x (QLI 2.0). On BSP 2.3.x (QLI 1.8), use tag `v0.0.10` or earlier. See the **Supported Versions** section of the [application tutorials](../../applications/README.md).
+## Supported Versions
+
+Choose the iQ-Studio version that matches your platform. To check your BSP version, run `cat /etc/innodisk/BSP-version` on the platform.
+
+| Your platform | iQ-Studio version |
+| :--- | :--- |
+| BSP v2.5.0 or later | Latest |
+| BSP earlier than v2.5.0 | `v0.0.10` |
+| Ubuntu image `x09` | `v0.0.10` |
+
+For `v0.0.10`, run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. To return to the latest version, run `git checkout main`.
 
 ## How to Deploy
 

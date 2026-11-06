@@ -27,14 +27,7 @@ Other applications, such as DMS (Driver Monitoring System) and Smart City, are s
 
 ## Supported Versions
 
-Pick the iQ-Studio version that matches your platform:
-
-| Your platform | iQ-Studio version |
-| :--- | :--- |
-| BSP 2.5.x (QLI 2.0) | Latest (`main`) |
-
-- **Check BSP:** `cat /etc/innodisk/BSP-version`
-- **Check QLI:** `uname -a`, then look for the `qli-<version>` field.
+Requires BSP v2.5.0 or later.
 
 ## What You Need?
 

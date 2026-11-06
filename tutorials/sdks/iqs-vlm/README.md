@@ -7,7 +7,7 @@
 
 # iQS-VLM: Chat with the VLM through Open WebUI
 
-> Note: Try the [iQS-VLM application](../../applications/iqs-vlm/README.md) first; this guide needs BSP 2.5.x (QLI 2.0), while BSP 2.3.x (QLI 1.8) uses the OGenie-based demo on tag `v0.0.10` (see [Supported Versions](../../applications/iqs-vlm/README.md#supported-versions)).
+> Note: Try the [iQS-VLM application](../../applications/iqs-vlm/README.md) first. This guide requires BSP v2.5.0 or later.
 
 Besides the live camera demo, iQS-VLM has a chat mode. It runs the same model,
 powered by [GenieX](https://github.com/qualcomm/GenieX), behind

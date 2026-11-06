@@ -34,9 +34,10 @@ class RUN:
         return script_path
 
     def execute_script(self, component_name, *script_args):
+        """Run the application script. Return True on success, False on failure."""
         if not component_name:
             logging.error("Component name not provided.")
-            return
+            return False
         try:
             script_path = self._get_script_path(component_name)
             
@@ -52,5 +53,7 @@ class RUN:
 
             logging.info(f"Execute command: {' '.join(command)}")
             subprocess.run(command, check=True)
+            return True
         except (FileNotFoundError, subprocess.CalledProcessError) as e:
             logging.error(f"An error occurred while executing the script for component '{component_name}': {e}")
+            return False

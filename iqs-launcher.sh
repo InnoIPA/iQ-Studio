@@ -10,6 +10,13 @@ set -e
 # Get the absolute path of the script's directory to locate venv and python scripts.
 ROOT="$(dirname "$(readlink -f "$0")")"
 
+# The virtual environment is created by install.sh. Without it, tell the user what to do.
+if [ ! -f "$ROOT/iqs-venv/bin/activate" ]; then
+    echo "Error: the Python environment was not found in $ROOT/iqs-venv." >&2
+    echo "Run ./install.sh in $ROOT first." >&2
+    exit 1
+fi
+
 # Activate the Python virtual environment.
 # shellcheck source=/dev/null
 source "$ROOT/iqs-venv/bin/activate"

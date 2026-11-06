@@ -103,8 +103,8 @@ Below is an overview of how we conduct platform benchmark testing.
 
 ### EXMP-Q911 
 
-1. Install iQ Studio
-   ```
+1. Install iQ-Studio
+   ```bash
    git clone https://github.com/InnoIPA/iQ-Studio.git
    cd iQ-Studio
    ./install.sh

@@ -4,7 +4,7 @@
  This software is released under the MIT License.
  https://opensource.org/licenses/MIT
 -->
-# iQ Studio
+# iQ-Studio
 
   <br />
   <div align="center"><img width="30%" height="30%" src="./docs/fig/iq-studio-logo.png"></div>
@@ -28,9 +28,9 @@ Three common starting points. Pick the one that matches your goal today; you can
 
 # Getting Started
 
-Follow these two steps in order. Once they are done, every demo and tutorial below will run.
+Boot your platform first, then install iQ-Studio. Once both are done, every demo and tutorial below will run.
 
-## Step 1. Boot your platform
+## Boot Your Platform
 
 Flash an image and boot the device. See the [Starting Guides](./tutorials/starting-guides/README.md); for the Q911 series, start with the [EXMP-Q911 Starting Guide](./tutorials/starting-guides/q911/README.md).
 
@@ -39,13 +39,13 @@ Two image options are available (see [OS Images](#os-images) for details):
 - **Innodisk BSP (Yocto), recommended.** iQ-Studio is developed and validated on the Yocto-based BSP.
 - **Innodisk Ubuntu image.** iQ-Studio `v0.0.10` has been verified on Ubuntu image release `x09` (Canonical's release naming for Qualcomm platforms). Other iQ-Studio versions have not been tested on Ubuntu; use it only if you need an Ubuntu environment.
 
-## Step 2. Install iQ Studio
+## Install iQ-Studio
 
 Choose the iQ-Studio version that matches your platform. To check your BSP version, run `cat /etc/innodisk/BSP-version` on the platform.
 
 | Your platform | iQ-Studio version |
 | :--- | :--- |
-| BSP v2.5.0 or later | Latest |
+| BSP v2.5.0 or later | `v0.0.12` or later |
 | BSP earlier than v2.5.0 | `v0.0.10` |
 | Ubuntu image `x09` | `v0.0.10` |
 
@@ -57,7 +57,7 @@ cd iQ-Studio
 ./install.sh
 ```
 
-For `v0.0.10`, run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. To return to the latest version, run `git checkout main`.
+For `v0.0.10`, run `git checkout v0.0.10` in the `iQ-Studio` directory before `./install.sh`. To return to the latest version, run `git checkout main`. The demos and tutorials differ between versions, so on `v0.0.10` follow the README in that checkout instead of this page.
 
 # 30-Second Demo
 
@@ -81,7 +81,7 @@ For other applications and the launch commands behind them, see [Applications](.
 
 # Explore Documentation & Resources
 
-iQ Studio resources are grouped into categories based on functionality:
+iQ-Studio resources are grouped into categories based on functionality:
 
 
 <table>
@@ -222,13 +222,7 @@ Each Innodisk BSP release carries one QLI release and lands **one quarter after*
 <div align="center"><img width="80%" height="80%" src="./docs/fig/bsp-release-roadmap.png"></div>
 <br />
 
-The BSP version number reads as `vMAJOR.MINOR.PATCH`:
-
-| Field | Tracks |
-| :--- | :--- |
-| `MAJOR` | Hardware change |
-| `MINOR` | QLI version carried by the release |
-| `PATCH` | Patch level |
+For the BSP version numbering rules and release notes, see the [meta-iQ__manifest release table](https://github.com/InnoIPA/meta-iQ__manifest).
 
 > Note: Versions and dates beyond the current release are planned schedules and may change together with the [Qualcomm Linux Roadmap](https://www.qualcomm.com/developer/software/qualcomm-linux).
 
@@ -236,7 +230,7 @@ The BSP version number reads as `vMAJOR.MINOR.PATCH`:
 
 Besides the Yocto-based Innodisk BSP, Innodisk also provides integrated [Ubuntu images](https://ubuntu.com/download/qualcomm-iot#evaluation-kit) for development.
 
-> Note: To keep all IO functions working correctly, use the Innodisk-provided Ubuntu image. See [InnoIPA/iQ-ubuntu__manifest](https://github.com/InnoIPA/iQ-ubuntu__manifest) (no longer maintained since v2.5.1; merged into [InnoIPA/meta-iQ__manifest](https://github.com/InnoIPA/meta-iQ__manifest)) for the available image versions. The official Ubuntu image from Qualcomm can boot on the platform but does not guarantee full IO support.
+> Note: To keep all IO functions working correctly, use the Innodisk-provided Ubuntu image. See [InnoIPA/iQ-ubuntu__manifest](https://github.com/InnoIPA/iQ-ubuntu__manifest) (no longer maintained since v2.5.1; merged into [InnoIPA/meta-iQ__manifest](https://github.com/InnoIPA/meta-iQ__manifest)) for the available image versions. If you need your own Ubuntu image, Innodisk provides a packaging guide in [meta-iQ__manifest](https://github.com/InnoIPA/meta-iQ__manifest/blob/main/recipes-ubuntu/README.md); a self-packaged image is not validated by Innodisk, so test the IO functions yourself. The official Ubuntu image from Qualcomm can boot on the platform but does not guarantee full IO support.
 
 # In the News
 

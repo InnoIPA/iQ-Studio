@@ -44,7 +44,7 @@ Choose the iQ-Studio version that matches your platform. To check your BSP versi
 
 | Your platform | iQ-Studio version |
 | :--- | :--- |
-| BSP v2.5.0 or later | Latest |
+| BSP v2.5.0 or later | `v0.0.11` or later |
 | BSP earlier than v2.5.0 | `v0.0.10` |
 | Ubuntu image `x09` | `v0.0.10` |
 

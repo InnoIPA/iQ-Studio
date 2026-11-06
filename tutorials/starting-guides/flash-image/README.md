@@ -9,7 +9,7 @@ To obtain an image package, please contact Innodisk sales. We mainly provide Yoc
 For Ubuntu, you can choose either of the following:
 
 - Contact Innodisk sales to obtain a validated Innodisk-ported image — see [iQ-ubuntu__manifest](https://github.com/InnoIPA/iQ-ubuntu__manifest) (no longer maintained since v2.5.1; merged into meta-iQ__manifest) for the available versions.
-- Build the Ubuntu image yourself from the Innodisk image package by following [recipes-ubuntu/README.md](https://github.com/InnoIPA/meta-iQ__manifest/blob/main/recipes-ubuntu/README.md) in meta-iQ__manifest.
+- Package your own Ubuntu image from the Innodisk image package by following [recipes-ubuntu/README.md](https://github.com/InnoIPA/meta-iQ__manifest/blob/main/recipes-ubuntu/README.md) in meta-iQ__manifest. Innodisk does not validate a self-packaged image, so test the IO functions yourself.
 
 > **Note**
 > - Yocto Linux and Ubuntu images are flashed with exactly the same procedure below.

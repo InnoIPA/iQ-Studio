@@ -24,7 +24,7 @@ For Markdown work, use both `iq-studio-literacy` and `iq-studio-formatting`. For
 
 - **Show Performance, Spark Imagination**: The primary goal of iQ-Studio is to help users quickly understand and explore AI capabilities on edge hardware (e.g., Jetson, Qualcomm Dragonwing QCS9075). All development should align with making this experience seamless and inspiring.
 - **Technical Context as a Bridge**: Provide clear documentation of the software stack (SW Stack). Bridging the gap between BSP/Firmware and high-level AI applications is essential for user trust and technical clarity.
-- **Simplicity & User Experience (UX)**: Ensure the execution commands remain as simple as `./install.sh` and `iqs-launcher --autotag ...` or `--ipk ...`. Hide complex environment setups (like BSP version checking) behind robust scripts.
+- **Simplicity & User Experience (UX)**: Ensure the execution commands remain as simple as `./install.sh` and `iqs-launcher --autotag ...`. Hide complex environment setups (like BSP version checking) behind robust scripts.
 - **Documentation is a First-Class Citizen**: High-quality `README.md` files with clear instructions, tables, and images/GIFs are essential. Contributions without proper documentation are incomplete.
 - **Incremental & Safe Progress**: Avoid breaking existing offline or online demos. Ensure backward compatibility when modifying the core `iqs-launcher` or `mod/` Python modules.
 
@@ -40,7 +40,7 @@ When adding new features or applications, strictly adhere to the existing direct
   - `sdks/`: Advanced developer usage for the applications.
 - `benchmarks/`: Performance benchmarks and comparisons.
 - `docs/`: Core project documentation, topology figures, `changelog.md`, and offline package guides.
-- `mod/`: Python backend for `iqs-launcher`. Contains the logical modules for `autotag`, `run`, `ipk`, and `utils`.
+- `mod/`: Python backend for `iqs-launcher`. Contains the logical modules for `autotag`, `run`, and `utils`.
 - **Root Scripts**: `iqs-launcher.sh` (entry point), `launcher.py` (main logic), `install.sh` (setup).
 
 **Rule**: Any new application or benchmark must be categorized, linked in the main `README.md` resource table (under **Explore Documentation & Resources**), and have its own dedicated, detailed `README.md`.
@@ -48,8 +48,8 @@ When adding new features or applications, strictly adhere to the existing direct
 ## 3. Technical Standards
 
 ### Python Development (`launcher.py`, `mod/*.py`)
-- **Robustness**: Always handle environmental edge cases (e.g., missing BSP versions, missing IPK files, or lack of internet) gracefully with clear error messages using the `logging` module. Avoid raw `print()` for system-level execution messages.
-- **Modularity**: Maintain single responsibilities. `mod/autotag.py` handles image tagging, `mod/ipk.py` handles package installation, `mod/run.py` handles script execution. Do not overlap or mix these logically.
+- **Robustness**: Always handle environmental edge cases (e.g., missing BSP versions, missing offline image files, or lack of internet) gracefully with clear error messages using the `logging` module. Avoid raw `print()` for system-level execution messages.
+- **Modularity**: Maintain single responsibilities. `mod/autotag.py` handles image tagging and loading, `mod/run.py` handles script execution. Do not overlap or mix these logically.
 - **Dependencies**: Do not introduce new heavy dependencies in the core launcher unless absolutely necessary. The offline installation process must remain lightweight and viable.
 
 ### Shell Scripting (`install.sh`, `iqs-launcher.sh`)

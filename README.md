@@ -77,7 +77,7 @@ To stop the demo, press `q` in the dashboard window or `Ctrl+C` in the terminal.
 
 For other applications and the launch commands behind them, see [Applications](./tutorials/applications/README.md).
 
-> Note: `iqs-launcher` runs every iQ-Studio application by pulling (online) or loading (offline) the matching Docker image or IPK package. See [How to use iqs-launcher](./docs/how-to-use-iqs-launcher.md).
+> Note: `iqs-launcher` runs every iQ-Studio application by pulling (online) or loading (offline) the matching Docker image. See [How to use iqs-launcher](./docs/how-to-use-iqs-launcher.md).
 
 # Explore Documentation & Resources
 

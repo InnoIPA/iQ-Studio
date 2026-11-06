@@ -14,7 +14,7 @@ ROOT="$(dirname "$(readlink -f "$0")")"
 # shellcheck source=/dev/null
 source "$ROOT/iqs-venv/bin/activate"
 
-# Add the project root to PYTHONPATH so that Python can find modules like autotag, ipk, etc.
+# Add the project root to PYTHONPATH so that Python can find modules like autotag, run, etc.
 export PYTHONPATH="$ROOT:$PYTHONPATH"
 
 # Execute the main Python application, passing all command-line arguments ("$@") to it.

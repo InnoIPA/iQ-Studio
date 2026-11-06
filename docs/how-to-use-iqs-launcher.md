@@ -7,9 +7,9 @@
 
 # How to Use iqs-launcher
 
-`iqs-launcher` is the execution entry point for every application shipped with iQ-Studio. It checks the platform BSP version, locates the matching Docker image or IPK package, and runs the application. It supports both online mode (pull from Docker Hub) and offline mode (load pre-staged files).
+`iqs-launcher` is the execution entry point for every application shipped with iQ-Studio. It locates the Docker image for the application and runs it. It supports both online mode (pull from Docker Hub) and offline mode (load pre-staged files).
 
-This page covers both modes side by side. For a single end-to-end demo command, see the [Quick Start](../README.md#quick-start) in the entry page.
+This page covers both modes side by side. For a single end-to-end demo command, see the [Quick Start](../README.md#getting-started) in the entry page.
 
 ## Introduction
 
@@ -17,17 +17,16 @@ This page covers both modes side by side. For a single end-to-end demo command, 
 
 - `iqs-launcher.sh` — the shell entry point installed by `install.sh` into your `PATH`.
 - `launcher.py` — the dispatcher that parses CLI flags and routes to a module.
-- `mod/` — module-level logic: `mod/autotag.py` handles Docker images, `mod/ipk.py` handles IPK packages, `mod/run.py` executes application scripts, and `mod/utils.py` retrieves the platform BSP version.
+- `mod/` — module-level logic: `mod/autotag.py` handles Docker images, `mod/run.py` executes application scripts, and `mod/utils.py` provides helper functions such as autotag parsing.
 
 The public command surface is:
 
 ```bash
 iqs-launcher --autotag <app_name>[:<version>]    # Docker image: pull / load / run
-iqs-launcher --ipk <package_name>                # IPK package: install
 iqs-launcher --other <command>                   # Additional flags forwarded to the application
 ```
 
-`iqs-launcher` automatically detects the platform BSP version and selects the compatible image or package. You do not need to specify BSP-related flags manually.
+`iqs-launcher` does not check the BSP version. `install.sh` checks it once at installation, so choose the iQ-Studio version that matches your BSP as described in [Install iQ-Studio](../README.md#install-iq-studio).
 
 ## Online Mode
 
@@ -45,11 +44,11 @@ iqs-launcher --autotag iqs-streampipe
 iqs-launcher --autotag iqs-yolov10n
 ```
 
-To pin a specific version, append `:<version>` to the autotag value, for example `iqs-launcher --autotag iqs-yolov10n:0.0.3`. To pass extra flags to the underlying application, use `--other`, for example `iqs-launcher --autotag iqs-streampipe --other "-c config.json"`.
+To pin a specific version, append `:<version>` to the autotag value, for example `iqs-launcher --autotag iqs-yolov10n:v0.1.0`. To pass extra flags to the underlying application, use `--other`, for example `iqs-launcher --autotag iqs-streampipe --other "-c config.json"`.
 
 ## Offline Mode
 
-Use offline mode when the platform has no internet access. You pre-stage the Docker image (`.tar`) or IPK package (`.ipk`) on a host PC, transfer it to the platform, and `iqs-launcher` loads it locally.
+Use offline mode when the platform has no internet access. You pre-stage the Docker image (`.tar`) on a host PC, transfer it to the platform, and `iqs-launcher` loads it locally.
 
 <br />
 <div align="center"><img width="80%" height="80%" src="./fig/iqs-offline-flow.svg"></div>
@@ -57,9 +56,7 @@ Use offline mode when the platform has no internet access. You pre-stage the Doc
 
 ### Step 1: Download the Package on a Host PC
 
-> Notice: This step requires internet access on the host PC.
-
-**A. Docker Image (`.tar`)**
+> Notice: This step requires internet access on the host PC. If you cannot access Docker Hub, contact Innodisk to obtain the `.tar`.
 
 1. Install [skopeo](https://github.com/containers/skopeo). On an x86 Ubuntu 24.04 host:
 
@@ -96,15 +93,10 @@ Use offline mode when the platform has no internet access. You pre-stage the Doc
 
     The result is a `.tar` file ready to transfer to the platform.
 
-**B. IPK Package (`.ipk`)**
-
-1. Obtain the `.ipk` file that matches your platform BSP version.
-    > Notice: `.ipk` files are currently provided directly by Innodisk.
-
 ### Step 2: Transfer the Package to the Platform
 
 1. Prepare a USB flash drive.
-2. Copy the `.tar` or `.ipk` to the USB drive, then insert it into the platform.
+2. Copy the `.tar` to the USB drive, then insert it into the platform.
 3. Locate the USB device on the platform:
 
     ```bash
@@ -131,23 +123,15 @@ Use offline mode when the platform has no internet access. You pre-stage the Doc
     mount /dev/sdi1 workspace/usb/
     ```
 
-6. Copy the package into the iQ-Studio binaries directory.
-
-    Docker image:
+6. Copy the `.tar` into the iQ-Studio binaries directory:
 
     ```bash
     cp workspace/usb/<docker image>.tar /path/to/iQ-Studio/binaries/docker-images/
     ```
 
-    IPK:
-
-    ```bash
-    cp workspace/usb/<demo>.ipk /path/to/iQ-Studio/binaries/ipk/
-    ```
-
 7. Verify the package is in the correct location.
 
-    Docker image must be under `iQ-Studio/binaries/docker-images/`:
+    The `.tar` must be under `iQ-Studio/binaries/docker-images/`:
 
     ```text
     iQ-Studio/
@@ -156,24 +140,14 @@ Use offline mode when the platform has no internet access. You pre-stage the Doc
             └── iqs-vlm-demo.tar  <-- your .tar
     ```
 
-    IPK must be under `iQ-Studio/binaries/ipk/`:
-
-    ```text
-    iQ-Studio/
-    └── binaries/
-        └── ipk/
-            └── your-package.ipk  <-- your .ipk
-    ```
-
 ### Step 3: Launch the Application
 
-Run the same `iqs-launcher` command as in online mode. `iqs-launcher` detects the local `.tar` or `.ipk` and loads it directly without contacting Docker Hub. For application-specific usage, see the relevant page under [Applications](../tutorials/applications/README.md).
+Run the same `iqs-launcher` command as in online mode. `iqs-launcher` detects the local `.tar` and loads it directly without contacting Docker Hub. For application-specific usage, see the relevant page under [Applications](../tutorials/applications/README.md).
 
 ## Troubleshooting
 
-- **BSP version mismatch**: `iqs-launcher` aborts with a clear message when the local BSP does not match any compatible package version. Cross-check with the BSP listed in each application's tutorial. If `install.sh` rejects your BSP because it is earlier than v2.5.0, run `git checkout v0.0.10` in the `iQ-Studio` directory and install again.
+- **BSP version mismatch**: `install.sh` aborts when the BSP is earlier than v2.5.0. Run `git checkout v0.0.10` in the `iQ-Studio` directory and install again. `iqs-launcher` does not select a version automatically, so make sure the iQ-Studio version matches your BSP (see [Install iQ-Studio](../README.md#install-iq-studio)).
 - **`autotag` cannot find an image**: in online mode, verify network access from the platform. In offline mode, confirm the `.tar` is under `binaries/docker-images/` and that the filename matches the autotag value.
-- **`ipk` install fails**: confirm the `.ipk` matches the platform BSP version. IPK packages are tied to specific BSP releases.
 
 ## Related
 

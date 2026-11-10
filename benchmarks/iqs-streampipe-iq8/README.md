@@ -169,7 +169,7 @@ Coming soon.
 
    ```bash
    cd benchmarks/iqs-streampipe-iq8
-   wget https://github.com/InnoIPA/iQ-Studio/releases/download/v0.0.12/benchmark_orinnx_sources.tar.gz
+   wget https://github.com/InnoIPA/iQ-Studio/releases/download/v0.0.13/benchmark_orinnx_sources.tar.gz
    ```
 
 2. In the same directory, extract the NVIDIA benchmark archive and check its contents:

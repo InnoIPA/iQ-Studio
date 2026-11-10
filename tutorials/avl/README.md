@@ -31,6 +31,14 @@ This quick reference lists the Innodisk camera modules and embedded peripheral m
 
 > Note: Camera test reports are available in the [iQ-Cam test summary](https://github.com/InnoIPA/iQ-Cam__manifest/blob/main/doc/common/test_summary/). New reports will be added there.
 
+## Supported Camera Adapter Boards
+
+| Model | Interface | Key Specs | Deserializer |
+| --- | --- | --- | --- |
+| [EB120-1S8F](https://www.innodisk.com/en/products/camera/capture-card/eb120-1s8f) | GMSL2 | SAMTEC 120-pin x1 to GMSL2 mini FAKRA x2, up to 8 camera ports | Maxim MAX96724 x2 |
+| [EB022-2M4F](https://www.innodisk.com/en/products/camera/capture-card/eb022-2m4f) | GMSL2 | MIPI CSI-2 22-pin x2 to GMSL2 IPEX FAKRA Z x4 | Maxim MAX96724 |
+| [EB120-1S4M](https://www.innodisk.com/en/products/camera/capture-card/eb120-1s4m) | MIPI CSI-2 | SAMTEC 120-pin x1 to MIPI CSI-2 22-pin x4 | N/A |
+
 ## Supported Embedded Peripheral Modules
 
 | Model | Interface | Module Type | Key Function | Controller |

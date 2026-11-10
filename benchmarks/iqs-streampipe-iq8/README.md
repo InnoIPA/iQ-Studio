@@ -38,7 +38,7 @@ The benchmark uses two edge AI platforms with the configurations shown below.
 | **Processor cores** | 8 (8× Cortex-A78AE)        | 8 (4× Cortex-A78C + 4× Cortex-A55)    |
 | **AI accelerator**  | GPU                        | NPU (Qualcomm Hexagon)                |
 | **AI runtime**      | TensorRT 10.3.0.30         | TFLite 2.16.1 (QNN 2.50)              |
-| **AI performance**  | 100 TOPS                   | Up to 40 TOPS (INT8)                  |
+| **AI performance**  | 50 TOPS (INT8, dense)      | Up to 40 TOPS (INT8, dense)           |
 | **BSP / SDK**       | L4T R36.4.3                | Coming soon                           |
 | **Linux kernel**    | 5.15.148-tegra (PREEMPT)   | Coming soon                           |
 
@@ -62,7 +62,7 @@ The results in this report were measured with four videos, one for each resoluti
 The four videos were made from one licensed stock video from
 [Envato](https://app.envato.com/stock-video/5a08c377-3935-48d8-b0e5-741d82db817e),
 and they are not distributed with iQ-Studio. To reproduce the results, license a
-video and prepare your own copies at each resolution.
+video and prepare your own copies at each resolution. The video must be H.264 in an MP4 file.
 
 > Note: Results with a different video differ from this report, because the content, the bitrate, and the length of the video are different. To test the other resolutions, prepare your own videos and give them to the script with `--video` (see [How to Use](#how-to-use)).
 
@@ -147,13 +147,13 @@ video and prepare your own copies at each resolution.
 
 ### Observations
 
-- In the multi-channel cases at 720p and 1080p, the IQ-8275 delivers a higher per-channel FPS than the Jetson Orin NX. At 720p, the 9- and 16-channel cases are about 2.9 times higher, and at 1080p, the 9- and 16-channel cases are about 1.3 and 2.0 times higher.
-- The IQ-8275 runs the whole test range at 8.5 W to 13.9 W, while the Jetson Orin NX needs 17.5 W to 31.6 W. As a result, the IQ-8275 has the higher FPS/Watt in every measured case, from about 1.4 times to about 6.4 times.
+- In the multi-channel cases at 720p and 1080p, the IQ-8275 delivers a higher per-channel FPS than the Jetson Orin NX. At 720p, the 9- and 16-channel cases reach about 25.2 and 13.1 FPS, and at 1080p, about 10.3 and 7.4 FPS.
+- The IQ-8275 draws up to 13.9 W over the whole test range, while the Jetson Orin NX draws up to 31.6 W.
 - The Jetson Orin NX has 8× Cortex-A78AE cores, and the IQ-8275 has 4× Cortex-A78C + 4× Cortex-A55 cores. The four efficiency cores of the IQ-8275 reach high utilization first, so its overall CPU loading is higher than that of the Jetson Orin NX.
 
 ## Conclusion
 
-Both platforms follow the same pattern: per-channel FPS stays near the source rate at low channel counts, then drops as the number of channels increases. At 9 and 16 channels at 720p and 1080p, the IQ-8275 keeps a higher per-channel FPS, and it does so at less than half of the measured power. The Jetson Orin NX keeps a higher per-channel FPS at 4K and at 2K with 4 channels.
+Both platforms follow the same pattern: per-channel FPS stays near the source rate at low channel counts, then drops as the number of channels increases. Because the CPU of the IQ-8275 is less capable (four of its eight cores are efficiency cores), its per-channel FPS is lower at high resolutions (4K, and 2K with 4 channels). But in the multi-channel cases, it still performs at a good level: at 720p, 9 channels keep 25.2 FPS and 16 channels reach 13.1 FPS, and at 1080p, 9 and 16 channels reach 10.3 and 7.4 FPS, with a lower power consumption.
 
 ## How to Use
 
@@ -172,14 +172,21 @@ Coming soon.
    wget https://github.com/InnoIPA/iQ-Studio/releases/download/v0.0.12/benchmark_orinnx_sources.tar.gz
    ```
 
-2. In the same directory, extract the NVIDIA benchmark archive:
+2. In the same directory, extract the NVIDIA benchmark archive and check its contents:
 
    ```bash
    tar xzf benchmark_orinnx_sources.tar.gz --strip-components=1
+   ls -1 config_nv.json nvidia/* videos/*
    ```
 
-   This provides the `videos/` directory, `config_nv.json`, and the
-   `nvidia/streampipe_nv` binary with its engine file.
+   The output should list these files:
+
+   ```text
+   config_nv.json            # stream configuration template
+   nvidia/model_int8.engine  # TensorRT engine
+   nvidia/streampipe_nv      # streampipe executable for the NVIDIA platform
+   videos/japan_walk.mp4     # included 1080p video
+   ```
 
 3. Set the power mode to MAXN and check it:
 
@@ -207,20 +214,13 @@ Coming soon.
    ./scripts/auto_benchmark.sh \
        --platform nv \
        --channels 9 \
-       --video <your video path> \
        --test_time 420 \
        --warmup_time 300 \
-       --output ./logs/nv_1080p_9ch.txt
+       --output ./logs/nv_1080p_9ch.txt \
+       --video <your video path>   # replace with the path of your own video
    ```
 
-   The script builds the stream list from `config_nv.json`, using the number of
-   channels and the video you give. Without `--channels` and `--video`, it runs
-   `config_nv.json` as is, which is 1 channel of `videos/japan_walk.mp4`.
+   Without `--channels` and `--video`, it runs `config_nv.json` as is, which is 1 channel of
+   `videos/japan_walk.mp4`.
 
    The results are saved in the file given by `--output`. The file starts with the test settings (channels, video, warm-up, and test time), followed by the average CPU loading and memory usage, and the inference time and FPS tables. Use a different file name for each run, because the file is overwritten.
-
-> Note: `--video` is optional. Replace `<your video path>` with the path of your own video, for example to test another resolution. The video must be H.264 in an MP4 file. If `--video` is not set, the script uses the included `videos/japan_walk.mp4`.
-
-> Note: The script measures CPU loading, CPU memory, and FPS. It does not measure power. To measure power, connect your own power meter between the wall socket and the power adapter of the platform, and read it during the measurement window, which starts after the warm-up time.
-
-> Note: TensorRT may print the warning "Using an engine plan file across different models of devices is not recommended". It is a warning only and does not stop the benchmark.

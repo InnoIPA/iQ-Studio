@@ -141,6 +141,7 @@ iQ-Studio resources are grouped into categories based on functionality:
         <ul>
           <li><a href="./tutorials/model-deploy/README.md">Model Deploy Overview</a></li>
           <li><a href="./tutorials/model-deploy/cv/yolo26/README.md">Model Deploy: How to Convert, Optimize, and Perform Inference with YOLO26 Models</a></li>
+          <li><a href="./tutorials/model-deploy/iqf-model-guide/README.md">iQ-Foundry Model Selection Guide</a></li>
         </ul>
       </td>
     </tr>

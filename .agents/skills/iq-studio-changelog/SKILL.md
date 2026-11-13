@@ -24,6 +24,7 @@ Do not use this skill for commit message drafting (use `iq-studio-commit-log`) o
 - Intermediate work that was overwritten, moved, or deleted later in the same release window is invisible to the reader — drop it, even if its commit is in range.
 - Group commits by user-visible theme, not by commit count. Multiple commits that ship one capability collapse into one bullet.
 - Match the existing `docs/changelog.md` voice: short past-tense bullets, no trailing periods, no commit hashes, no PR numbers.
+- Do not name third-party vendors or competing platforms (for example NVIDIA or Jetson) in changelog bullets. When a benchmark compares against another vendor's platform, say that a comparison with another platform was added, and leave the product names to the benchmark page.
 - A bullet's section is decided by comparing the **previous tagged release** against **HEAD**, taking only the final state. A reader who upgrades from v(N-1) to v(N) experiences the delta in HEAD, not the path the commits took to get there.
 
 ## Workflow

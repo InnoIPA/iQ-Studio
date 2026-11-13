@@ -32,7 +32,7 @@ Boot your platform first, then install iQ-Studio. Once both are done, every demo
 
 ## Boot Your Platform
 
-Flash an image and boot the device. See the [Starting Guides](./tutorials/starting-guides/README.md); for the Q911 series, start with the [EXMP-Q911 Starting Guide](./tutorials/starting-guides/q911/README.md).
+Flash an image and boot the device. See the [Starting Guides](./tutorials/starting-guides/README.md); for the Q911 series, start with the [EXMP-Q911 Starting Guide](./tutorials/starting-guides/iq-9075/README.md).
 
 Two image options are available (see [OS Images](#os-images) for details):
 
@@ -102,7 +102,7 @@ iQ-Studio resources are grouped into categories based on functionality:
       <td>
         <ul>
           <li><a href="./tutorials/starting-guides/README.md">Starting Guides Overview</a></li>
-          <li><a href="./tutorials/starting-guides/q911/README.md">Q911 Quick Start Guide</a></li>
+          <li><a href="./tutorials/starting-guides/iq-9075/README.md">Q911 Quick Start Guide</a></li>
           <li><a href="./tutorials/starting-guides/flash-image/README.md">Q911 Image Flashing Guide</a></li>
           <li><a href="./tutorials/starting-guides/ota/README.md">Qualcomm OTA Guide</a></li>
         </ul>
@@ -116,6 +116,8 @@ iQ-Studio resources are grouped into categories based on functionality:
           <li><a href="./tutorials/avl/README.md">Approved Vendor List</a></li>
           <li><a href="./tutorials/avl/gmsl-camera/README.md">GMSL Camera</a></li>
           <li><a href="./tutorials/avl/mipi-camera/README.md">MIPI Camera</a></li>
+          <li><a href="./tutorials/avl/camera-adapter-boards/README.md">Camera Adapter Boards</a></li>
+          <li><a href="./tutorials/avl/embedded-peripheral/README.md">Embedded Peripheral Modules</a></li>
         </ul>
       </td>
     </tr>
@@ -139,6 +141,7 @@ iQ-Studio resources are grouped into categories based on functionality:
         <ul>
           <li><a href="./tutorials/model-deploy/README.md">Model Deploy Overview</a></li>
           <li><a href="./tutorials/model-deploy/cv/yolo26/README.md">Model Deploy: How to Convert, Optimize, and Perform Inference with YOLO26 Models</a></li>
+          <li><a href="./tutorials/model-deploy/iqf-model-guide/README.md">iQ-Foundry Model Selection Guide</a></li>
         </ul>
       </td>
     </tr>
@@ -157,14 +160,15 @@ iQ-Studio resources are grouped into categories based on functionality:
     </tr>
     <tr>
       <td>Benchmarks</td>
-      <td>Reproducible performance tests for multi-stream YOLO, generic streaming pipelines, and perception models on Qualcomm QCS9075.</td>
+      <td>Reproducible performance tests for multi-stream inference and AI models, grouped by platform (IQ-9075 and IQ-8275).</td>
       <td>
         <ul>
           <li><a href="./benchmarks/README.md">Benchmarks Overview</a></li>
-          <li><a href="./benchmarks/innoppe/README.md">InnoPPE Benchmark</a></li>
-          <li><a href="./benchmarks/iqs-streampipe/README.md">Multi-stream Inference Status</a></li>
-          <li><a href="./benchmarks/multistream/README.md">Multi-stream Scaling Across Resolutions</a></li>
-          <li><a href="./benchmarks/perception_model/README.md">Perception AI Benchmark</a></li>
+          <li><a href="./benchmarks/iq-9075/multi-stream/iqs-streampipe/README.md">IQ-9075: iQS-Streampipe Multi-stream Inference</a></li>
+          <li><a href="./benchmarks/iq-9075/multi-stream/iqs-qvadk-scaling/README.md">IQ-9075: iQS-QVADK Multi-stream Scaling</a></li>
+          <li><a href="./benchmarks/iq-9075/model/perception_model/README.md">IQ-9075: Perception AI Benchmark</a></li>
+          <li><a href="./benchmarks/iqf-models/README.md">IQ-9075: iQ-Foundry Model Benchmark</a></li>
+          <li><a href="./benchmarks/iq-8275/multi-stream/iqs-streampipe/README.md">IQ-8275: iQS-Streampipe Multi-stream Inference</a></li>
         </ul>
       </td>
     </tr>

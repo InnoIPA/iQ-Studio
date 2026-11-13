@@ -1,4 +1,4 @@
-# Perception AI benchmark between QCS9075-EVK and NVIDIA AGX Orin
+# Perception AI benchmark between IQ-9075 EVK and NVIDIA AGX Orin
 
 We conducted a benchmark comparison between two AI computing platforms with similar specifications, evaluating an NPU-based system and a GPU-based system. This benchmark aims to provide a reference for users who prioritize power efficiency and inference performance.
 
@@ -6,7 +6,7 @@ We conducted a benchmark comparison between two AI computing platforms with simi
 
 | **Platform** | **NVIDIA Jetson AGX Orin** | **EXMP-Q911** |
 | --- | --- | --- |
-| **SoM / SoC** | NVIDIA Jetson AGX Orin 32GB - Jetpack 5.1.2 [L4T 35.4.1] | Qualcomm QCS9075 |
+| **SoM / SoC** | NVIDIA Jetson AGX Orin 32GB - Jetpack 5.1.2 [L4T 35.4.1] | Qualcomm IQ-9075 |
 | **Power plan** | 30 W | 30 W (High Performance mode) |
 | **AI Accelerator** | GPU | NPU (Hexagon HTP) |
 | **AI Runtime** | TensorRT | TensorFlow Lite |
@@ -26,12 +26,12 @@ NPUs specialize in converting neural networks into hardware pipelines, optimizin
 We executed benchmarks on the following AI models using both platforms. For each platform below, we describe **how to obtain the models** and the **benchmark procedure/commands**.
 
 ### EXMP-Q911 (Qualcomm QNN):
-1. Get the int8 tflite models from the iQ-Studio [release page](https://github.com/InnoIPA/iQ-Studio/releases/download/v0.0.6/tflite_model.tar).
+1. Get the int8 tflite models from the iQ-Studio [release page](https://github.com/InnoIPA/iQ-Studio/releases/download/v0.0.6/tflite_model.tar.gz).
 
-   Then, you can extract the `tflite_model.tar` file using the following command to obtain the models:
+   Then, you can extract the `tflite_model.tar.gz` file using the following command to obtain the models:
 
     ```bash
-    tar -xvf tflite_model.tar
+    tar -xvf tflite_model.tar.gz
     ```
 
     | Model Name | Input Size |

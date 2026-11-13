@@ -5,7 +5,7 @@
  https://opensource.org/licenses/MIT
 -->
 
-# Multi-stream inference status on Jetson AGX and Qualcomm QCS9075
+# Multi-stream inference status on Jetson AGX and Qualcomm IQ-9075
 
 This topic describes a multi-stream inference benchmark for the iQS-Streampipe
 application on the NVIDIA Jetson AGX Orin 32GB and the EXMP-Q911 platform.
@@ -13,7 +13,7 @@ The purpose is to observe execution behavior as the number of channels
 increases. The results are not intended to be a general hardware performance
 ranking. For live multi-stream inference on the recording platform, please check [here](./fig/nv_qc_live.mp4).
 
-- Application: [iQS-Streampipe](../../tutorials/applications/iqs-streampipe/README.md)
+- Application: [iQS-Streampipe](../../../../tutorials/applications/iqs-streampipe/README.md)
 - Task: object detection with an INT8 model
 - Input: 1080p, 30 FPS H.264 video streams
 - Platforms: Jetson AGX Orin 32GB, EXMP-Q911 (Qualcomm IQ-9075-based module)
@@ -113,7 +113,7 @@ Below is an overview of how we conduct platform benchmark testing.
 2. From the repository root on EXMP-Q911, change to the benchmark directory:
 
    ```bash
-   cd benchmarks/iqs-streampipe
+   cd benchmarks/iq-9075/multi-stream/iqs-streampipe
    ```
 
 3. Edit `config.json` so that the `streams` array contains 1, 4, 9, or 16
@@ -138,7 +138,7 @@ Below is an overview of how we conduct platform benchmark testing.
    wget https://github.com/InnoIPA/iQ-Studio/releases/download/v0.0.6/benchmark_nvidia_sources.tar.gz
    ```
 
-1. Under `benchmarks/iqs-streampipe`, extract the NVIDIA benchmark archive:
+1. Under `benchmarks/iq-9075/multi-stream/iqs-streampipe`, extract the NVIDIA benchmark archive:
 
    ```bash
    tar xzf benchmark_nvidia_sources.tar.gz

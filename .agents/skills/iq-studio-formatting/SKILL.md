@@ -35,7 +35,7 @@ Expected output: Markdown that follows repository structure rules, has valid rel
   - Python code: `python`
   - JSON configuration: `json`
   - Plain output: `text`
-- In `bash` blocks, prefix user-entered commands with `$`.
+- In `bash` blocks, write commands without a `$` prompt prefix.
 - Avoid nested fenced code blocks in examples when a prose explanation is clearer and easier for audit tools to parse.
 
 ## Notes And Links
@@ -53,14 +53,14 @@ Expected output: Markdown that follows repository structure rules, has valid rel
 Run these from the repository root after documentation changes:
 
 ```bash
-$ python3 tools/audit_content.py
-$ python3 tools/get_headings.py
+python3 tools/audit_content.py
+python3 tools/get_headings.py
 ```
 
 Use `python3 tools/fix_bash_tags.py` only when an in-place code-fence rewrite is intended.
 
 ## Gotchas
 
-- Do not use the auto-fix tool as a substitute for reviewing command labels and `$` prompts.
+- Do not use the auto-fix tool as a substitute for reviewing command labels.
 - Do not change presentation-layer headings in root `README.md` or `tutorials/applications/` unless the project standard changes.
 - Do not add images without checking their relative paths from the Markdown file that references them.

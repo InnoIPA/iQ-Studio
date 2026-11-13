@@ -116,6 +116,8 @@ iQ-Studio resources are grouped into categories based on functionality:
           <li><a href="./tutorials/avl/README.md">Approved Vendor List</a></li>
           <li><a href="./tutorials/avl/gmsl-camera/README.md">GMSL Camera</a></li>
           <li><a href="./tutorials/avl/mipi-camera/README.md">MIPI Camera</a></li>
+          <li><a href="./tutorials/avl/camera-adapter-boards/README.md">Camera Adapter Boards</a></li>
+          <li><a href="./tutorials/avl/embedded-peripheral/README.md">Embedded Peripheral Modules</a></li>
         </ul>
       </td>
     </tr>

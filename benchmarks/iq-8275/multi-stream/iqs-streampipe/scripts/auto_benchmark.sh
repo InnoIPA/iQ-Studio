@@ -93,7 +93,7 @@ if [ ! -d "$VENV_DIR" ]; then
         exit 1
     fi
     source "$VENV_DIR/bin/activate"
-    pip3 install -r requirement.txt
+    pip3 install -r requirements.txt
 else
     source "$VENV_DIR/bin/activate"
 fi

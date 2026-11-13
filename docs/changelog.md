@@ -4,6 +4,7 @@
 ### Feat
 
 - Added a multi-stream benchmark on the Qualcomm Dragonwing IQ-8275 from 720p to 4K, with a comparison against another platform, power and FPS per watt, and the scripts to reproduce it
+- Added the IQ-8275 benchmark procedure, with a ready-to-use `config.json` and an updated `auto_benchmark.sh`
 - Added a Camera Adapter Boards page to AVL covering the EB120-1S8F, EB022-2M4F, and EB120-1S4M boards
 - Expanded the AVL Embedded Peripheral Modules page with tested Yocto (QLI) and Ubuntu versions, more serial and CAN Bus modules, and a Wi-Fi / Bluetooth table
 - Added a how-to for finding and adding missing firmware files
@@ -20,6 +21,10 @@
 
 - Renamed `requirement.txt` to `requirements.txt` in the IQ-9075 iQS-Streampipe benchmark and updated its script
 - Updated the `.agents/` guidance by dropping the `$` prompt rule from the formatting skill, removing commit scopes from the commit-log skill, and recording the benchmark layout in `IQS.md`
+
+### Fixes
+
+- Fixed the broken model download link in the IQ-9075 Perception AI Benchmark
 
 ## v0.0.12
 ### Feat

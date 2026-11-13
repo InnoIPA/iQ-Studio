@@ -26,12 +26,12 @@ NPUs specialize in converting neural networks into hardware pipelines, optimizin
 We executed benchmarks on the following AI models using both platforms. For each platform below, we describe **how to obtain the models** and the **benchmark procedure/commands**.
 
 ### EXMP-Q911 (Qualcomm QNN):
-1. Get the int8 tflite models from the iQ-Studio [release page](https://github.com/InnoIPA/iQ-Studio/releases/download/v0.0.6/tflite_model.tar).
+1. Get the int8 tflite models from the iQ-Studio [release page](https://github.com/InnoIPA/iQ-Studio/releases/download/v0.0.6/tflite_model.tar.gz).
 
-   Then, you can extract the `tflite_model.tar` file using the following command to obtain the models:
+   Then, you can extract the `tflite_model.tar.gz` file using the following command to obtain the models:
 
     ```bash
-    tar -xvf tflite_model.tar
+    tar -xvf tflite_model.tar.gz
     ```
 
     | Model Name | Input Size |

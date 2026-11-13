@@ -28,9 +28,10 @@ usage() {
     echo "  --test_time SECS     Total test duration (default: 300)"
     echo "  --warmup_time SECS   Warmup time before monitoring (default: 180)"
     echo "  --output PATH        Output file path (default: ./output.txt)"
-    echo "  --video PATH         Video file for every channel (default: the video in config_nv.json)"
-    echo "  --channels N         Number of channels, 1 to 16 (default: the number in config_nv.json)"
+    echo "  --video PATH         NVIDIA only: video file for every channel (default: the video in config_nv.json)"
+    echo "  --channels N         NVIDIA only: number of channels, 1 to 16 (default: the number in config_nv.json)"
     echo "  --platform TYPE      Platform: auto, nv, qcom (default: auto)"
+    echo "                       qcom runs config.json in the iqs-streampipe Docker image; edit config.json to set the channels"
     echo "  --help               Display this help message"
     exit 1
 }
@@ -68,9 +69,18 @@ fi
 echo "Target Platform: $TARGET_PLATFORM"
 
 if [[ "$TARGET_PLATFORM" == "qcom" ]]; then
-    # IQ-8275 (Qualcomm): Coming soon.
-    echo "[INFO] The Qualcomm IQ-8275 procedure is coming soon." >&2
-    exit 1
+    if [[ -n "$CHANNELS" || -n "$VIDEO_FILE" ]]; then
+        echo "[ERROR] --channels and --video are only for the NVIDIA platform. For the Qualcomm platform, edit config.json." >&2
+        exit 1
+    fi
+    if ! command -v iqs-launcher &> /dev/null; then
+        echo "[ERROR] iqs-launcher not found. Run ./install.sh in the iQ-Studio repository root first." >&2
+        exit 1
+    fi
+    if [ ! -f config.json ]; then
+        echo "[ERROR] config.json not found. Run this script from benchmarks/iq-8275/multi-stream/iqs-streampipe." >&2
+        exit 1
+    fi
 fi
 
 if [[ -n "$CHANNELS" ]]; then
@@ -147,7 +157,27 @@ PY
         BENCH_PID=$!
         ;;
     "qcom")
-        # IQ-8275 (Qualcomm): Coming soon.
+        # Write the test settings at the top of the output file (also printed on the screen).
+        read -r CFG_CHANNELS CFG_VIDEO < <(python3 - config.json <<'PY'
+import json, sys
+streams = json.load(open(sys.argv[1]))["streams"]
+print(len(streams), streams[0]["source_path"])
+PY
+)
+        {
+            echo "=== Benchmark settings ==="
+            echo "Date:        $(date '+%Y-%m-%d %H:%M:%S')"
+            echo "Platform:    $TARGET_PLATFORM"
+            echo "Channels:    $CFG_CHANNELS"
+            echo "Video:       $CFG_VIDEO"
+            echo "Warm-up:     ${WARMUP_TIME} s"
+            echo "Test time:   ${TEST_DURATION} s (measurement window ${MONITOR_DURATION} s)"
+            echo "=========================="
+            echo
+        } | tee -a "$OUTPUTPATH"
+        echo "[INFO] Starting iqs-launcher (the Docker image is pulled on the first run)..."
+        timeout "${TEST_DURATION}" iqs-launcher --autotag iqs-streampipe --other " -c config.json -b --warmup_time ${WARMUP_TIME}" 1> >(tee -a "$OUTPUTPATH") &
+        BENCH_PID=$!
         ;;
     *)
         echo "[ERROR] Invalid platform: $TARGET_PLATFORM" >&2

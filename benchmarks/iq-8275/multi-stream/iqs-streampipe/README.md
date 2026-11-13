@@ -39,8 +39,8 @@ The benchmark uses two edge AI platforms with the configurations shown below.
 | **AI accelerator**  | GPU                        | NPU (Qualcomm Hexagon)                |
 | **AI runtime**      | TensorRT 10.3.0.30         | TFLite 2.16.1 (QNN 2.50)              |
 | **AI performance**  | 50 TOPS (INT8, dense)      | Up to 40 TOPS (INT8, dense)           |
-| **BSP / SDK**       | L4T R36.4.3                | Coming soon                           |
-| **Linux kernel**    | 5.15.148-tegra (PREEMPT)   | Coming soon                           |
+| **BSP / SDK**       | L4T R36.4.3                |                                       |
+| **Linux kernel**    | 5.15.148-tegra (PREEMPT)   | 6.18.44-gb6e015a3cb19-dirty (PREEMPT) |
 
 ## AI model
 
@@ -159,9 +159,43 @@ Both platforms follow the same pattern: per-channel FPS stays near the source ra
 
 Below is an overview of how we conduct platform benchmark testing.
 
-### IQ-8275
+### IQ-8275 procedure
 
-Coming soon.
+1. Install iQ-Studio:
+
+   ```bash
+   git clone https://github.com/InnoIPA/iQ-Studio.git
+   cd iQ-Studio
+   ./install.sh
+   ```
+
+2. From the repository root, change to the benchmark directory:
+
+   ```bash
+   cd benchmarks/iq-8275/multi-stream/iqs-streampipe
+   ```
+
+3. Edit `config.json` so that the `streams` array contains 1, 4, 9, or 16 entries, depending on
+   the channel count being tested. The file contains 9 streams of the YOLO26n model and the
+   1080p videos that come with the Docker image.
+
+4. Run the benchmark script with the Qualcomm platform selected:
+
+   ```bash
+   ./scripts/auto_benchmark.sh \
+       --platform qcom \
+       --test_time 420 \
+       --warmup_time 300 \
+       --output ./logs/qcom_9ch.txt
+   ```
+
+   On the first run, `iqs-launcher` pulls the `iqs-streampipe` Docker image, so the board needs
+   network access.
+
+   The results are saved in the file given by `--output`. The file starts with the test settings
+   (channels, video, warm-up, and test time), followed by the average CPU loading and memory usage,
+   and the inference time and FPS tables. Use a different file name for each run, because the file
+   is overwritten.
 
 ### NVIDIA Jetson Orin NX 16GB procedure
 

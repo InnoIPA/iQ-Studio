@@ -41,6 +41,8 @@ When adding new features or applications, strictly adhere to the existing direct
 - `benchmarks/`: Performance benchmarks and comparisons, organized as `benchmarks/<platform>/<category>/<report>/README.md`.
   - `<platform>`: `iq-9075` or `iq-8275`.
   - `<category>`: `model` or `multi-stream`.
+  - Name `<report>` after the application or tool under test (for example `iqs-streampipe`, `iqs-qvadk-scaling`), without repeating the platform or category.
+  - Exception: a report whose subject is a tool rather than a platform, such as `benchmarks/iqf-models/` for iQ-Foundry, sits directly under `benchmarks/`. Its row in the index still states the platform it was measured on.
   - `benchmarks/README.md` is the only index page; add each new report as a row (Platform, Category, Topic, Workload) instead of creating category README files.
 - `docs/`: Core project documentation, topology figures, `changelog.md`, and offline package guides.
 - `mod/`: Python backend for `iqs-launcher`. Contains the logical modules for `autotag`, `run`, and `utils`.

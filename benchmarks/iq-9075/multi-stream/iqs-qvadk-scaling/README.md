@@ -173,7 +173,7 @@ application runs in a Docker container.
 2. From the repository root on EXEC-Q911, change to the benchmark directory:
 
    ```bash
-   cd benchmarks/iq-9075/multi-stream/multistream
+   cd benchmarks/iq-9075/multi-stream/iqs-qvadk-scaling
    ls
    ```
 
@@ -206,7 +206,7 @@ application runs in a Docker container.
    where you ran `git clone`:
 
    ```bash
-   cd iQ-Studio/benchmarks/iq-9075/multi-stream/multistream
+   cd iQ-Studio/benchmarks/iq-9075/multi-stream/iqs-qvadk-scaling
    timeout 120 python3 ../iqs-streampipe/scripts/system_monitor.py
    ```
 
@@ -216,7 +216,7 @@ application runs in a Docker container.
 
 ### How to change the config
 
-Open `config.json` in `benchmarks/iq-9075/multi-stream/multistream/` and edit it:
+Open `config.json` in `benchmarks/iq-9075/multi-stream/iqs-qvadk-scaling/` and edit it:
 
 ```bash
 vi config.json
@@ -228,15 +228,15 @@ vi config.json
 
 - **Video:** the default `source_path` is `videos/adb/ppe/road.mp4`, the 1080p
   demo video in the image. To use your own video, first copy the file to the
-  `benchmarks/iq-9075/multi-stream/multistream/` directory on the platform. For example, run this on
+  `benchmarks/iq-9075/multi-stream/iqs-qvadk-scaling/` directory on the platform. For example, run this on
   your PC:
 
   ```bash
-  scp 01_720.mp4 root@<platform IP>:~/iQ-Studio/benchmarks/iq-9075/multi-stream/multistream/
+  scp 01_720.mp4 root@<platform IP>:~/iQ-Studio/benchmarks/iq-9075/multi-stream/iqs-qvadk-scaling/
   ```
 
   Then set `source_path` to `/workspace/<file name>`, for example
-  `/workspace/01_720.mp4`. `/workspace` is the `benchmarks/iq-9075/multi-stream/multistream/`
+  `/workspace/01_720.mp4`. `/workspace` is the `benchmarks/iq-9075/multi-stream/iqs-qvadk-scaling/`
   directory as seen from inside the container, so the file must be in that
   directory. Also change `width` and `height` (**Resolution** in
   the figure) to the resolution of the video:
@@ -250,7 +250,7 @@ vi config.json
 
 - **Model:** the default `yolo_model` (**Model** in the figure) is `models/tflite/yolo26n_ppe_v73_int8.tflite`,
   which is in the image. To use your own model, copy the file to the
-  `benchmarks/iq-9075/multi-stream/multistream/` directory on the platform in the same way, and set
+  `benchmarks/iq-9075/multi-stream/iqs-qvadk-scaling/` directory on the platform in the same way, and set
   `yolo_model` to `/workspace/<file name>`.
 - **Channel count:** the `streams` array has 1 entry (the `{ ... }` block in
   the figure), which is 1 channel. Copy the whole block and paste it after

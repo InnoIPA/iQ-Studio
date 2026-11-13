@@ -164,7 +164,7 @@ iQ-Studio resources are grouped into categories based on functionality:
         <ul>
           <li><a href="./benchmarks/README.md">Benchmarks Overview</a></li>
           <li><a href="./benchmarks/iq-9075/multi-stream/iqs-streampipe/README.md">IQ-9075: iQS-Streampipe Multi-stream Inference</a></li>
-          <li><a href="./benchmarks/iq-9075/multi-stream/multistream/README.md">IQ-9075: iQS-QVADK Multi-stream Scaling</a></li>
+          <li><a href="./benchmarks/iq-9075/multi-stream/iqs-qvadk-scaling/README.md">IQ-9075: iQS-QVADK Multi-stream Scaling</a></li>
           <li><a href="./benchmarks/iq-9075/model/perception_model/README.md">IQ-9075: Perception AI Benchmark</a></li>
           <li><a href="./benchmarks/iqf-models/README.md">IQ-9075: iQ-Foundry Model Benchmark</a></li>
           <li><a href="./benchmarks/iq-8275/multi-stream/iqs-streampipe/README.md">IQ-8275: iQS-Streampipe Multi-stream Inference</a></li>

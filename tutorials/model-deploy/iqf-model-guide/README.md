@@ -58,5 +58,5 @@ iQ-Foundry supports the **YOLOv10n**, **YOLOv11n**, and **YOLOv26n** model varie
 
 1. Choose the main priority: accuracy, balance, or efficiency.
 2. Select a compatible runtime and precision.
-3. Review the [iQ-Foundry Model Benchmark](../../../benchmarks/iqf-models/README.md).
+3. Review the [iQ-Foundry Model Benchmark](../../../benchmarks/iq-9075/model/iqf-models/README.md).
 4. Use [iQ-Foundry](https://github.com/InnoIPA/iQ-Foundry) to test with real application images, then select the smallest, fastest model that meets the required accuracy.

@@ -27,7 +27,7 @@ The workflow supports model optimization and quantization paths, including INT8 
 
 Use the [iQ-Foundry Model Selection Guide](./iqf-model-guide/README.md) to choose a model configuration based on your application's accuracy, speed, size, and runtime requirements.
 
-For detailed accuracy, model size, and inference latency results, see the [iQ-Foundry Model Benchmark](../../benchmarks/iqf-models/README.md).
+For detailed accuracy, model size, and inference latency results, see the [iQ-Foundry Model Benchmark](../../benchmarks/iq-9075/model/iqf-models/README.md).
 
 ## Get Started
 

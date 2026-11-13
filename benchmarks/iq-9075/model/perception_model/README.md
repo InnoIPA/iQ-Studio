@@ -1,4 +1,4 @@
-# Perception AI benchmark between QCS9075-EVK and NVIDIA AGX Orin
+# Perception AI benchmark between IQ-9075 EVK and NVIDIA AGX Orin
 
 We conducted a benchmark comparison between two AI computing platforms with similar specifications, evaluating an NPU-based system and a GPU-based system. This benchmark aims to provide a reference for users who prioritize power efficiency and inference performance.
 
@@ -6,7 +6,7 @@ We conducted a benchmark comparison between two AI computing platforms with simi
 
 | **Platform** | **NVIDIA Jetson AGX Orin** | **EXMP-Q911** |
 | --- | --- | --- |
-| **SoM / SoC** | NVIDIA Jetson AGX Orin 32GB - Jetpack 5.1.2 [L4T 35.4.1] | Qualcomm QCS9075 |
+| **SoM / SoC** | NVIDIA Jetson AGX Orin 32GB - Jetpack 5.1.2 [L4T 35.4.1] | Qualcomm IQ-9075 |
 | **Power plan** | 30 W | 30 W (High Performance mode) |
 | **AI Accelerator** | GPU | NPU (Hexagon HTP) |
 | **AI Runtime** | TensorRT | TensorFlow Lite |

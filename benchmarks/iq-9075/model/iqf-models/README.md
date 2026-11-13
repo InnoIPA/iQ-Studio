@@ -7,7 +7,7 @@
 
 # iQ-Foundry Model Benchmark
 
-This benchmark compares [iQ-Foundry](https://github.com/InnoIPA/iQ-Foundry) model conversions and their measured performance on EXMP-Q911 (Qualcomm QCS9075).
+This benchmark compares [iQ-Foundry](https://github.com/InnoIPA/iQ-Foundry) model conversions and their measured performance on EXMP-Q911 (Qualcomm IQ-9075).
 
 ## Overview
 
@@ -21,7 +21,7 @@ These results provide comparison data rather than a universal model ranking. Sel
 
 | Item | Configuration |
 | --- | --- |
-| Target device | EXMP-Q911 (Qualcomm QCS9075) |
+| Target device | EXMP-Q911 (Qualcomm IQ-9075) |
 | Inference accelerator | Qualcomm HTP/NPU |
 | Power plan | 30 W (High Performance mode) |
 | AI performance | 100 TOPS (Dense) |
@@ -98,7 +98,7 @@ There is no single best model for every deployment. Choose a model by considerin
 
 FP32 provides the closest measured accuracy to the reference models in this benchmark. The quantized models provide reduced size and lower measured invocation latency, with model-dependent accuracy changes. Evaluate these trade-offs according to the requirements of your use case.
 
-For application-based recommendations, see the [iQ-Foundry Model Selection Guide](../../tutorials/model-deploy/iqf-model-guide/README.md).
+For application-based recommendations, see the [iQ-Foundry Model Selection Guide](../../../../tutorials/model-deploy/iqf-model-guide/README.md).
 
 ## Benchmark and Deploy Your Model
 

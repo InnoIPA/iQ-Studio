@@ -5,7 +5,7 @@
  https://opensource.org/licenses/MIT
 -->
 
-# Multi-stream inference scaling on EXEC-Q911 (QCS9075) across video resolutions
+# Multi-stream inference scaling on EXEC-Q911 (IQ-9075) across video resolutions
 
 This topic describes a multi-stream inference benchmark on the EXEC-Q911 at
 720p, 1080p, 2K, and 4K. The purpose is to observe how many channels the
@@ -13,10 +13,10 @@ platform sustains in real time at each resolution, and what limits it as the
 channel count increases. The results are not intended to be a general hardware
 performance ranking.
 
-- Application: [iQS-QVADK](../../tutorials/applications/iqs-qvadk/README.md) v3.0.0 (GStreamer hardware decode → inference → drawing → compositor display)
+- Application: [iQS-QVADK](../../../../tutorials/applications/iqs-qvadk/README.md) v3.0.0 (GStreamer hardware decode → inference → drawing → compositor display)
 - Task: object detection with an INT8 model
 - Input: 720p, 1080p, 2K, and 4K, 30 FPS H.264 video streams
-- Platform: EXEC-Q911 (Qualcomm Dragonwing QCS9075), BSP v2.5.0
+- Platform: EXEC-Q911 (Qualcomm Dragonwing IQ-9075), BSP v2.5.0
 - Metrics:
   - Output average end-to-end FPS per channel
   - Average CPU loading (%)
@@ -27,7 +27,7 @@ performance ranking.
 
 | **Platform**        | **EXEC-Q911**                                |
 |:--------------------|:---------------------------------------------|
-| **SoM / SoC**       | Qualcomm Dragonwing QCS9075                  |
+| **SoM / SoC**       | Qualcomm Dragonwing IQ-9075                  |
 | **Power plan**      | Normal                                       |
 | **Processor cores** | 8                                            |
 | **AI accelerator**  | NPU                                          |
@@ -173,7 +173,7 @@ application runs in a Docker container.
 2. From the repository root on EXEC-Q911, change to the benchmark directory:
 
    ```bash
-   cd benchmarks/multistream
+   cd benchmarks/iq-9075/multi-stream/multistream
    ls
    ```
 
@@ -206,7 +206,7 @@ application runs in a Docker container.
    where you ran `git clone`:
 
    ```bash
-   cd iQ-Studio/benchmarks/multistream
+   cd iQ-Studio/benchmarks/iq-9075/multi-stream/multistream
    timeout 120 python3 ../iqs-streampipe/scripts/system_monitor.py
    ```
 
@@ -216,7 +216,7 @@ application runs in a Docker container.
 
 ### How to change the config
 
-Open `config.json` in `benchmarks/multistream/` and edit it:
+Open `config.json` in `benchmarks/iq-9075/multi-stream/multistream/` and edit it:
 
 ```bash
 vi config.json
@@ -228,15 +228,15 @@ vi config.json
 
 - **Video:** the default `source_path` is `videos/adb/ppe/road.mp4`, the 1080p
   demo video in the image. To use your own video, first copy the file to the
-  `benchmarks/multistream/` directory on the platform. For example, run this on
+  `benchmarks/iq-9075/multi-stream/multistream/` directory on the platform. For example, run this on
   your PC:
 
   ```bash
-  scp 01_720.mp4 root@<platform IP>:~/iQ-Studio/benchmarks/multistream/
+  scp 01_720.mp4 root@<platform IP>:~/iQ-Studio/benchmarks/iq-9075/multi-stream/multistream/
   ```
 
   Then set `source_path` to `/workspace/<file name>`, for example
-  `/workspace/01_720.mp4`. `/workspace` is the `benchmarks/multistream/`
+  `/workspace/01_720.mp4`. `/workspace` is the `benchmarks/iq-9075/multi-stream/multistream/`
   directory as seen from inside the container, so the file must be in that
   directory. Also change `width` and `height` (**Resolution** in
   the figure) to the resolution of the video:
@@ -250,7 +250,7 @@ vi config.json
 
 - **Model:** the default `yolo_model` (**Model** in the figure) is `models/tflite/yolo26n_ppe_v73_int8.tflite`,
   which is in the image. To use your own model, copy the file to the
-  `benchmarks/multistream/` directory on the platform in the same way, and set
+  `benchmarks/iq-9075/multi-stream/multistream/` directory on the platform in the same way, and set
   `yolo_model` to `/workspace/<file name>`.
 - **Channel count:** the `streams` array has 1 entry (the `{ ... }` block in
   the figure), which is 1 channel. Copy the whole block and paste it after

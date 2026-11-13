@@ -61,13 +61,13 @@ sudo systemctl restart udev
 Set the jumper on the bottom side of the board to `EDL mode`.
 
   <p align="center">
-    <img src="../q911/fig/jumper_mode_edl.png" style="width:50%;">
+    <img src="../iq-9075/fig/jumper_mode_edl.png" style="width:50%;">
   </p>
 
 Please also confirm that all boot mode DIP switches are set to `ON`, as shown below, so the system can boot from `UFS`. The DIP switches stay in this position for the entire flashing process — only the jumper changes.
 
   <p align="center">
-    <img src="../q911/fig/boot_mode_ufs.png" style="width:50%;">
+    <img src="../iq-9075/fig/boot_mode_ufs.png" style="width:50%;">
   </p>
 
 ## Step 2: Connect the Target
@@ -184,7 +184,7 @@ If the flashing process completes successfully, you will see output similar to t
 Power off the device and set the jumper on the bottom side of the board back to `Normal mode`. The DIP switches need no change — they stay `ON` the whole time.
 
   <p align="center">
-    <img src="../q911/fig/jumper_mode_normal.png" style="width:50%;">
+    <img src="../iq-9075/fig/jumper_mode_normal.png" style="width:50%;">
   </p>
 
 > **Reference**: Qualcomm [Flash software images → *Force the device into EDL mode → Manual*](https://docs.qualcomm.com/doc/80-70030-254/topic/flash_images.html#manual) — corresponds to Qualcomm's note to disable the EDL switch after flashing completes; on the Q911/A100 this means moving the jumper back to `Normal mode`.
@@ -193,7 +193,7 @@ Power off the device and set the jumper on the bottom side of the board back to 
 
 Connect a DisplayPort monitor, power on the device, and let it boot. Seeing the system desktop on the screen means the image was flashed successfully.
 
-From here, head back to the [Q911 Quick Start Guide → Interact with the System](../q911/README.md#interact-with-the-system) to start using the device (DisplayPort, SSH, ADB, UART).
+From here, head back to the [Q911 Quick Start Guide → Interact with the System](../iq-9075/README.md#interact-with-the-system) to start using the device (DisplayPort, SSH, ADB, UART).
 
 ## Troubleshooting
 

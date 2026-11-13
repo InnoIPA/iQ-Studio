@@ -13,10 +13,10 @@ IQ-8275 platform. The purpose is to observe execution behavior as the number of
 channels and the video resolution increase. The results are not intended to be
 a general hardware performance ranking.
 
-- Application: [iQS-Streampipe](../../tutorials/applications/iqs-streampipe/README.md)
+- Application: [iQS-Streampipe](../../../../tutorials/applications/iqs-streampipe/README.md)
 - Task: object detection with an INT8 model
 - Input: 720p, 1080p, 2K, and 4K, 30 FPS H.264 video streams
-- Platforms: NVIDIA Jetson Orin NX 16GB, IQ-8275 (Qualcomm Dragonwing QCS8275)
+- Platforms: NVIDIA Jetson Orin NX 16GB, Qualcomm Dragonwing IQ-8275
 - Metrics:
   - Output average end-to-end FPS per channel
   - Average CPU loading (%)
@@ -33,7 +33,7 @@ The benchmark uses two edge AI platforms with the configurations shown below.
 
 | **Platform**        | NVIDIA Jetson Orin NX 16GB | IQ-8275                               |
 |:--------------------|:---------------------------|:--------------------------------------|
-| **SoM / SoC**       | NVIDIA Jetson Orin NX 16GB | Qualcomm Dragonwing IQ-8275 (QCS8275) |
+| **SoM / SoC**       | NVIDIA Jetson Orin NX 16GB | Qualcomm Dragonwing IQ-8275 |
 | **Power plan**      | MAXN                       | Normal                                |
 | **Processor cores** | 8 (8× Cortex-A78AE)        | 8 (4× Cortex-A78C + 4× Cortex-A55)    |
 | **AI accelerator**  | GPU                        | NPU (Qualcomm Hexagon)                |
@@ -172,7 +172,7 @@ Below is an overview of how we conduct platform benchmark testing.
 2. From the repository root, change to the benchmark directory:
 
    ```bash
-   cd benchmarks/iqs-streampipe-iq8
+   cd benchmarks/iq-8275/multi-stream/iqs-streampipe
    ```
 
 3. Edit `config.json` so that the `streams` array contains 1, 4, 9, or 16 entries, depending on
@@ -202,7 +202,7 @@ Below is an overview of how we conduct platform benchmark testing.
 1. Go to the benchmark directory of the iQ-Studio repository and download the archive:
 
    ```bash
-   cd benchmarks/iqs-streampipe-iq8
+   cd benchmarks/iq-8275/multi-stream/iqs-streampipe
    wget https://github.com/InnoIPA/iQ-Studio/releases/download/v0.0.13/benchmark_orinnx_sources.tar.gz
    ```
 

@@ -78,7 +78,7 @@ if [[ "$TARGET_PLATFORM" == "qcom" ]]; then
         exit 1
     fi
     if [ ! -f config.json ]; then
-        echo "[ERROR] config.json not found. Run this script from benchmarks/iqs-streampipe-iq8." >&2
+        echo "[ERROR] config.json not found. Run this script from benchmarks/iq-8275/multi-stream/iqs-streampipe." >&2
         exit 1
     fi
 fi
@@ -103,7 +103,7 @@ if [ ! -d "$VENV_DIR" ]; then
         exit 1
     fi
     source "$VENV_DIR/bin/activate"
-    pip3 install -r requirement.txt
+    pip3 install -r requirements.txt
 else
     source "$VENV_DIR/bin/activate"
 fi

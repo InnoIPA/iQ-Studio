@@ -33,12 +33,17 @@ For Markdown work, use both `iq-studio-literacy` and `iq-studio-formatting`. For
 When adding new features or applications, strictly adhere to the existing directory structure:
 
 - `tutorials/`: Heavily used for all guides.
-  - `starting-guides/`: Boot up and flashing guides (e.g., Q911).
+  - `starting-guides/`: Boot up and flashing guides. Platform-specific guides live under the SoC folder (`iq-9075/` for the Q911 series; future SoCs such as `iq-8275/` follow the same layout), and the `<platform>` names match `benchmarks/`.
   - `avl/`: Approved Vendor List validations (Cameras, etc.).
   - `applications/`: Vertical scenario demos (e.g., `iqs-vlm`, `iqs-streampipe`).
   - `model-deploy/`: End-to-end deployment workflows for converting, optimizing, validating, and running AI models on target platforms.
   - `sdks/`: Advanced developer usage for the applications.
-- `benchmarks/`: Performance benchmarks and comparisons.
+- `benchmarks/`: Performance benchmarks and comparisons, organized as `benchmarks/<platform>/<category>/<report>/README.md`.
+  - `<platform>`: `iq-9075` or `iq-8275`.
+  - `<category>`: `model` or `multi-stream`.
+  - Name `<report>` after the application or tool under test (for example `iqs-streampipe`, `iqs-qvadk-scaling`), without repeating the platform or category.
+  - Exception: a report whose subject is a tool rather than a platform, such as `benchmarks/iqf-models/` for iQ-Foundry, sits directly under `benchmarks/`. Its row in the index still states the platform it was measured on.
+  - `benchmarks/README.md` is the only index page; add each new report as a row (Platform, Category, Topic, Workload) instead of creating category README files.
 - `docs/`: Core project documentation, topology figures, `changelog.md`, and offline package guides.
 - `mod/`: Python backend for `iqs-launcher`. Contains the logical modules for `autotag`, `run`, and `utils`.
 - **Root Scripts**: `iqs-launcher.sh` (entry point), `launcher.py` (main logic), `install.sh` (setup).

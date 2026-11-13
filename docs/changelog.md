@@ -1,5 +1,31 @@
 # Changelogs
 
+## v0.0.13
+### Feat
+
+- Added a multi-stream benchmark on the Qualcomm Dragonwing IQ-8275 from 720p to 4K, with a comparison against another platform, power and FPS per watt, and the scripts to reproduce it
+- Added the IQ-8275 benchmark procedure, with a ready-to-use `config.json` and an updated `auto_benchmark.sh`
+- Added a Camera Adapter Boards page to AVL covering the EB120-1S8F, EB022-2M4F, and EB120-1S4M boards
+- Expanded the AVL Embedded Peripheral Modules page with tested Yocto (QLI) and Ubuntu versions, more serial and CAN Bus modules, and a Wi-Fi / Bluetooth table
+- Added a how-to for finding and adding missing firmware files
+- Linked the APEX-A100 product page in the Q911 Quick Start Guide
+
+### Refactor
+
+- Reorganized `benchmarks/` into `iq-9075/` and `iq-8275/` folders, each split into `model` and `multi-stream`, with a single index table, and renamed `multistream` to `iqs-qvadk-scaling`
+- Renamed `tutorials/starting-guides/q911/` to `iq-9075/` so the starting guides and benchmarks share the same platform names
+- Split the AVL page into an overview and separate GMSL Camera, MIPI Camera, Camera Adapter Boards, and Embedded Peripheral Modules pages
+- Removed the InnoPPE benchmark
+
+### Chore
+
+- Renamed `requirement.txt` to `requirements.txt` in the IQ-9075 iQS-Streampipe benchmark and updated its script
+- Updated the `.agents/` guidance by dropping the `$` prompt rule from the formatting skill, removing commit scopes from the commit-log skill, and recording the benchmark layout in `IQS.md`
+
+### Fixes
+
+- Fixed the broken model download link in the IQ-9075 Perception AI Benchmark
+
 ## v0.0.12
 ### Feat
 

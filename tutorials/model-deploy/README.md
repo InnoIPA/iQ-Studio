@@ -2,7 +2,7 @@
 
 The iQ-Studio Model Deploy feature, provided by [iQ-Foundry](https://github.com/InnoIPA/iQ-Foundry), offers an end-to-end workflow for preparing AI models for deployment on the target platform. The flow covers model quantization, model conversion, quality assurance, and target inference so users can move from a training artifact to deployable outputs with a guided process.
 
-![Model Deploy flow](./cv/yolo26/fig/model-deploy-flow.gif)
+![Model Deploy flow](./cv/fig/model-deploy-flow.gif)
 
 ## Overview
 
@@ -19,7 +19,7 @@ The workflow supports model optimization and quantization paths, including INT8 
 
 | Before (FP32) | After (INT8) |
 | --- | --- |
-| <img src="./cv/yolo26/fig/yolo26-fp32.png" alt="YOLO26 FP32 output" width="420" /> | <img src="./cv/yolo26/fig/yolo26-int8.png" alt="YOLO26 INT8 output" width="420" /> |
+| <img src="./cv/detect/fig/yolo26-fp32.png" alt="YOLO26 FP32 output" width="420" /> | <img src="./cv/detect/fig/yolo26-int8.png" alt="YOLO26 INT8 output" width="420" /> |
 
 🔴 Prediction, 🟢 Ground truth
 
@@ -33,4 +33,4 @@ For detailed accuracy, model size, and inference latency results, see the [iQ-Fo
 
 > The computer vision tutorials for Model Deploy are available under `tutorials/model-deploy/cv`.
 >
-> To follow the current YOLO workflow, start with [cv/yolo26/README.md](./cv/yolo26/README.md).
+> To follow the current YOLO workflow, start with [cv/detect/README.md](./cv/detect/README.md).

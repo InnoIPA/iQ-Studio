@@ -1,15 +1,15 @@
-# Model Deploy: How to Convert, Optimize, and Perform Inference with YOLO26 Models
+# Model Deploy: How to Convert, Optimize, and Perform Inference with YOLO26 Detection Models
 
-This iQ-Studio tutorial follows the [iQ-Foundry](https://github.com/InnoIPA/iQ-Foundry) YOLO26 workflow for EXMP-Q911 (Qualcomm QCS9075). It covers the default Ubuntu host flow for model preparation, quality assurance, and ADB-based inference through `./docker/iqf`.
+This iQ-Studio tutorial follows the [iQ-Foundry](https://github.com/InnoIPA/iQ-Foundry) YOLO26 object detection workflow for EXMP-Q911 (Qualcomm QCS9075). It covers the default Ubuntu host flow for model preparation, quality assurance, and ADB-based inference through `./docker/iqf`.
 
-![YOLO model deploy overview](./fig/yolo-model-deploy-overview.png)
+![YOLO model deploy overview](../fig/model-deploy-overview.png)
 
 ## Overview
 
 This guide follows a straightforward end-to-end flow:
 
 1. Quantize and convert the FP32 YOLO model into a deployment-ready `.tflite` model with Qualcomm AI Hub.
-2. Compare source and converted model quality with mAP.
+2. Compare source and converted model quality with `eval`.
 3. Run inference on EXMP-Q911 (Qualcomm QCS9075) through ADB from the Ubuntu host.
 
 If you need pretrained YOLO weights (.pt), download the official models from [Ultralytics](https://docs.ultralytics.com/).
@@ -30,7 +30,7 @@ If you need pretrained YOLO weights (.pt), download the official models from [Ul
 
 Connect the EXMP-Q911 target to the host with a USB-C cable.
 
-![Host to target USB-C connection](./fig/iq9-usb-connection.png)
+![Host to target USB-C connection](../fig/iq9-usb-connection.png)
 
 ADB reference: [adb overview](https://developer.android.com/tools/adb). No steps are required from that page for this tutorial.
 
@@ -63,9 +63,9 @@ Authenticate the host workflow with your API token:
 
 ## Step 4. Run the Modes
 
-> Note: The examples below use `yolov26` with `--runtime litert --precision int8`.
+> Note: The examples below use `yolov26` with `--task detect --runtime litert --precision int8`.
 
-Follow the steps for each mode below to convert the model (qc), evaluate its quality (mAP), and deploy YOLO inference (test).
+Follow the steps for each mode below to convert the model (qc), evaluate its quality (eval), and deploy YOLO inference (test).
 
 ### 1. QC
 
@@ -74,7 +74,7 @@ Follow the steps for each mode below to convert the model (qc), evaluate its qua
 Configure the required paths:
 
 ```bash
-./docker/iqf configure qc --type yolov26 --runtime litert --precision int8
+./docker/iqf configure qc --type yolov26 --task detect --runtime litert --precision int8
 ```
 
 When prompted, enter the requested model and calibration paths.
@@ -84,24 +84,24 @@ When prompted, enter the requested model and calibration paths.
 Run the mode:
 
 ```bash
-./docker/iqf run qc --type yolov26 --runtime litert --precision int8
+./docker/iqf run qc --type yolov26 --task detect --runtime litert --precision int8
 ```
 
 This generates the converted YOLO artifact in the output directory.
 
 ![QC mode output](./fig/qc-mode-output.png)
 
-Output location: `out/model/yolov26/yolov26_litert_int8_<timestamp>.tflite`
+Output location: `out/model/detect/yolov26/yolov26_litert_int8_<timestamp>.tflite`
 
-### 2. mAP
+### 2. Eval
 
-`mAP` compares source versus converted model quality at `mAP@0.5`. The source model runs on the
+`eval` compares source versus converted model quality at `mAP@0.5`. The source model runs on the
 host, and the converted model runs on EXMP-Q911 (Qualcomm QCS9075) through ADB.
 
 Configure the required paths:
 
 ```bash
-./docker/iqf configure mAP --type yolov26 --runtime litert --precision int8
+./docker/iqf configure eval --type yolov26 --task detect --runtime litert --precision int8
 ```
 
 When prompted, enter the requested annotation, image, FP model, and converted model paths.
@@ -109,23 +109,23 @@ When prompted, enter the requested annotation, image, FP model, and converted mo
 Run the mode:
 
 ```bash
-./docker/iqf run mAP --type yolov26 --runtime litert --precision int8
+./docker/iqf run eval --type yolov26 --task detect --runtime litert --precision int8
 ```
 
 For a smaller validation run, you can limit the number of images:
 
 ```bash
-./docker/iqf run mAP --type yolov26 --runtime litert --precision int8 --max-images 5
+./docker/iqf run eval --type yolov26 --task detect --runtime litert --precision int8 --max-images 5
 ```
 
 This produces the source-versus-converted quality comparison report.
 
 For `yolov10` and `yolov26`, if the converted model was generated with `--qc-head one2one`, run
-`mAP` with `--fp-head one2one` so the FP branch matches the converted model.
+`eval` with `--fp-head one2one` so the FP branch matches the converted model.
 
-![mAP mode output](./fig/map-mode-output.png)
+![Eval mode output](./fig/eval-mode-output.png)
 
-Output location: `out/mAP_results/yolov26/yolov26_mAP_result_litert_int8_<timestamp>.txt`
+Output location: `out/eval_results/detect/yolov26/yolov26_eval_result_litert_int8_<timestamp>.txt`
 
 ### 3. Test
 
@@ -135,7 +135,7 @@ and saves the output artifacts.
 Configure the required paths:
 
 ```bash
-./docker/iqf configure test --type yolov26 --runtime litert --precision int8
+./docker/iqf configure test --type yolov26 --task detect --runtime litert --precision int8
 ```
 
 When prompted, enter the requested model, YAML, and test image paths.
@@ -143,7 +143,7 @@ When prompted, enter the requested model, YAML, and test image paths.
 Run the mode:
 
 ```bash
-./docker/iqf run test --type yolov26 --runtime litert --precision int8 --adb
+./docker/iqf run test --type yolov26 --task detect --runtime litert --precision int8 --adb
 ```
 
 This runs inference on the target and saves the generated result artifacts.
@@ -155,13 +155,13 @@ This runs inference on the target and saves the generated result artifacts.
 
 This inference example was generated using a pretrained [Ultralytics YOLO26 model](https://docs.ultralytics.com/models/yolo26/).
 
-Output location: `out/test/yolov26/yolov26_inference_litert_int8_<timestamp>/`
+Output location: `out/test/detect/yolov26/yolov26_inference_litert_int8_<timestamp>/`
 
 > 💡 Tip: To review the currently saved mode paths, open `.iqf/docker-paths.json`.
 
 ## Use iQ-Foundry for More Options
 
-This iQ-Studio tutorial focuses on the default `yolov26` workflow with LiteRT INT8. If you want
+This iQ-Studio tutorial focuses on the default `yolov26` detection workflow with LiteRT INT8. For pose estimation, instance segmentation, and image classification, see the [Model Deploy tutorials](../README.md). If you want
 to use other YOLO models, precisions, or runtimes, continue with the
 [iQ-Foundry](https://github.com/InnoIPA/iQ-Foundry/tree/main) Ubuntu or Windows host guide and adjust the `--type`, `--runtime`, and `--precision` options there.
 
@@ -174,12 +174,16 @@ to use other YOLO models, precisions, or runtimes, continue with the
       <th>Supported Options</th>
     </tr>
     <tr>
-      <td>YOLO models</td>
+      <td>Detection models</td>
       <td><code>yolov10</code>, <code>yolov11</code>, <code>yolov26</code></td>
     </tr>
     <tr>
+      <td>Other tasks</td>
+      <td>Pose and segmentation (<code>yolov26</code>), classification (<code>resnet50</code>)</td>
+    </tr>
+    <tr>
       <td>Runtimes</td>
-      <td>LiteRT, ONNX Runtime</td>
+      <td>LiteRT, ONNX Runtime, QAIRT</td>
     </tr>
     <tr>
       <td>Precisions</td>

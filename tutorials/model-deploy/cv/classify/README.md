@@ -171,11 +171,11 @@ Run the mode:
 ./docker/iqf run test --type resnet50 --task classify --runtime litert --precision int8 --adb
 ```
 
-This runs inference on the target and saves each picture with its predicted class. The last line of the output shows `avg_model_invoke_ms`, the average model invocation latency.
+This runs inference on the target and saves each picture with its predicted class. Near the end of the output, `avg_model_invoke_ms` shows the average model invocation latency.
 
 ![Test mode output](./fig/test-mode-output.png)
 <p align="center">
-  <img src="./fig/inference-output.png" alt="Inference output" width="640" />
+  <img src="./fig/inference-output.png" alt="Inference output" width="360" />
 </p>
 
 Output location: `out/test/classify/resnet50/resnet50_classify_inference_litert_int8_<timestamp>/`

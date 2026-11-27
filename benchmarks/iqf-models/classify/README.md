@@ -30,6 +30,7 @@ These results provide comparison data rather than a universal model ranking. Sel
 
 | Item | Configuration |
 | --- | --- |
+| iQ-Foundry version | v1.1.0 |
 | Dataset | [Imagenette](https://github.com/fastai/imagenette) (`imagenette2-160`), a 10-class subset of ImageNet |
 | Evaluation subset | 300 validation images, 30 per class |
 | Evaluation images | 300 |

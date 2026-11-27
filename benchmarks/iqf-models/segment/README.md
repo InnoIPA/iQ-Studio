@@ -30,6 +30,7 @@ These results provide comparison data rather than a universal model ranking. Sel
 
 | Item | Configuration |
 | --- | --- |
+| iQ-Foundry version | v1.1.0 |
 | Dataset | [COCO 2017 validation dataset](https://cocodataset.org/#download) |
 | Evaluation subset | First 300 validation images |
 | Evaluation images | 300 |
